@@ -1,0 +1,2852 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="assets/Daur-Logo-B530W0NU.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daur Production</title>
+     <link rel="icon" type="image/png" href="favicon_img/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="favicon_img/favicon.svg" />
+  <link rel="shortcut icon" href="favicon_img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_img/apple-touch-icon.png" />
+  <link rel="manifest" href="favicon_img/site.webmanifest" />
+    <link rel="stylesheet" href="css_mode/nav.css">
+    <script src="js.js"></script>
+
+    <script type="module" crossorigin src="assets/index-DJX6Ryb6.js"></script>
+    <link rel="stylesheet" crossorigin href="assets/index-C4DKkz-q.css">
+    <link rel="stylesheet" crossorigin href="css.css">
+    <script src="https://kit.fontawesome.com/87cb04b335.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header style="background-color: white;">
+        <style>
+            :root {
+                --yellow: #F5C518;
+                --dark: #0d0d0d;
+                --dark2: #161616;
+                --dark3: #1e1e1e;
+                --dark4: #252525;
+                --white: #ffffff;
+                --gray: #888888;
+                --gray2: #555;
+                --border: rgba(255, 255, 255, 0.08);
+                --grad-lan: linear-gradient(90deg, #000000ff, #140d06, #000000, #040403, #32260Aff, #282621, #080808);
+                --grad-padd: 20px 25px;
+
+
+
+
+                --dp-yellow: #F5C518;
+                --dp-yellow-dark: #d4a800;
+                --dp-black: #0a0a0a;
+                --dp-dark: #161510;
+                --dp-dark2: #1a1a1a;
+                --dp-gray: #888888;
+                --dp-light-gray: #f5f5f5;
+                --dp-white: #ffffff;
+                --dp-text: #222222;
+                /* --dp-font-display: 'Bebas Neue', sans-serif; */
+                /* --dp-font-body: 'Barlow', sans-serif; */
+                --dp-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                --dp-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+                --poppins: 'Poppins', sans-serif;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+
+
+            /* ── SCROLL REVEAL ── */
+            .reveal {
+                opacity: 0;
+                transform: translateY(40px);
+                transition: opacity 0.7s ease, transform 0.7s ease;
+            }
+
+            .reveal.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .reveal-left {
+                opacity: 0;
+                transform: translateX(-50px);
+                transition: opacity 0.7s ease, transform 0.7s ease;
+            }
+
+            .reveal-left.visible {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .reveal-right {
+                opacity: 0;
+                transform: translateX(50px);
+                transition: opacity 0.7s ease, transform 0.7s ease;
+            }
+
+            .reveal-right.visible {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .delay-1 {
+                transition-delay: 0.1s;
+            }
+
+            .delay-2 {
+                transition-delay: 0.2s;
+            }
+
+            .delay-3 {
+                transition-delay: 0.3s;
+            }
+
+            .delay-4 {
+                transition-delay: 0.4s;
+            }
+
+            .delay-5 {
+                transition-delay: 0.5s;
+            }
+
+            /* ── NAV ── */
+            nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 1000;
+                /* background: rgba(13, 13, 13, 0.95); */
+                backdrop-filter: blur(12px);
+                border-bottom: 1px solid var(--border);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                /* padding: 0 40px; */
+                height: 70px;
+                transition: background 0.3s;
+                width: 100%;
+                background-color: rgb(0, 0, 0);
+            }
+
+            .logo {
+                display: flex;
+                flex-direction: column;
+                line-height: 1;
+            }
+
+            .logo-main {
+                /* font-family: 'Bebas Neue', sans-serif; */
+                font-size: 30px;
+                color: var(--yellow);
+                letter-spacing: 3px;
+            }
+
+            .logo-sub {
+                font-size: 8px;
+                letter-spacing: 5px;
+                color: var(--white);
+                font-weight: 600;
+                margin-top: -2px;
+            }
+
+            .nav-links {
+                display: flex;
+                gap: 32px;
+                list-style: none;
+            }
+
+            .nav-links a {
+                color: var(--white);
+                text-decoration: none;
+                font-size: 13px;
+                font-weight: 500;
+                letter-spacing: 0.5px;
+                transition: color 0.3s;
+                position: relative;
+            }
+
+            .nav-links a::after {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: var(--yellow);
+                transition: width 0.3s;
+            }
+
+            .nav-links a:hover {
+                color: var(--yellow);
+            }
+
+            .nav-links a:hover::after {
+                width: 100%;
+            }
+
+            .nav-links li.active a {
+                color: var(--yellow);
+            }
+
+            .nav-links li.active a::after {
+                width: 100%;
+            }
+
+            .nav-cta {
+                background: var(--yellow);
+                color: var(--dark);
+                border: none;
+                padding: 10px 22px;
+                font-size: 13px;
+                font-weight: 700;
+                font-family: 'Montserrat', sans-serif;
+                cursor: pointer;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                transition: background 0.3s, transform 0.2s;
+                text-decoration: none;
+                letter-spacing: 0.5px;
+            }
+
+            .nav-cta:hover {
+                background: #e6b800;
+                transform: translateY(-1px);
+            }
+
+            /* Hamburger */
+            .hamburger {
+                display: none;
+                flex-direction: column;
+                gap: 5px;
+                cursor: pointer;
+                padding: 4px;
+            }
+
+            .hamburger span {
+                display: block;
+                width: 24px;
+                height: 2px;
+                background: var(--white);
+                transition: all 0.3s;
+            }
+
+            .hamburger.open span:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+
+            .hamburger.open span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.open span:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+
+            /* Mobile Nav */
+            .mobile-nav {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(13, 13, 13, 0.98);
+                backdrop-filter: blur(12px);
+                z-index: 999;
+                padding: 24px 40px;
+                border-bottom: 1px solid var(--border);
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .mobile-nav.open {
+                display: flex;
+            }
+
+            .mobile-nav a {
+                color: var(--white);
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                transition: color 0.3s;
+            }
+
+            .mobile-nav a:hover {
+                color: var(--yellow);
+            }
+
+            /* ── HERO ── */
+
+            /* ── FOOTER ── */
+            #contact {
+                background: var(--grad-lan);
+                padding: var(--grad-padd);
+                /* padding: 80px 80px 40px; */
+            }
+
+            .footer-grid {
+                display: grid;
+                grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+                gap: 60px;
+                margin-bottom: 60px;
+                padding: 15px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px !important;
+            }
+
+            .footer-brand p {
+                font-size: 13px;
+                color: rgba(255, 255, 255, 0.5);
+                line-height: 1.9;
+                margin: 20px 0;
+                max-width: 240px;
+            }
+
+            .footer-copyright {
+                font-size: 12px;
+                color: var(--gray2);
+                margin-top: 16px;
+            }
+
+            .footer-col h4 {
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 2.5px;
+                color: var(--yellow);
+                text-transform: uppercase;
+                margin-bottom: 24px;
+            }
+
+            .footer-links {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            .footer-links a {
+                color: rgba(255, 255, 255, 0.55);
+                text-decoration: none;
+                font-size: 13px;
+                transition: color 0.3s;
+            }
+
+            .footer-links a:hover {
+                color: var(--yellow);
+            }
+
+            .social-icons {
+                display: flex;
+                gap: 12px;
+                margin-top: 4px;
+            }
+
+            .social-icon {
+                width: 38px;
+                height: 38px;
+                border-radius: 8px;
+                border: 1.5px solid rgba(255, 255, 255, 0.15);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: rgba(255, 255, 255, 0.6);
+                text-decoration: none;
+                transition: all 0.3s;
+                font-size: 13px;
+                font-weight: 700;
+            }
+
+            .social-icon:hover {
+                border-color: var(--yellow);
+                color: var(--yellow);
+                background: rgba(245, 197, 24, 0.08);
+                transform: translateY(-2px);
+            }
+
+            .contact-items {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .contact-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                font-size: 13px;
+                color: rgba(255, 255, 255, 0.6);
+                line-height: 1.6;
+            }
+
+            .contact-item-icon {
+                color: var(--yellow);
+                margin-top: 2px;
+                flex-shrink: 0;
+            }
+
+            .footer-divider {
+                height: 1px;
+                background: var(--border);
+                margin-bottom: 30px;
+            }
+
+            .footer-bottom {
+                text-align: center;
+                font-size: 12px;
+                color: var(--gray2);
+            }
+
+            /* ── CURSOR ── */
+            .cursor {
+                position: fixed;
+                width: 8px;
+                height: 8px;
+                background: var(--yellow);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                transition: transform 0.1s;
+                mix-blend-mode: difference;
+            }
+
+            .cursor-ring {
+                position: fixed;
+                width: 32px;
+                height: 32px;
+                border: 1.5px solid rgba(245, 197, 24, 0.5);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9998;
+                transition: all 0.12s ease;
+            }
+
+            /* ── PARTICLE DOTS ── */
+            .particles {
+                position: absolute;
+                inset: 0;
+                overflow: hidden;
+                pointer-events: none;
+                z-index: 4;
+            }
+
+            .particle {
+                position: absolute;
+                width: 2px;
+                height: 2px;
+                background: rgba(245, 197, 24, 0.6);
+                border-radius: 50%;
+                animation: particleFloat linear infinite;
+            }
+
+            @keyframes particleFloat {
+                0% {
+                    transform: translateY(100vh) translateX(0);
+                    opacity: 0;
+                }
+
+                10% {
+                    opacity: 1;
+                }
+
+                90% {
+                    opacity: 1;
+                }
+
+                100% {
+                    transform: translateY(-100px) translateX(30px);
+                    opacity: 0;
+                }
+            }
+
+            /* ── RESPONSIVE ── */
+            @media (max-width: 1200px) {
+                nav {
+                    /* padding: 0 30px; */
+                }
+
+                .hero-content {
+                    padding: 0 50px;
+                }
+
+                #about,
+                #services,
+                #work,
+                #clients,
+                #contact {
+                    padding-left: 50px;
+                    padding-right: 50px;
+                }
+
+                .services-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                    border-radius: 12px;
+                }
+
+                .service-card {
+                    border-bottom: 1px solid var(--border);
+                }
+
+                .service-card:nth-child(3) {
+                    border-right: none;
+                }
+
+                .service-card:nth-child(4),
+                .service-card:nth-child(5),
+                .service-card:nth-child(6) {
+                    border-bottom: none;
+                }
+
+                .work-card {
+                    min-width: calc(33.333% - 11px);
+                }
+
+                .footer-grid {
+                    grid-template-columns: 1fr 1fr;
+                    gap: 40px;
+                }
+            }
+
+            @media (max-width: 900px) {
+                .nav-links {
+                    display: none;
+                }
+
+                .nav-cta {
+                    display: none;
+                }
+
+                .hamburger {
+                    display: flex;
+                }
+
+                nav {
+                    /* padding: 0 24px; */
+                }
+
+                .hero-content {
+                    padding: 50px 24px;
+                    max-width: 100%;
+                }
+
+                .hero-camera-svg {
+                    display: none;
+                }
+
+                #home {
+                    justify-content: center;
+                    align-items: flex-end;
+                    padding-bottom: 60px;
+                }
+
+                .hero-bg {
+                    background: radial-gradient(ellipse 80% 80% at 50% 50%, rgba(245, 197, 24, 0.1) 0%, transparent 70%);
+                }
+
+                .about-grid {
+                    grid-template-columns: 1fr;
+                    gap: 40px;
+                }
+
+                .about-left p {
+                    max-width: 100%;
+                }
+
+                .stats-grid {
+                    padding: 30px 20px;
+                }
+
+                .stat-number {
+                    font-size: 32px;
+                }
+
+                #about,
+                #services,
+                #work,
+                #contact {
+                    padding: 70px 24px;
+                }
+
+                #clients {
+                    padding: 40px 24px;
+                }
+
+                .services-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                .service-card:nth-child(2) {
+                    border-right: none;
+                }
+
+                .service-card:nth-child(3) {
+                    border-right: 1px solid var(--border);
+                }
+
+                .service-card:nth-child(4) {
+                    border-right: none;
+                }
+
+                .service-card:nth-child(5) {
+                    border-right: 1px solid var(--border);
+                    border-bottom: none;
+                }
+
+                .service-card:nth-child(6) {
+                    border-right: none;
+                    border-bottom: none;
+                }
+
+                .service-card {
+                    border-bottom: 1px solid var(--border);
+                }
+
+                .work-card {
+                    min-width: calc(50% - 8px);
+                }
+
+                .clients-inner {
+                    flex-direction: column;
+                    gap: 20px;
+                    align-items: flex-start;
+                }
+
+                .trusted-label {
+                    border-right: none;
+                    padding-right: 0;
+                    border-right: 1px solid #666;
+                    border-bottom: 1px solid var(--border);
+                    padding-bottom: 16px;
+                }
+
+                .footer-grid {
+                    grid-template-columns: 1fr 1fr;
+                    gap: 40px;
+                }
+            }
+
+            @media (max-width: 600px) {
+                .hero-title {
+                    font-size: clamp(36px, 10vw, 52px);
+                }
+
+                .stats-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
+                .stat-item:not(:last-child)::after {
+                    display: none;
+                }
+
+                .stat-number {
+                    font-size: 28px;
+                }
+
+                .stat-label {
+                    font-size: 9px;
+                    letter-spacing: 1px;
+                }
+
+                .stat-icon {
+                    width: 40px;
+                    height: 40px;
+                }
+
+                .awsad13 {
+                    padding: 10px;
+                }
+
+                .services-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .service-card {
+                    border-right: none !important;
+                }
+
+                .work-card {
+                    min-width: calc(75% - 8px);
+                }
+
+                .carousel-btn {
+                    display: flex;
+                }
+
+                .footer-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .work-header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 16px;
+                }
+
+                .hero-buttons {
+                    gap: 16px;
+                }
+
+                .btn-primary {
+                    padding: 12px 20px;
+                    font-size: 12px;
+                }
+            }
+        </style>
+        <!-- <div style="padding: 0 5px 20px 5px;backdrop-filter: blur(0);"> -->
+        <nav id="navbar" style="border-radius: 15px;">
+            <a href="/" class="logo" style="text-decoration:none;">
+               <div style="width:50px;padding-left:6px;margin-left:15px;">
+            <img style="width: 70%;" src="assets/Daur-Production.webp" alt="">
+          </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li class="active"><a href="/about">About</a></li>
+                <li id="servicesPc"><a href="#">Services</a><i style="color: white;" class="fa-solid fa-angle-down"></i>
+                    <div class="dropdown_1">
+                        <ul>
+                            <li><a href="/production">Video Production</a></li>
+                            <li><a href="/voice-recording-studio-in-delhi">Voice Over</a></li>
+                            <li><a href="/ai-video-production-services">AI Service</a></li>
+                            <li><a href="/voiceove_course">Our Courses</a></li>
+                            <li><a href="/localization">Localization</a></li>
+                        </ul>
+
+                    </div>
+                </li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+
+            <a href="" id="call_me_to_more" class="nav-cta">Let's Talk &nbsp;↗</a>
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+
+        <!-- Mobile Nav -->
+        <div class="mobile-nav" id="mobileNav">
+            <a href="/" >Home</a>
+            <a href="/about" >About</a>
+            <a href="#" id="servicesmb">Services <i class="fa-solid fa-angle-down"></i> </a>
+            <div class="dropdown_2 unshow_smmb">
+                <ul>
+                    <li><a href="/production">Video Production</a></li>
+                    <li><a href="/voice-recording-studio-in-delhi">Voice Over</a></li>
+                    <li><a href="/ai-video-production-services">AI Service</a></li>
+                    <li><a href="/voiceove_course">Our Courses</a></li>
+                    <li><a href="/localization">Localization</a></li>
+                </ul>
+
+            </div>
+            <a href="#work" >Work</a>
+            <a href="#clients" >Clients</a>
+            <a href="/contact" >Contact</a>
+            <a href="" id="call_me_to_more" class="btn-primary" style="width:fit-content;" >Let's Talk
+                ↗</a>
+        </div>
+
+
+        <!-- <script>
+
+
+            let aewcce55 = document.getElementById("aewcce55")
+
+
+            aewcce55.addEventListener("click", () => {
+                console.log("99")
+            })
+        </script> -->
+        <!-- </div> -->
+
+
+
+    </header>
+
+
+
+
+
+    <main>
+        <!-- section 1 -->
+        <div class="h-20"></div>
+        <section
+            class="relative bg-gradient-to-r from-gray-700 via-gray-600 to-gray-800 py-20 px-6 overflow-hidden min-h-[600px] flex items-center">
+            <div class="absolute inset-0 bg-black/40 animate-pulse-slow"></div>
+            <div class="absolute inset-0 opacity-20 animate-zoom-slow"
+                style="background-image: url(&quot;https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&amp;h=600&amp;fit=crop&quot;); background-size: cover; background-position: center center; transform: scale(1.1);">
+            </div>
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="animate-fade-up">
+                        <div
+                            class="inline-block bg-yellow-600 backdrop-blur-sm px-4 py-2 rounded-full mb-6 animate-blur-in">
+                            <p class="text-white text-sm font-medium">We are production service agency →</p>
+                        </div>
+                        <div class="min-h-[230px]">
+                            <h1 class="text-5xl md:text-5xl font-bold text-white mb-6 leading-tight"><span
+                                    class="inline-block"><span class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 0s 1 normal forwards running typewriter;">T</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 0.1s 1 normal forwards running typewriter;">h</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 0.2s 1 normal forwards running typewriter;">i</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 0.3s 1 normal forwards running typewriter;">n</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 0.4s 1 normal forwards running typewriter;">k</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 0.5s 1 normal forwards running typewriter;">&nbsp;</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 0.6s 1 normal forwards running typewriter;">B</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 0.7s 1 normal forwards running typewriter;">i</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 0.8s 1 normal forwards running typewriter;">g</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 0.9s 1 normal forwards running typewriter;">.</span></span><br><span
+                                    class="inline-block"><span class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 1.5s 1 normal forwards running typewriter;">W</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 1.6s 1 normal forwards running typewriter;">h</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 1.7s 1 normal forwards running typewriter;">e</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 1.8s 1 normal forwards running typewriter;">r</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 1.9s 1 normal forwards running typewriter;">e</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 2s 1 normal forwards running typewriter;">&nbsp;</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 2.1s 1 normal forwards running typewriter;">S</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 2.2s 1 normal forwards running typewriter;">t</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 2.3s 1 normal forwards running typewriter;">o</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 2.4s 1 normal forwards running typewriter;">r</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 2.5s 1 normal forwards running typewriter;">i</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 2.6s 1 normal forwards running typewriter;">e</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 2.7s 1 normal forwards running typewriter;">s</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 2.8s 1 normal forwards running typewriter;">&nbsp;</span>
+                                        
+                                        </span>
+                                        <br>
+                                        <span class="inline-block"><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 2.9s 1 normal forwards running typewriter;">F</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 3s 1 normal forwards running typewriter;">i</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 3.1s 1 normal forwards running typewriter;">n</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 3.2s 1 normal forwards running typewriter;">d</span>
+                                        <span class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 3.5s 1 normal forwards running typewriter;">T</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 3.6s 1 normal forwards running typewriter;">h</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 3.7s 1 normal forwards running typewriter;">e</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 3.8s 1 normal forwards running typewriter;">i</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 3.9s 1 normal forwards running typewriter;">r</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 4s 1 normal forwards running typewriter;">&nbsp;</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 4.1s 1 normal forwards running typewriter;">V</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 4.2s 1 normal forwards running typewriter;">o</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 4.3s 1 normal forwards running typewriter;">i</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 4.4s 1 normal forwards running typewriter;">c</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 4.5s 1 normal forwards running typewriter;">e</span><span
+                                        class="typewriter-letter opacity-0"
+                                        style="animation: 0.1s ease 4.6s 1 normal forwards running typewriter;">.</span></span>
+                                <!-- <span class="ml-1 w-[3px] h-[3.5rem] bg-yellow-500 inline-block animate-cursor"
+                                    style="animation-delay: 6.5s;"></span> -->
+                            </h1>
+                        </div>
+                        <p class="text-white/90 text-lg mb-8 leading-relaxed animate-fade-up animate-delay-200">We
+                            believe in authentic performances and creative collaboration to activate every phase of film
+                            and voice production.</p><button onclick="contact_function()"
+                            class="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-4 rounded-md font-semibold transition-colors shadow-lg flex items-center gap-2 animate-fade-up animate-delay-300 hover:scale-105 transition-transform duration-300">Our
+                            Team →</button>
+                    </div>
+                    <div class="relative animate-float">
+                        <div class="relative z-10"></div>
+                        <div
+                            class="absolute top-10 -right-10 w-64 h-64 bg-orange-500/20 rounded-full blur-3xl animate-pulse-glow">
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-16">
+                    <div
+                        class="bg-transparent rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition-shadow animate-fade-up animate-delay-0 hover:scale-105 transition-transform duration-300">
+                        <div
+                            class="bg-orange-100 w-14 h-14 rounded-lg flex items-center justify-center mx-auto mb-3  ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-film w-7 h-7 text-orange-500"
+                                aria-hidden="true">
+                                <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                                <path d="M7 3v18"></path>
+                                <path d="M3 7.5h4"></path>
+                                <path d="M3 12h18"></path>
+                                <path d="M3 16.5h4"></path>
+                                <path d="M17 3v18"></path>
+                                <path d="M17 7.5h4"></path>
+                                <path d="M17 16.5h4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-white text-sm">Film Production</h3>
+                    </div>
+                    <div
+                        class="bg-transparent rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition-shadow animate-fade-up animate-delay-100 hover:scale-105 transition-transform duration-300">
+                        <div
+                            class="bg-orange-100 w-14 h-14 rounded-lg flex items-center justify-center mx-auto mb-3  ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-video w-7 h-7 text-orange-500"
+                                aria-hidden="true">
+                                <path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5">
+                                </path>
+                                <rect x="2" y="6" width="14" height="12" rx="2"></rect>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-white text-sm">Video Editing</h3>
+                    </div>
+                    <div
+                        class="bg-transparent rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition-shadow animate-fade-up animate-delay-200 hover:scale-105 transition-transform duration-300">
+                        <div
+                            class="bg-orange-100 w-14 h-14 rounded-lg flex items-center justify-center mx-auto mb-3  ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-camera w-7 h-7 text-orange-500"
+                                aria-hidden="true">
+                                <path
+                                    d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z">
+                                </path>
+                                <circle cx="12" cy="13" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-white text-sm">Photography</h3>
+                    </div>
+                    <div
+                        class="bg-transparent rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition-shadow animate-fade-up animate-delay-300 hover:scale-105 transition-transform duration-300">
+                        <div
+                            class="bg-orange-100 w-14 h-14 rounded-lg flex items-center justify-center mx-auto mb-3  ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-clapperboard w-7 h-7 text-orange-500"
+                                aria-hidden="true">
+                                <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z">
+                                </path>
+                                <path d="m6.2 5.3 3.1 3.9"></path>
+                                <path d="m12.4 3.4 3.1 4"></path>
+                                <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-white text-sm">Direction</h3>
+                    </div>
+                    <div
+                        class="bg-transparent rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition-shadow animate-fade-up animate-delay-400 hover:scale-105 transition-transform duration-300">
+                        <div
+                            class="bg-orange-100 w-14 h-14 rounded-lg flex items-center justify-center mx-auto mb-3  ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-monitor-play w-7 h-7 text-orange-500"
+                                aria-hidden="true">
+                                <path
+                                    d="M15.033 9.44a.647.647 0 0 1 0 1.12l-4.065 2.352a.645.645 0 0 1-.968-.56V7.648a.645.645 0 0 1 .967-.56z">
+                                </path>
+                                <path d="M12 17v4"></path>
+                                <path d="M8 21h8"></path>
+                                <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-white text-sm">Post Production</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section 2 -->
+        <div class="relative overflow-hidden mt-0"
+            style="background-image: linear-gradient(130deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 18%, rgba(0, 0, 0, 0.35) 38%,
+             rgb(0, 0, 0) 55%, rgba(0, 0, 0, 0.75) 70%, rgb(0, 0, 0) 85%, rgb(0, 0, 0) 100%), url(&quot;assets/footer_bg-BPhS4X1b.jpg&quot;); background-size: cover; background-repeat: no-repeat; background-position: center center;">
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div
+                    class="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float">
+                </div>
+                <div class="absolute top-40 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"
+                    style="animation-delay: 1s;"></div>
+                <div class="absolute -bottom-20 left-1/2 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"
+                    style="animation-delay: 2s;"></div>
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center mb-16"><br>
+                    <div
+                        class="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-600 to-yellow-400 px-4 py-2 rounded-full mb-6 animate-fade-in">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-sparkles w-4 h-4 text-white-600 animate-pulse" aria-hidden="true">
+                            <path
+                                d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z">
+                            </path>
+                            <path d="M20 2v4"></path>
+                            <path d="M22 4h-4"></path>
+                            <circle cx="4" cy="20" r="2"></circle>
+                        </svg><span class="text-sm text-white font-semibold text-blue-700 tracking-wide">TRUSTED BY
+                            INDUSTRY LEADERS</span>
+                    </div>
+                    <h2 class="text-3xl md:text-3xl font-bold text-white mb-4 animate-slide-up">Trusted by Leading
+                        Brands</h2>
+                    <p class="text-white text-lg md:text-xl max-w-2xl mx-auto animate-slide-up pl-10"
+                        style="animation-delay: 0.1s;">Partnering with industry leaders to create impactful visual
+                        stories</p>
+                </div>
+                <section class="relative py-16 overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+                    <div
+                        class="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none">
+                    </div>
+                    <div
+                        class="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none">
+                    </div>
+                    <style>
+                        @keyframes marquee-left {
+                            0% {
+                                transform: translateX(0);
+                            }
+
+                            100% {
+                                transform: translateX(-50%);
+                            }
+                        }
+
+                        @keyframes marquee-right {
+                            0% {
+                                transform: translateX(-50%);
+                            }
+
+                            100% {
+                                transform: translateX(0);
+                            }
+                        }
+
+                        .marquee-left {
+                            animation: marquee-left 35s linear infinite;
+                            will-change: transform;
+                            backface-visibility: hidden;
+                            transform: translateZ(0);
+                        }
+
+                        .marquee-right {
+                            animation: marquee-right 40s linear infinite;
+                            will-change: transform;
+                            backface-visibility: hidden;
+                            transform: translateZ(0);
+                        }
+
+                        .marquee-container {
+                            mask-image: linear-gradient(to right,
+                                    transparent 0%,
+                                    black 10%,
+                                    black 90%,
+                                    transparent 100%);
+                        }
+
+                        .marquee-container:hover .marquee-left,
+                        .marquee-container:hover .marquee-right {
+                            animation-play-state: paused;
+                        }
+
+                        /* Smooth performance optimization */
+                        .marquee-left,
+                        .marquee-right {
+                            -webkit-backface-visibility: hidden;
+                            -webkit-perspective: 1000px;
+                            perspective: 1000px;
+                        }
+                    </style>
+                    <div class="space-y-8">
+                        <div class="marquee-container relative overflow-hidden">
+                            <div class="marquee-left flex gap-5 w-max">
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/1-DnSlOvlP.png" alt="Partner 1"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/2-CqWLUh6G.png" alt="Partner 2"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-600 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/3-C0UoxgA1.png" alt="Partner 3"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/4-7GULLmPC.png" alt="Partner 4"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/5-BXKCc1zF.png" alt="Partner 5"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/6-C5VDGDZF.png" alt="Partner 6"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/7-lANRRnvw.png" alt="Partner 7"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/8-BC6NNpoF.png" alt="Partner 8"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/1-DnSlOvlP.png" alt="Partner 1"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/2-CqWLUh6G.png" alt="Partner 2"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-600 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/3-C0UoxgA1.png" alt="Partner 3"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/4-7GULLmPC.png" alt="Partner 4"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/5-BXKCc1zF.png" alt="Partner 5"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/6-C5VDGDZF.png" alt="Partner 6"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/7-lANRRnvw.png" alt="Partner 7"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/8-BC6NNpoF.png" alt="Partner 8"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="marquee-container relative overflow-hidden">
+                            <div class="marquee-right flex gap-5 w-max">
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/9-BPUIHpmH.png" alt="Partner 1"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/10-DQvSp32w.png" alt="Partner 2"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-600 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/11-B0oxODcl.png" alt="Partner 3"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/12-BHc54wxv.png" alt="Partner 4"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/13-D-kOlWye.png" alt="Partner 5"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/14-CuzCmUQW.png" alt="Partner 6"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/15-xsD2Df_a.png" alt="Partner 7"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/16-DsO99oGs.png" alt="Partner 8"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/9-BPUIHpmH.png" alt="Partner 1"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/10-DQvSp32w.png" alt="Partner 2"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-600 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/11-B0oxODcl.png" alt="Partner 3"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/12-BHc54wxv.png" alt="Partner 4"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/13-D-kOlWye.png" alt="Partner 5"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/14-CuzCmUQW.png" alt="Partner 6"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/15-xsD2Df_a.png" alt="Partner 7"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/16-DsO99oGs.png" alt="Partner 8"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section><br>
+                <div class="flex flex-wrap justify-center gap-4 sm:gap-8 mb-20">
+                    <div
+                        class="backdrop-blur-md bg-[#222222]/5 rounded-xl w-[calc(50%-0.5rem)] sm:w-42 h-42 flex flex-col items-center justify-center border border-[#f2f2f2]">
+                        <div class="text-xl font-bold text-[#f2f2f2] mb-2"><span class="counter"
+                                data-target="10">0</span>+</div>
+                        <div class="text-sm text-white text-center ">Years of Experience</div>
+                    </div>
+                    <div
+                        class="backdrop-blur-md bg-[#222222]/5 rounded-xl w-[calc(50%-0.5rem)] sm:w-42 h-42 flex flex-col items-center justify-center border border-[#f2f2f2]">
+                        <div class="text-xl font-bold text-[#f2f2f2] mb-2"><span class="counter"
+                                data-target="200">0</span>+</div>
+                        <div class="text-sm text-white text-center ">Successful Projects</div>
+                    </div>
+                    <div
+                        class="backdrop-blur-md bg-[#222222]/5 rounded-xl w-[calc(50%-0.5rem)] sm:w-42 h-42 flex flex-col items-center justify-center border border-[#f2f2f2]">
+                        <div class="text-xl font-bold text-[#f2f2f2] mb-2"><span class="counter"
+                                data-target="150">0</span>+</div>
+                        <div class="text-sm text-white text-center ">Happy Clients</div>
+                    </div>
+                    <div
+                        class="backdrop-blur-md bg-[#222222]/5 rounded-xl w-[calc(50%-0.5rem)] sm:w-42 h-42 flex flex-col items-center justify-center border border-[#f2f2f2]">
+                        <div class="text-xl font-bold text-[#f2f2f2] mb-2"><span class="counter"
+                                data-target="160">0</span>+</div>
+                        <div class="text-sm text-white text-center ">5 Star Reviews</div>
+                    </div>
+                </div>
+            </div><br>
+        </div>
+
+        <!-- section 3 -->
+        <section class="bg-transparent py-20 px-6"
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 18%, rgba(0, 0, 0, 0.35) 38%,rgba(0, 0, 0, 0.35) 38%, rgba(0, 0, 0, 0.35) 38%, rgba(0, 0, 0, 0.35) 38%, rgb(0, 0, 0) 100%), url(&quot;assets/slide-1-scaled-CExHPPCg.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <p class="text-yellow-600 font-semibold mb-4 uppercase text-sm tracking-wide">ABOUT DAUR
+                            PRODUCTION</p>
+                        <h2 class="text-4xl md:text-4xl font-bold text-white mb-6 leading-tight">Creating Cinematic
+                            Excellence for Your Vision</h2>
+                        <p class="text-white mb-6 leading-relaxed">With years of experience in the industry, we are
+                            committed to delivering exceptional production services that exceed our clients'
+                            expectations.</p>
+                        <p class="text-white mb-8 leading-relaxed">Our team of talented professionals uses
+                            state-of-the-art equipment and innovative techniques to bring your stories to life, ensuring
+                            every project meets the highest standards of quality and creativity.</p><button
+                            class="bg-yellow-500 hover:bg-orange-600 text-white px-8 py-3 rounded-md font-semibold transition-colors">Learn
+                            More</button>
+                    </div>
+                    <div class="relative"><img
+                            src="https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&amp;h=400&amp;fit=crop"
+                            alt="Production team" class="rounded-lg shadow-lg w-full h-auto"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section 4 -->
+        <section class="py-20 px-4 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden"
+            initial="[object Object]" animate="[object Object]" transition="[object Object]"
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 18%, rgba(0, 0, 0, 0.35) 38%,rgba(0, 0, 0, 0.35) 38%, rgba(0, 0, 0, 0.35) 38%, rgba(0, 0, 0, 0.35) 38%, rgb(0, 0, 0) 100%), url(&quot;assets/slide-1-scaled-CExHPPCg.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; will-change: transform, filter;">
+            <div
+                class="absolute top-10 left-10 max-w-full max-h-32 object-contain group-hover:scale-110 transition-transform duration-500 opacity-30">
+                <div class="grid grid-cols-4 gap-2">
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                </div>
+            </div>
+            <div
+                class="absolute bottom-10 right-10 max-w-full max-h-32 object-contain group-hover:scale-110 transition-transform duration-500 opacity-30">
+                <div class="grid grid-cols-4 gap-2">
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div
+                            class="inline-flex items-center gap-2 mb-4 text-white text-sm font-semibold uppercase tracking-wide">
+                            <div class="w-12 h-0.5 bg-yellow-600"></div><span>ABOUT OUR DAUR PRODUCTION</span>
+                            <div class="w-12 h-0.5 bg-yellow-600"></div>
+                        </div>
+                        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">How Our<br><span
+                                class="text-white">AI Works</span></h2>
+                        <p class="text-white text-lg mb-8 leading-relaxed">A seamless four-step process powered by
+                            advanced machine learning </p>
+                        <div class="space-y-6 mb-8">
+                            <div class="flex items-start gap-4 group">
+                                <div
+                                    class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-400 to-cyan-300 flex items-center justify-center flex-shrink-0 transform group-hover:scale-110 transition-all duration-300 shadow-lg">
+                                    <div class="text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-database w-8 h-8" aria-hidden="true">
+                                            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                            <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
+                                            <path d="M3 12A9 3 0 0 0 21 12"></path>
+                                        </svg></div>
+                                </div>
+                                <div class="flex-1">
+                                    <h3
+                                        class="text-lg font-bold text-white mb-1 group-hover:text-orange-600 transition-colors duration-300">
+                                        Input &amp; Analysis</h3>
+                                    <p class="text-white text-sm">AI analyzes your requirements, brand voice, and target
+                                        audience</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 group">
+                                <div
+                                    class="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-400 to-pink-300 flex items-center justify-center flex-shrink-0 transform group-hover:scale-110 transition-all duration-300 shadow-lg">
+                                    <div class="text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-cpu w-8 h-8" aria-hidden="true">
+                                            <path d="M12 20v2"></path>
+                                            <path d="M12 2v2"></path>
+                                            <path d="M17 20v2"></path>
+                                            <path d="M17 2v2"></path>
+                                            <path d="M2 12h2"></path>
+                                            <path d="M2 17h2"></path>
+                                            <path d="M2 7h2"></path>
+                                            <path d="M20 12h2"></path>
+                                            <path d="M20 17h2"></path>
+                                            <path d="M20 7h2"></path>
+                                            <path d="M7 20v2"></path>
+                                            <path d="M7 2v2"></path>
+                                            <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                                            <rect x="8" y="8" width="8" height="8" rx="1"></rect>
+                                        </svg></div>
+                                </div>
+                                <div class="flex-1">
+                                    <h3
+                                        class="text-lg font-bold text-white mb-1 group-hover:text-orange-600 transition-colors duration-300">
+                                        AI Processing</h3>
+                                    <p class="text-white text-sm">Neural networks generate content, avatars, or media
+                                        based on patterns</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 group">
+                                <div
+                                    class="w-12 h-12 rounded-lg bg-gradient-to-br from-green-400 to-emerald-300 flex items-center justify-center flex-shrink-0 transform group-hover:scale-110 transition-all duration-300 shadow-lg">
+                                    <div class="text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-sparkles w-8 h-8" aria-hidden="true">
+                                            <path
+                                                d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z">
+                                            </path>
+                                            <path d="M20 2v4"></path>
+                                            <path d="M22 4h-4"></path>
+                                            <circle cx="4" cy="20" r="2"></circle>
+                                        </svg></div>
+                                </div>
+                                <div class="flex-1">
+                                    <h3
+                                        class="text-lg font-bold text-white mb-1 group-hover:text-orange-600 transition-colors duration-300">
+                                        Quality Enhancement</h3>
+                                    <p class="text-white text-sm">AI refines output with human-like quality and
+                                        emotional intelligence</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 group">
+                                <div
+                                    class="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-400 to-red-300 flex items-center justify-center flex-shrink-0 transform group-hover:scale-110 transition-all duration-300 shadow-lg">
+                                    <div class="text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-rocket w-8 h-8" aria-hidden="true">
+                                            <path
+                                                d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z">
+                                            </path>
+                                            <path
+                                                d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z">
+                                            </path>
+                                            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                                            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+                                        </svg></div>
+                                </div>
+                                <div class="flex-1">
+                                    <h3
+                                        class="text-lg font-bold text-white mb-1 group-hover:text-orange-600 transition-colors duration-300">
+                                        Delivery &amp; Optimization</h3>
+                                    <p class="text-white text-sm">Content delivered with performance analytics and
+                                        improvement suggestions</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center gap-4 p-4 bg-transparent rounded-xl shadow-lg border border-gray-100">
+                            <div
+                                class="max-w-full max-h-32 object-contain group-hover:scale-110 transition-transform duration-500 rounded-full bg-gradient-to-br from-yellow-500 to-yellow-600 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-circle-user w-10 h-10 text-white"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                    <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"></path>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-white">Sahil Khanna</h4>
+                                <p class="text-sm text-white">AI Solutions Expert</p>
+                            </div><button id="call_me_to_more"
+                                class="px-6 py-3 bg-yellow-600 text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors duration-300 flex items-center gap-2"><span
+                                    class="text-sm">CALL:+91 6283915317</span></button>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div
+                                class="relative rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-300">
+                                <img src="assets/Daur-Image-1-SQLY9ARb.jpeg" alt="Team collaboration"
+                                    class="w-full h-64 object-cover">
+                            </div>
+                            <div
+                                class="relative rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-300 mt-8">
+                                <img src="assets/Video-Production-DrSmh4PT.jpeg" alt="Professional working"
+                                    class="w-full h-64 object-cover">
+                            </div>
+                            <div
+                                class="col-span-2 relative rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-300">
+                                <img src="assets/Video-Editing-Banner-CHDZWtYr.jpeg" alt="Business meeting"
+                                    class="w-full h-48 object-cover">
+                            </div>
+                        </div>
+                        <div
+                            class="absolute -bottom-8 -left-8 bg-gradient-to-br from-[#222222] to-[#222222] rounded-2xl p-6 shadow-2xl transform hover:scale-105 transition-all duration-300">
+                            <div class="text-white">
+                                <div class="text-5xl font-bold mb-2">10+</div>
+                                <p class="text-sm text-white/90">Of experience<br>in AI solutions</p>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute -top-4 -right-4 max-w-full max-h-32 object-contain group-hover:scale-110 transition-transform duration-500 border-4 border-[#f2f2f2] border-dashed rounded-full animate-spin-slow opacity-50">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section 5 -->
+        <section class="bg-gradient-to-r from-orange-50 to-white py-16 px-6" initial="[object Object]"
+            animate="[object Object]" transition="[object Object]"
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 18%, rgba(0, 0, 0, 0.35) 38%,rgba(0, 0, 0, 0.35) 38%, rgba(0, 0, 0, 0.35) 38%, rgba(0, 0, 0, 0.35) 38%, rgb(0, 0, 0) 100%), url(&quot;assets/bg_clients-CLnRtWas.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; will-change: transform, filter;">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="relative"><img
+                            src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&amp;h=400&amp;fit=crop"
+                            alt="Production process" class="rounded-lg shadow-lg w-full h-auto"></div>
+                    <div>
+                        <h2 class="text-2xl md:text-2xl font-bold text-white mb-6">Let's work together to create
+                            sustainable and innovative production solutions</h2>
+                        <p class="text-white mb-8 leading-relaxed p_version13">We believe in collaborative creativity and
+                            cutting-edge technology to deliver outstanding visual experiences
+                            that captivate audiences.</p>
+                        <p class="text-white mb-8 leading-relaxed p_version14">We believe in collaborative creativity and
+                            cutting-edge technology to deliver outstanding visual experiences
+                            that captivate audiences.</p>
+                            <button onclick="contact_function()"
+                            class="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-3 rounded-md font-semibold transition-colors">Get
+                            Started</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section 6 -->
+        <section class="py-20 px-6 relative overflow-hidden"
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url(&quot;https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&amp;h=600&amp;fit=crop&quot;); background-size: cover; background-position: center center; background-attachment: fixed;">
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Service We Provide</h2>
+                    <p class="text-gray-300 max-w-2xl mx-auto"></p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div
+                        class="bg-white hover:bg-yellow-600 transition-all duration-300 rounded-lg p-8 text-center group cursor-pointer">
+                        <div class="flex justify-center mb-4">
+                            <div
+                                class="max-w-full max-h-32 object-contain group-hover:scale-110 transition-transform duration-500 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-video w-12 h-12 text-black"
+                                    aria-hidden="true">
+                                    <path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5">
+                                    </path>
+                                    <rect x="2" y="6" width="14" height="12" rx="2"></rect>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-black mb-3">Video Production</h3>
+                        <p class="text-black text-sm mb-4 leading-relaxed">From concept to screen, we craft compelling
+                            visual narratives that captivate audiences and bring your vision to life with cinematic
+                            excellence.</p><button class="text-black font-semibold hover:underline text-sm">Learn More
+                            →</button>
+                    </div>
+                    <div
+                        class="bg-white hover:bg-yellow-600 hover:shadow-xl transition-all duration-300 rounded-lg p-8 text-center group cursor-pointer">
+                        <div class="flex justify-center mb-4">
+                            <div
+                                class="max-w-full max-h-32 object-contain group-hover:scale-110 transition-transform duration-500 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-play w-12 h-12 text-black"
+                                    aria-hidden="true">
+                                    <path
+                                        d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Post Production</h3>
+                        <p class="text-black text-sm mb-4 leading-relaxed">Expert editing, color grading, and sound
+                            design that transforms raw footage into polished masterpieces with professional finesse.</p>
+                        <button class="text-gray-900 font-semibold hover:text-orange-600 text-sm">Learn More →</button>
+                    </div>
+                    <div
+                        class="bg-white hover:bg-yellow-600 hover:shadow-xl transition-all duration-300 rounded-lg p-8 text-center group cursor-pointer">
+                        <div class="flex justify-center mb-4">
+                            <div
+                                class="max-w-full max-h-32 object-contain group-hover:scale-110 transition-transform duration-500 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-users w-12 h-12 text-black"
+                                    aria-hidden="true">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                    <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Voice Dubbing</h3>
+                        <p class="text-black text-sm mb-4 leading-relaxed">Professional voice artists and
+                            state-of-the-art recording facilities delivering authentic performances in multiple
+                            languages.</p><button
+                            class="text-gray-900 font-semibold hover:text-orange-600 text-sm">Learn More →</button>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div
+                        class="bg-white hover:bg-yellow-600 hover:shadow-xl transition-all duration-300 rounded-lg p-8 text-center group cursor-pointer">
+                        <div class="flex justify-center mb-4">
+                            <div
+                                class="max-w-full max-h-32 object-contain group-hover:scale-110 transition-transform duration-500 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-film w-12 h-12 text-black"
+                                    aria-hidden="true">
+                                    <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                                    <path d="M7 3v18"></path>
+                                    <path d="M3 7.5h4"></path>
+                                    <path d="M3 12h18"></path>
+                                    <path d="M3 16.5h4"></path>
+                                    <path d="M17 3v18"></path>
+                                    <path d="M17 7.5h4"></path>
+                                    <path d="M17 16.5h4"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Film Production</h3>
+                        <p class="text-black text-sm mb-4 leading-relaxed">Complete film production services from
+                            pre-production planning to final delivery with state-of-the-art equipment and techniques.
+                        </p><button class="text-gray-900 font-semibold hover:text-orange-600 text-sm">Learn More
+                            →</button>
+                    </div>
+                    <div
+                        class="bg-white hover:bg-yellow-600 hover:shadow-xl transition-all duration-300 rounded-lg p-8 text-center group cursor-pointer">
+                        <div class="flex justify-center mb-4">
+                            <div
+                                class="max-w-full max-h-32 object-contain group-hover:scale-110 transition-transform duration-500 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-camera w-12 h-12 text-black"
+                                    aria-hidden="true">
+                                    <path
+                                        d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z">
+                                    </path>
+                                    <circle cx="12" cy="13" r="3"></circle>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Photography</h3>
+                        <p class="text-black text-sm mb-4 leading-relaxed">Professional photography services capturing
+                            stunning visuals that tell your story with artistic vision and technical precision.</p>
+                        <button class="text-gray-900 font-semibold hover:text-orange-600 text-sm">Learn More →</button>
+                    </div>
+                    <div
+                        class="bg-white hover:bg-yellow-600 hover:shadow-xl transition-all duration-300 rounded-lg p-8 text-center group cursor-pointer">
+                        <div class="flex justify-center mb-4">
+                            <div
+                                class="max-w-full max-h-32 object-contain group-hover:scale-110 transition-transform duration-500 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-clapperboard w-12 h-12 text-black"
+                                    aria-hidden="true">
+                                    <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z">
+                                    </path>
+                                    <path d="m6.2 5.3 3.1 3.9"></path>
+                                    <path d="m12.4 3.4 3.1 4"></path>
+                                    <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Direction</h3>
+                        <p class="text-black text-sm mb-4 leading-relaxed">Creative direction that brings your vision to
+                            life with expertise in storytelling, performance, and visual composition.</p><button
+                            class="text-gray-900 font-semibold hover:text-orange-600 text-sm">Learn More →</button>
+                    </div>
+                </div>
+                <div class="text-center mt-12"><button onclick="contact_function()"
+                        class="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-3 rounded-md font-semibold transition-colors">Load
+                        More</button></div>
+            </div>
+        </section>
+
+        <!-- section 7 -->
+        <section class="bg-gray-50 p-10" initial="[object Object]"
+            style="overflow: hidden; background-image: linear-gradient(130deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 18%, rgba(0, 0, 0, 0.35) 38%,rgba(0, 0, 0, 0.35) 38%, rgba(0, 0, 0, 0.35) 38%, rgba(0, 0, 0, 0.35) 38%, rgb(0, 0, 0) 100%), url(&quot;assets/slide-1-scaled-CExHPPCg.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; will-change: transform, filter;">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-4">
+                    <div
+                        class="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-600 to-yellow-500 px-4 py-2 rounded-full mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-users w-4 h-4 text-white animate-pulse" aria-hidden="true">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                            <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                        </svg><span class="text-sm font-semibold text-white tracking-wide">Our Team</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-12">Introduction To Best Production Agency!
+                    </h2>
+                </div>
+                <div class="grid md:grid-cols-5 gap-8 mb-12">
+
+                    <!-- icon 1  -->
+                    <div class="text-center feature-box box1212">
+                        <div
+                            class="feature-icon bg-yellow-600 w-20 h-20 rounded-full flex items-center justify-center  mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-award w-8 h-8 text-white"
+                                aria-hidden="true">
+                                <path
+                                    d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526">
+                                </path>
+                                <circle cx="12" cy="8" r="6"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Best Price Guaranteed</h3>
+                    </div>
+
+                    <!-- line 1   -->
+                    <div class="hidden md:flex items-center justify-center col-span-1 pt-10 feature-box">
+                        <div class="line-container">
+                            <div class="line-fill"></div>
+                        </div>
+                    </div>
+                    <!-- icon 2  -->
+                    <div class="text-center feature-box box1212">
+                        <div
+                            class="feature-icon bg-yellow-600 w-20 h-20 rounded-full flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-play w-8 h-8 text-white"
+                                aria-hidden="true">
+                                <path
+                                    d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Intensive Analysis</h3>
+                    </div>
+
+                    <!-- line 2  -->
+                    <div class="hidden md:flex items-center justify-center col-span-1 pt-10 feature-box">
+                        <div class="line-container">
+                            <div class="line-fill"></div>
+                        </div>
+                    </div>
+
+
+                    <!-- icon 3  -->
+                    <div class="text-center feature-box box1212">
+                        <div
+                            class="feature-icon bg-yellow-600 w-20 h-20 rounded-full flex items-center justify-center  mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-users w-8 h-8 text-white"
+                                aria-hidden="true">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Professional Team</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="rounded-lg overflow-hidden shadow-lg reveal reveal-left"
+                        style="border-radius: 15px !important;">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop"
+                            class="w-full h-80 object-cover">
+                    </div>
+
+                    <div class="rounded-lg overflow-hidden shadow-lg reveal" style="border-radius: 15px !important;">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop"
+                            class="w-full h-80 object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+
+                            // images wale (left-right animation)
+                            if (entry.target.classList.contains('reveal')) {
+                                entry.target.classList.add('show');
+                            }
+
+                            // feature boxes wale (icon section)
+                            if (entry.target.classList.contains('feature-box')) {
+                                entry.target.classList.add('active');
+                            }
+
+                        }
+                    });
+                }, {
+                    threshold: 0.2
+                });
+
+                // dono types observe karo
+                document.querySelectorAll('.reveal, .feature-box').forEach(el => {
+                    observer.observe(el);
+                });
+            </script>
+        </section>
+
+        <!-- section 8 -->
+        
+          
+        <style>
+            
+            /* Small Mobile */
+            .p_version12{
+                display:none;
+            }
+            
+            .p_version14{
+                
+                display:none;
+            }
+            
+            .jsada12{
+                padding:100px;
+            }
+@media screen and (max-width: 880px) {
+    .p_version11{
+        display:none;
+    }
+    .p_version12{
+        display:block;
+    }
+    .p_version13{
+        
+        display:none;
+        
+    }
+    
+    .p_version14{
+        display:block;
+        text-align:start;
+    }
+
+    .jsada12{
+        padding:25px 0;
+    }
+    
+    .wrta100{
+        width: 100%;
+    }
+}
+        </style>
+        <div class="py-10 md:py-24 bg-gradient-to-b from-gray-300/35 to bg-transparent relative overflow-hidden mt-0"
+            initial="[object Object]" animate="[object Object]" transition="[object Object]"
+            style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 18%, rgba(0, 0, 0, 0.35) 38%,rgba(0, 0, 0, 0.35) 38%, rgba(0, 0, 0, 0.35) 38%, rgba(0, 0, 0, 0.35) 38%, rgb(0, 0, 0) 100%), url(&quot;assets/footer_bg-BPhS4X1b.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; will-change: transform, filter;">
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div
+                    class="absolute top-10 left-10 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float">
+                </div>
+                <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float"
+                    style="animation-delay: 2s;"></div>
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center mb-16 animate-fade-in">
+                    <div
+                        class="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-600 to-rgba(157, 115, 24, 0.8) 85% px-4 py-2 rounded-full mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-sparkles w-4 h-4 text-white animate-pulse" aria-hidden="true">
+                            <path
+                                d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z">
+                            </path>
+                            <path d="M20 2v4"></path>
+                            <path d="M22 4h-4"></path>
+                            <circle cx="4" cy="20" r="2"></circle>
+                        </svg><span class="text-sm font-semibold text-white tracking-wide">CLIENT TESTIMONIALS</span>
+                    </div>
+                    <h2 class="text-4xl md:text-4xl font-bold text-white mb-4">What Our Clients Say</h2>
+                    <p class="text-white  md:text-xl max-w-3xl mx-auto pl-20 p_version11">Trusted by leading brands and creators
+                        across India for delivering <br><span class="text-center pl-25">exceptional video content that
+                            drives results.</span></p>
+                    <p class="text-white  md:text-xl max-w-3xl mx-auto p_version12">Trusted by leading brands and creators
+                        across India for delivering <span class="text-center ">exceptional video content that
+                            drives results.</span></p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                    <div class="group relative bg-white hover:bg-yellow-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up"
+                        style="animation-delay: 0s;">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="flex gap-1 mb-6 relative z-10">
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 0ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 100ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 200ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 300ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 400ms;">⭐</div>
+                        </div>
+                        <p class="text-black text-lg leading-relaxed mb-8 relative z-10">"Daur Productions transformed
+                            our brand story into a cinematic masterpiece. The attention to detail and creative vision
+                            exceeded all expectations. Our campaign achieved record engagement."</p>
+                        <div class="flex items-center gap-4 relative z-10">
+                            <div
+                                class="w-14  h-14 rounded-full bg-gradient-to-br from-rgba(101, 72, 9, 0.95) 95%, flex items-center justify-center text-black font-bold text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                RK</div>
+                            <div>
+                                <div class="font-bold text-gray-900 text-lg">Rajesh Kumar</div>
+                                <div class="text-black text-sm">Marketing Director, TechCorp India</div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute top-6 right-6 text-6xl text-blue-100 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+                            "</div>
+                    </div>
+                    <div class="group relative bg-white hover:bg-yellow-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up"
+                        style="animation-delay: 0.2s;">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-yellow-400/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="flex gap-1 mb-6 relative z-10">
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 0ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 100ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 200ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 300ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 400ms;">⭐</div>
+                        </div>
+                        <p class="text-black text-lg leading-relaxed mb-8 relative z-10">"Professional, creative, and
+                            results-driven. The team's technical expertise combined with artistic vision delivered
+                            content that truly resonates with our audience. Highly recommended!"</p>
+                        <div class="flex items-center gap-4 relative z-10">
+                            <div
+                                class="w-14 h-14 rounded-full bg-gradient-to-br from-rgba(101, 72, 9, 0.95) 95%, flex items-center justify-center text-black font-bold text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                PS</div>
+                            <div>
+                                <div class="font-bold text-black text-lg">Priya Sharma</div>
+                                <div class="text-black text-sm">Creative Head, Lifestyle Brands</div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute top-6 right-6 text-6xl text-purple-100 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+                            "</div>
+                    </div>
+                    <div class="group relative bg-white hover:bg-yellow-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up"
+                        style="animation-delay: 0.4s;">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-yellow-400/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="flex gap-1 mb-6 relative z-10">
+                            <div class="text-black animate-scale-in" style="animation-delay: 0ms;">⭐</div>
+                            <div class="text-black animate-scale-in" style="animation-delay: 100ms;">⭐</div>
+                            <div class="text-black animate-scale-in" style="animation-delay: 200ms;">⭐</div>
+                            <div class="text-black animate-scale-in" style="animation-delay: 300ms;">⭐</div>
+                            <div class="text-black animate-scale-in" style="animation-delay: 400ms;">⭐</div>
+                        </div>
+                        <p class="text-black text-lg leading-relaxed mb-8 relative z-10">"From concept to final
+                            delivery, Daur Productions demonstrated exceptional professionalism. Their ability to
+                            understand our vision and execute flawlessly made the entire process seamless."</p>
+                        <div class="flex items-center gap-4 relative z-10">
+                            <div
+                                class="w-14 h-14 rounded-full bg-gradient-to-br from-rgba(101, 72, 9, 0.95) 95%, flex items-center justify-center text-black font-bold text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                AP</div>
+                            <div>
+                                <div class="font-bold text-black text-lg">Amit Patel</div>
+                                <div class="text-black text-sm">CEO, StartupHub</div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute top-6 right-6 text-6xl text-black opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+                            "</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- section 9 -->
+
+
+        <!-- section 10 -->
+    </main>
+
+
+    <!-- Footer -->
+
+    <!-- ── FOOTER / CONTACT ── -->
+
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+
+    <style>
+        .dropdwon_footer ul {
+            list-style: none;
+            padding: 5px;
+        }
+
+        .dropdwon_footer ul li {
+            padding: 8px 5px;
+        }
+
+        .aswawnone {
+            display: none;
+        }
+
+        .downarrow {
+            /* transform: rotate(180deg); */
+            transition: 0.3s;
+        }
+
+        /* #waxdaw{
+  transition: transform 0.3s ease;
+}
+
+.downarrow{
+  transform: rotate(180deg);
+} */
+        .awsad14 {
+            transition: 0.3s ease;
+            padding: 15px 20px;
+            /* background: rgba(255, 255, 255, 0.2); */
+
+            background: rgba(255, 255, 255, 0);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+        }
+
+        .awsad13 {
+            transition: 0.3s ease;
+            padding: 15px 20px;
+            /* background: rgba(255, 255, 255, 0.2); */
+
+            background: rgb(255 255 255 / 8%);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+        }
+
+
+        /* new code  */
+.ADOAJOWE{
+  display: flex;
+  gap: 10px;
+  
+}
+.ADOAJOWE input{
+  background-color: var(--grad-lan);
+  border: 1px solid #665;
+  border-radius: 5px;
+}
+.ADOAJOWE input::placeholder{
+color: rgba(255, 255, 255, 0.678);
+padding-left: 5px;
+font-family: var(--poppins);
+font-size: 12px;
+}
+
+.ADOAJOWE button{
+background: var(--yellow);
+padding:8px 15px;
+border: none;
+border-radius: 15px;
+
+}
+    </style>
+
+
+    <div class="awsad13" style="background:var(--grad-lan)!important;">
+        <div class="footer-grid">
+           <div class="footer-brand reveal">
+          <div class="logo">
+            <div style="width:110px;margin-left: 35px;">
+            <img style="width: 95%;" src="assets/footer_logo.png" alt="">
+          </div>
+          </div>
+          <p>Revolutionizing video dubbing with AI-powered technology. Making content globally accessible.</p>
+          <div class="footer-copyright" style="color: white;"><span>
+              <p>Stay updated with our latest</p>
+            </span>
+            <span class="ADOAJOWE"><input type="email" placeholder="Enter The Email "><button type="submit">submit</button></span>
+          </div>
+        </div>
+
+        <div class="footer-col reveal delay-1">
+          <h4>Useful  Links</h4>
+          <ul class="footer-links">
+            <li><a href="/">Business Academy</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/">Digital</a></li>
+            <li><a href="/">Creative</a></li>
+            <li><a href="/">FAQs</a></li>
+            
+          </ul>
+        </div>
+
+        <div class="footer-col reveal delay-2">
+          <h4>Daur Production</h4>
+          <ul class="footer-links">
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/">Daur Production Studio</a></li>
+            <li><a href="/">Why Daur Production?</a></li>
+            <!-- <li><a href="about">FAQs</a></li> -->
+            
+          </ul>
+          <!-- <div class="social-icons">
+            <a href="#" class="social-icon" title="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon" title="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon" title="YouTube">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22.54 6.42A2.78 2.78 0 0 0 20.59 4.5C19 4 12 4 12 4s-7 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.5C5 20 12 20 12 20s7 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                <polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="currentColor" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon" title="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+          </div> -->
+        </div>
+
+        <div class="footer-col reveal delay-3">
+          <h4>Contact Info</h4>
+          <div class="contact-items">
+
+            
+            <div class="contact-item">
+              <span class="contact-item-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </span>
+              2nd Floor, Welldone Tech Park,
+Unit No. 213 & 214,
+Badshahpur Sohna Rd Hwy, Sector 48,
+Gurugram, Haryana 122018 
+            </div>
+            <div class="contact-item">
+              <span class="contact-item-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </span>
+              hello@daurproduction.com
+            </div>
+            <div class="contact-item" id="call_me_to_more">
+              <span class="contact-item-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.08 6.08l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2z" />
+                </svg>
+              </span>
+              099147 66103
+            </div>
+            <!-- <div class="contact-item">
+              <span class="contact-item-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </span>
+              Delhi, India
+            </div> -->
+          </div>
+        </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-bottom" style="color: white;">Made with passion by Daur Productions</div>
+    </div>
+    </section>
+
+    <!-- Floating Buttons -->
+
+<!-- call and whatsapp icons start -->
+    <style>
+        /* ── CHAT WIDGET ── */
+        .chat-widget {
+            position: fixed;
+            bottom: 90px;
+            left: 20px;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 16px 18px;
+            max-width: 240px;
+            font-size: 13px;
+            color: #333;
+            line-height: 1.6;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            z-index: 100;
+            animation: chatPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s both;
+        }
+
+        @keyframes chatPop {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .chat-widget::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 20px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid var(--white);
+        }
+
+        /* Floating buttons */
+        .float-whatsapp {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 52px;
+            height: 52px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            animation: pulse-green 2s infinite;
+            cursor: pointer;
+            transition: transform 0.3s;
+            border-radius: 50% !important;
+            text-decoration: none;
+        }
+
+        .float-whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse-green {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+            }
+
+            70% {
+                box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .float-chat {
+            border-radius: 50% !important;
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            width: 52px;
+            height: 52px;
+            background: rgb(201, 133, 7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(26, 159, 224, 0.4);
+            animation: pulse-blue 2s infinite 0.5s;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .float-chat:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse-blue {
+            0% {
+                box-shadow: 0 0 0 0 rgba(224, 157, 13, 0.5);
+            }
+
+            70% {
+                box-shadow: 0 0 0 12px rgba(224, 132, 26, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(224, 155, 26, 0);
+            }
+        }
+
+        .badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            width: 18px;
+            height: 18px;
+            background: #ff3b3b;
+            border-radius: 50%;
+            font-size: 10px;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid white;
+            /* border-radius: 50% !important; */
+        }
+    </style>
+    <!-- +91 6283915317 -->
+    <a id="whatsappBtn" class="float-whatsapp" target="_blank" title="WhatsApp">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <div class="float-chat" id="chat_box" title="Chat">
+        <a href="tel:+916283915317">
+            <!-- <div class="badge">1</div> -->
+            <svg style="animation: ringing 1s infinite; width: 30px;text-align: center;display: flex;align-items: center;justify-items: center;justify-content: center;align-content: center;"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ffffff" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone-call">
+
+                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+                <g id="SVGRepo_iconCarrier">
+
+                    <path
+                        d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+
+                </g>
+
+            </svg></a>
+    </div>
+
+    <script>
+        let number = "916283915317";
+        let message = "Hello, Sir";
+
+        let url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+
+        document.getElementById("whatsappBtn").href = url;
+
+
+
+         document.getElementById("call_me_to_more")
+      .addEventListener("click", () => {
+        window.location.href = "tel:+916283915317";
+      });
+    </script>
+
+<!-- call and whatsapp icons end -->
+
+    <script>
+        let waxdaw = document.getElementById("waxdaw");
+        let sawekmo = document.getElementById("sawekmo");
+        let dropdwon_footer = document.querySelector(".dropdwon_footer");
+
+        sawekmo.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            dropdwon_footer.classList.toggle("aswawnone");
+            waxdaw.style.transform = ' rotate(180deg)';
+        });
+
+
+        // routing with js for footer
+        document.querySelectorAll(".nav_link_footer").forEach((item) => {
+
+            item.addEventListener("click", () => {
+
+                window.location.href = item.dataset.link;
+
+            });
+
+        });
+
+    </script>
+
+<!-- form box hera start -->
+    <style>
+        /* * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        } */
+
+        .form_box {
+            width: 100%;
+            height: 100vh;
+            background: #000000b6;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            display: none;
+            opacity: 0;
+            transform: translateY(-15px);
+
+            transition:
+                opacity 0.3s ease,
+                transform 0.3s ease;
+        }
+
+
+        .form_box.active {
+            display: flex;
+
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .box64 {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .bos63 {
+            position: absolute;
+            top: -60px;
+            right: 30px;
+
+            width: 40px;
+            height: 40px;
+
+            border: 2px solid #dddada;
+            border-radius: 50% !important;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            cursor: pointer;
+        }
+
+        .closebtn {
+            color: white;
+            font-size: 18px;
+            padding-top: 3px;
+        }
+
+        .form_ {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .losecc {
+            width: 400px;
+            background: #111;
+            padding: 40px;
+            border-radius: 20px !important;
+            border: 1px solid #333;
+        }
+
+        .losecc h2 {
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .input_box {
+            margin-bottom: 15px;
+        }
+
+        .input_box input {
+            width: 100%;
+            padding: 14px;
+
+            background: #191919;
+            border: 1px solid #333;
+
+            color: white;
+            font-size: 16px;
+
+            border-radius: 10px !important;
+            outline: none;
+        }
+
+        .input_box input:focus {
+            border-color: #a8230b;
+        }
+
+        .sendbtn {
+            width: 100%;
+            padding: 14px;
+
+            background: #fcac02;
+
+            border: none;
+            color: white;
+            border-radius: 10px !important;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .sendbtn:hover {
+            opacity: .9;
+        }
+    </style>
+
+    <div class="form_box">
+
+        <div class="box64">
+
+            <span class="bos63">
+                <h2 class="closebtn">✕</h2>
+            </span>
+
+            <div class="form_">
+
+                <div class="losecc">
+
+                    <h2>Contact For More Infomation </h2>
+
+                    <div class="input_box">
+                        <input type="text" id="username" placeholder="Your Name">
+                    </div>
+
+                    <div class="input_box">
+                        <input type="tel" id="usernumber" placeholder="Your Number">
+                    </div>
+
+                    <button class="sendbtn">
+                        Submit
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function contact_function() {
+
+            let form = document.querySelector(".form_box");
+
+            if (form.classList.contains("active")) {
+
+                form.style.opacity = "0";
+                form.style.transform = "translateY(-15px)";
+
+                setTimeout(() => {
+                    form.classList.remove("active");
+                }, 300);
+
+            } else {
+
+                form.classList.add("active");
+
+                setTimeout(() => {
+                    form.style.opacity = "1";
+                    form.style.transform = "translateY(0)";
+                }, 10);
+            }
+        }
+
+
+
+
+        let sendbtn = document.querySelector(".sendbtn");
+
+        sendbtn.addEventListener("click", () => {
+
+            let name =
+                document.getElementById("username").value.trim();
+
+            let number =
+                document.getElementById("usernumber").value.trim();
+
+            if (name === "" || number === "") {
+                alert("Fill all fields");
+                return;
+            }
+
+            // yaha apna whatsapp number
+            let whatsapp = "919876543210";
+
+            let msg = `Hello Sir/Madam,\n\nMy name is ${name}, and my contact number is ${number}.\n\nI would like to get some guidance regarding your services.\nPlease let me know how I should proceed.\n\nThank you.`;
+            window.open(
+                `https://wa.me/${whatsapp}?text=${encodeURIComponent(msg)}`,
+                "_blank"
+            );
+
+        });
+
+
+
+        // close
+        document
+            .querySelector(".bos63")
+            .addEventListener("click", () => {
+
+                document
+                    .querySelector(".form_box")
+                    .style.display = "none";
+
+            });
+
+    </script>
+    <!-- from box end -->
+
+
+
+    <script>
+        // ── PARTICLES ──
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 20; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDuration = (8 + Math.random() * 12) + 's';
+                p.style.animationDelay = (Math.random() * 10) + 's';
+                p.style.opacity = Math.random() * 0.6;
+                container.appendChild(p);
+            }
+        }
+        createParticles();
+
+        // ── SCROLL REVEAL ──
+        const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+        const observer93 = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12 });
+        reveals.forEach(el => observer93.observe(el));
+
+    </script>
+
+    <script src="js/nav.js"></script>
+</body>
+
+</html>

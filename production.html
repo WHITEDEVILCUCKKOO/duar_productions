@@ -1,0 +1,2413 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="assets/Daur-Logo-B530W0NU.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daur Production</title>
+     <link rel="icon" type="image/png" href="favicon_img/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="favicon_img/favicon.svg" />
+  <link rel="shortcut icon" href="favicon_img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_img/apple-touch-icon.png" />
+  <link rel="manifest" href="favicon_img/site.webmanifest" />
+    <link rel="stylesheet" href="css_mode/nav.css">
+    <script src="https://kit.fontawesome.com/87cb04b335.js" crossorigin="anonymous"></script>
+    <script src="js.js"></script>
+    <script type="module" crossorigin src="assets/index-DJX6Ryb6.js"></script>
+    <link rel="stylesheet" crossorigin href="assets/index-C4DKkz-q.css">
+    <link rel="stylesheet" crossorigin href="css.css">
+</head>
+
+<body>
+    <header style="background-color: white;">
+        <style>
+            :root {
+                --yellow: #F5C518;
+                --dark: #0d0d0d;
+                --dark2: #161616;
+                --dark3: #1e1e1e;
+                --dark4: #252525;
+                --white: #ffffff;
+                --gray: #888888;
+                --gray2: #555;
+                --border: rgba(255, 255, 255, 0.08);
+                --grad-lan: linear-gradient(90deg, #000000ff, #140d06, #000000, #040403, #32260Aff, #282621, #080808);
+                --grad-padd: 20px 25px;
+
+
+
+
+                --dp-yellow: #F5C518;
+                --dp-yellow-dark: #d4a800;
+                --dp-black: #0a0a0a;
+                --dp-dark: #161510;
+                --dp-dark2: #1a1a1a;
+                --dp-gray: #888888;
+                --dp-light-gray: #f5f5f5;
+                --dp-white: #ffffff;
+                --dp-text: #222222;
+                /* --dp-font-display: 'Bebas Neue', sans-serif; */
+                /* --dp-font-body: 'Barlow', sans-serif; */
+                --dp-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                --dp-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+                --poppins: 'Poppins', sans-serif;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+
+
+            /* ── SCROLL REVEAL ── */
+            .reveal {
+                opacity: 0;
+                transform: translateY(40px);
+                transition: opacity 0.7s ease, transform 0.7s ease;
+            }
+
+            .reveal.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .reveal-left {
+                opacity: 0;
+                transform: translateX(-50px);
+                transition: opacity 0.7s ease, transform 0.7s ease;
+            }
+
+            .reveal-left.visible {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .reveal-right {
+                opacity: 0;
+                transform: translateX(50px);
+                transition: opacity 0.7s ease, transform 0.7s ease;
+            }
+
+            .reveal-right.visible {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .delay-1 {
+                transition-delay: 0.1s;
+            }
+
+            .delay-2 {
+                transition-delay: 0.2s;
+            }
+
+            .delay-3 {
+                transition-delay: 0.3s;
+            }
+
+            .delay-4 {
+                transition-delay: 0.4s;
+            }
+
+            .delay-5 {
+                transition-delay: 0.5s;
+            }
+
+            /* ── NAV ── */
+            nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 1000;
+                /* background: rgba(13, 13, 13, 0.95); */
+                backdrop-filter: blur(12px);
+                border-bottom: 1px solid var(--border);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                /* padding: 0 40px; */
+                height: 70px;
+                transition: background 0.3s;
+                width: 100%;
+                background-color: rgb(0, 0, 0);
+            }
+
+            .logo {
+                display: flex;
+                flex-direction: column;
+                line-height: 1;
+            }
+
+            .logo-main {
+                font-family: 'Bebas Neue', sans-serif;
+                font-size: 30px;
+                color: var(--yellow);
+                letter-spacing: 3px;
+            }
+
+            .logo-sub {
+                font-size: 8px;
+                letter-spacing: 5px;
+                color: var(--white);
+                font-weight: 600;
+                margin-top: -2px;
+            }
+
+            .nav-links {
+                display: flex;
+                gap: 32px;
+                list-style: none;
+            }
+
+            .nav-links a {
+                color: var(--white);
+                text-decoration: none;
+                font-size: 13px;
+                font-weight: 500;
+                letter-spacing: 0.5px;
+                transition: color 0.3s;
+                position: relative;
+            }
+
+            .nav-links a::after {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: var(--yellow);
+                transition: width 0.3s;
+            }
+
+            .nav-links a:hover {
+                color: var(--yellow);
+            }
+
+            .nav-links a:hover::after {
+                width: 100%;
+            }
+
+            .nav-links li.active a {
+                color: var(--yellow);
+            }
+
+            .nav-links li.active a::after {
+                width: 100%;
+            }
+
+            .nav-cta {
+                background: var(--yellow);
+                color: var(--dark);
+                border: none;
+                padding: 10px 22px;
+                font-size: 13px;
+                font-weight: 700;
+                font-family: 'Montserrat', sans-serif;
+                cursor: pointer;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                transition: background 0.3s, transform 0.2s;
+                text-decoration: none;
+                letter-spacing: 0.5px;
+            }
+
+            .nav-cta:hover {
+                background: #e6b800;
+                transform: translateY(-1px);
+            }
+
+            /* Hamburger */
+            .hamburger {
+                display: none;
+                flex-direction: column;
+                gap: 5px;
+                cursor: pointer;
+                padding: 4px;
+            }
+
+            .hamburger span {
+                display: block;
+                width: 24px;
+                height: 2px;
+                background: var(--white);
+                transition: all 0.3s;
+            }
+
+            .hamburger.open span:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+
+            .hamburger.open span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.open span:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+
+            /* Mobile Nav */
+            .mobile-nav {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(13, 13, 13, 0.98);
+                backdrop-filter: blur(12px);
+                z-index: 999;
+                padding: 24px 40px;
+                border-bottom: 1px solid var(--border);
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .mobile-nav.open {
+                display: flex;
+            }
+
+            .mobile-nav a {
+                color: var(--white);
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                transition: color 0.3s;
+            }
+
+            .mobile-nav a:hover {
+                color: var(--yellow);
+            }
+
+            /* ── HERO ── */
+
+            /* ── FOOTER ── */
+            #contact {
+                background: var(--grad-lan);
+                padding: var(--grad-padd);
+                /* padding: 80px 80px 40px; */
+            }
+
+            .footer-grid {
+                display: grid;
+                grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+                gap: 60px;
+                margin-bottom: 60px;
+            }
+
+            .footer-brand p {
+                font-size: 13px;
+                color: rgba(255, 255, 255, 0.5);
+                line-height: 1.9;
+                margin: 20px 0;
+                max-width: 240px;
+            }
+
+            .footer-copyright {
+                font-size: 12px;
+                color: var(--gray2);
+                margin-top: 16px;
+            }
+
+            .footer-col h4 {
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 2.5px;
+                color: var(--yellow);
+                text-transform: uppercase;
+                margin-bottom: 24px;
+            }
+
+            .footer-links {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            .footer-links a {
+                color: rgba(255, 255, 255, 0.55);
+                text-decoration: none;
+                font-size: 13px;
+                transition: color 0.3s;
+            }
+
+            .footer-links a:hover {
+                color: var(--yellow);
+            }
+
+            .social-icons {
+                display: flex;
+                gap: 12px;
+                margin-top: 4px;
+            }
+
+            .social-icon {
+                width: 38px;
+                height: 38px;
+                border-radius: 8px;
+                border: 1.5px solid rgba(255, 255, 255, 0.15);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: rgba(255, 255, 255, 0.6);
+                text-decoration: none;
+                transition: all 0.3s;
+                font-size: 13px;
+                font-weight: 700;
+            }
+
+            .social-icon:hover {
+                border-color: var(--yellow);
+                color: var(--yellow);
+                background: rgba(245, 197, 24, 0.08);
+                transform: translateY(-2px);
+            }
+
+            .contact-items {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .contact-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                font-size: 13px;
+                color: rgba(255, 255, 255, 0.6);
+                line-height: 1.6;
+            }
+
+            .contact-item-icon {
+                color: var(--yellow);
+                margin-top: 2px;
+                flex-shrink: 0;
+            }
+
+            .footer-divider {
+                height: 1px;
+                background: var(--border);
+                margin-bottom: 30px;
+            }
+
+            .footer-bottom {
+                text-align: center;
+                font-size: 12px;
+                color: var(--gray2);
+            }
+
+            /* ── CURSOR ── */
+            .cursor {
+                position: fixed;
+                width: 8px;
+                height: 8px;
+                background: var(--yellow);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                transition: transform 0.1s;
+                mix-blend-mode: difference;
+            }
+
+            .cursor-ring {
+                position: fixed;
+                width: 32px;
+                height: 32px;
+                border: 1.5px solid rgba(245, 197, 24, 0.5);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9998;
+                transition: all 0.12s ease;
+            }
+
+            /* ── PARTICLE DOTS ── */
+            .particles {
+                position: absolute;
+                inset: 0;
+                overflow: hidden;
+                pointer-events: none;
+                z-index: 4;
+            }
+
+            .particle {
+                position: absolute;
+                width: 2px;
+                height: 2px;
+                background: rgba(245, 197, 24, 0.6);
+                border-radius: 50%;
+                animation: particleFloat linear infinite;
+            }
+
+            @keyframes particleFloat {
+                0% {
+                    transform: translateY(100vh) translateX(0);
+                    opacity: 0;
+                }
+
+                10% {
+                    opacity: 1;
+                }
+
+                90% {
+                    opacity: 1;
+                }
+
+                100% {
+                    transform: translateY(-100px) translateX(30px);
+                    opacity: 0;
+                }
+            }
+
+            /* ── RESPONSIVE ── */
+            @media (max-width: 1200px) {
+                nav {
+                    /* padding: 0 30px; */
+                }
+
+                .hero-content {
+                    padding: 0 50px;
+                }
+
+                #about,
+                #services,
+                #work,
+                #clients,
+                #contact {
+                    padding-left: 50px;
+                    padding-right: 50px;
+                }
+
+                .services-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                    border-radius: 12px;
+                }
+
+                .service-card {
+                    border-bottom: 1px solid var(--border);
+                }
+
+                .service-card:nth-child(3) {
+                    border-right: none;
+                }
+
+                .service-card:nth-child(4),
+                .service-card:nth-child(5),
+                .service-card:nth-child(6) {
+                    border-bottom: none;
+                }
+
+                .work-card {
+                    min-width: calc(33.333% - 11px);
+                }
+
+                .footer-grid {
+                    grid-template-columns: 1fr 1fr;
+                    gap: 40px;
+                }
+            }
+
+            @media (max-width: 900px) {
+                .nav-links {
+                    display: none;
+                }
+
+                .nav-cta {
+                    display: none;
+                }
+
+                .hamburger {
+                    display: flex;
+                }
+
+                nav {
+                    /* padding: 0 24px; */
+                }
+
+                .hero-content {
+                    padding: 50px 24px;
+                    max-width: 100%;
+                }
+
+                .hero-camera-svg {
+                    display: none;
+                }
+
+                #home {
+                    justify-content: center;
+                    align-items: flex-end;
+                    padding-bottom: 60px;
+                }
+
+                .hero-bg {
+                    background: radial-gradient(ellipse 80% 80% at 50% 50%, rgba(245, 197, 24, 0.1) 0%, transparent 70%);
+                }
+
+                .about-grid {
+                    grid-template-columns: 1fr;
+                    gap: 40px;
+                }
+
+                .about-left p {
+                    max-width: 100%;
+                }
+
+                .stats-grid {
+                    padding: 30px 20px;
+                }
+
+                .stat-number {
+                    font-size: 32px;
+                }
+
+                #about,
+                #services,
+                #work,
+                #contact {
+                    padding: 70px 24px;
+                }
+
+                #clients {
+                    padding: 40px 24px;
+                }
+
+                .services-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                .service-card:nth-child(2) {
+                    border-right: none;
+                }
+
+                .service-card:nth-child(3) {
+                    border-right: 1px solid var(--border);
+                }
+
+                .service-card:nth-child(4) {
+                    border-right: none;
+                }
+
+                .service-card:nth-child(5) {
+                    border-right: 1px solid var(--border);
+                    border-bottom: none;
+                }
+
+                .service-card:nth-child(6) {
+                    border-right: none;
+                    border-bottom: none;
+                }
+
+                .service-card {
+                    border-bottom: 1px solid var(--border);
+                }
+
+                .work-card {
+                    min-width: calc(50% - 8px);
+                }
+
+                .clients-inner {
+                    flex-direction: column;
+                    gap: 20px;
+                    align-items: flex-start;
+                }
+
+                .trusted-label {
+                    border-right: none;
+                    padding-right: 0;
+                    border-right: 1px solid #666;
+                    border-bottom: 1px solid var(--border);
+                    padding-bottom: 16px;
+                }
+
+                .footer-grid {
+                    grid-template-columns: 1fr 1fr;
+                    gap: 40px;
+                }
+            }
+
+            @media (max-width: 600px) {
+                .hero-title {
+                    font-size: clamp(36px, 10vw, 52px);
+                }
+
+                .stats-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
+                .stat-item:not(:last-child)::after {
+                    display: none;
+                }
+
+                .stat-number {
+                    font-size: 28px;
+                }
+
+                .stat-label {
+                    font-size: 9px;
+                    letter-spacing: 1px;
+                }
+
+                .stat-icon {
+                    width: 40px;
+                    height: 40px;
+                }
+
+                .awsad13 {
+                    padding: 10px;
+                }
+
+                .services-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .service-card {
+                    border-right: none !important;
+                }
+
+                .work-card {
+                    min-width: calc(75% - 8px);
+                }
+
+                .carousel-btn {
+                    display: flex;
+                }
+
+                .footer-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .work-header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 16px;
+                }
+
+                .hero-buttons {
+                    gap: 16px;
+                }
+
+                .btn-primary {
+                    padding: 12px 20px;
+                    font-size: 12px;
+                }
+            }
+        </style>
+        <!-- <div style="padding: 0 5px 20px 5px;backdrop-filter: blur(0);"> -->
+        <nav id="navbar" style="border-radius: 15px;">
+            <a href="/" class="logo" style="text-decoration:none;">
+                <div style="width:50px;padding-left:6px;margin-left:15px;">
+            <img style="width: 70%;" src="assets/Daur-Production.webp" alt="">
+          </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li id="servicesPc"><a href="#">Services</a><i style="color: white;" class="fa-solid fa-angle-down"></i>
+                    <div class="dropdown_1">
+                        <ul>
+                            <li class="active"><a href="/production">Video Production</a></li>
+                            <li><a href="/voice-recording-studio-in-delhi">Voice Over</a></li>
+                            <li><a href="/ai-video-production-services">AI Service</a></li>
+                            <li><a href="/voiceove_course">Our Course</a></li>
+                            <li><a href="/localization">Localization</a></li>
+                        </ul>
+
+                    </div>
+                </li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+
+            <a href="" id="call_me_to_more" class="nav-cta">Let's Talk &nbsp;↗</a>
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+
+        <!-- Mobile Nav -->
+        <div class="mobile-nav" id="mobileNav">
+            <a href="/" >Home</a>
+            <a href="/about" >About</a>
+            <a href="#" id="servicesmb">Services <i class="fa-solid fa-angle-down"></i> </a>
+            <div class="dropdown_2 unshow_smmb">
+                <ul>
+                    <li><a href="/production">Video Production</a></li>
+                    <li><a href="/voice-recording-studio-in-delhi">Voice Over</a></li>
+                    <li><a href="/ai-video-production-services">AI Service</a></li>
+                    <li><a href="/voiceove_course">Our Course</a></li>
+                    <li><a href="/localization">Localization</a></li>
+                </ul>
+
+            </div>
+            <a href="#work" >Work</a>
+            <a href="#clients" >Clients</a>
+            <a href="/contact" >Contact</a>
+            <a href="" id="call_me_to_more" class="btn-primary" style="width:fit-content;" >Let's Talk
+                ↗</a>
+        </div>
+
+
+
+
+    </header>
+
+
+    <main>
+        <div class="h-10"></div>
+
+        <!-- section 1 -->
+        <style>
+            .asjdo74{
+                padding-top:15px;
+                padding-bottom:0;
+            }
+            .asjdo74 p{
+                margin:10px auto;
+            }
+            .asjdo75{
+                display:none;
+                color:white;
+                margin-top:10px;
+                margin-bottom:20px;
+                font-size:16px;
+            }
+            
+            /* Tablet */
+            @media screen and (max-width: 954px) {
+               .asjdo74{
+                   display:none;
+               }
+               .asjdo75{
+                   display:block;
+               }
+            }
+            
+        </style>
+        <section
+            class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-900">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 z-10"></div>
+                <div class="absolute inset-0 bg-center opacity-50"
+                    style="background-image: url(&quot;assets/product_hero_bg-t9Do-dei.jpg&quot;); background-size: cover; background-position: center center;">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/60"></div>
+                </div>
+                <div class="absolute inset-0 z-0">
+                    <div class="absolute w-1 h-1 bg-blue-400 rounded-full animate-pulse"
+                        style="left: 59.1599%; top: 31.0129%; animation-delay: 1.01347s; opacity: 0.670564;"></div>
+                    <div class="absolute w-1 h-1 bg-blue-400 rounded-full animate-pulse"
+                        style="left: 33.3606%; top: 87.1182%; animation-delay: 0.547572s; opacity: 0.380514;"></div>
+                    <div class="absolute w-1 h-1 bg-blue-400 rounded-full animate-pulse"
+                        style="left: 47.1543%; top: 39.1094%; animation-delay: 2.27793s; opacity: 0.390142;"></div>
+                    <div class="absolute w-1 h-1 bg-blue-400 rounded-full animate-pulse"
+                        style="left: 85.1391%; top: 69.9008%; animation-delay: 3.34164s; opacity: 0.560376;"></div>
+                    <div class="absolute w-1 h-1 bg-blue-400 rounded-full animate-pulse"
+                        style="left: 26.186%; top: 84.3097%; animation-delay: 1.80257s; opacity: 0.666208;"></div>
+                    <div class="absolute w-1 h-1 bg-blue-400 rounded-full animate-pulse"
+                        style="left: 18.5334%; top: 44.7954%; animation-delay: 4.65497s; opacity: 0.545544;"></div>
+                    <div class="absolute w-1 h-1 bg-blue-400 rounded-full animate-pulse"
+                        style="left: 20.9782%; top: 19.6037%; animation-delay: 4.07844s; opacity: 0.417611;"></div>
+                    <div class="absolute w-1 h-1 bg-blue-400 rounded-full animate-pulse"
+                        style="left: 83.4527%; top: 17.4778%; animation-delay: 4.69623s; opacity: 0.647889;"></div>
+                    <div class="absolute w-1 h-1 bg-blue-400 rounded-full animate-pulse"
+                        style="left: 40.9966%; top: 48.3552%; animation-delay: 1.84877s; opacity: 0.370663;"></div>
+                    <div class="absolute w-1 h-1 bg-blue-400 rounded-full animate-pulse"
+                        style="left: 52.0384%; top: 9.11209%; animation-delay: 3.6152s; opacity: 0.630407;"></div>
+                    <div class="absolute w-1 h-1 bg-blue-400 rounded-full animate-pulse"
+                        style="left: 81.6599%; top: 53.8804%; animation-delay: 0.744592s; opacity: 0.318559;"></div>
+                    <div class="absolute w-1 h-1 bg-blue-400 rounded-full animate-pulse"
+                        style="left: 58.4493%; top: 66.2351%; animation-delay: 1.44353s; opacity: 0.31159;"></div>
+                    <div class="absolute w-1 h-1 bg-blue-400 rounded-full animate-pulse"
+                        style="left: 52.0495%; top: 20.636%; animation-delay: 2.40323s; opacity: 0.436339;"></div>
+                    <div class="absolute w-1 h-1 bg-blue-400 rounded-full animate-pulse"
+                        style="left: 72.5259%; top: 45.7498%; animation-delay: 4.50991s; opacity: 0.41262;"></div>
+                    <div class="absolute w-1 h-1 bg-blue-400 rounded-full animate-pulse"
+                        style="left: 22.5564%; top: 58.4913%; animation-delay: 2.19527s; opacity: 0.64557;"></div>
+                </div>
+            </div>
+            <div class="relative z-20 max-w-7xl mx-auto px-4 w-full">
+                <div class="text-center w-full">
+                    <div class="min-h-[250px] flex flex-col items-center justify-center" style="padding-top:3.5rem;">
+                        <h1 class="text-6xl md:text-6xl lg:text-6xl font-black  leading-tight text-center"><span
+                                class="text-white text-left min-w-[250px]"><span
+                                    class="inline-block typewriter-letter opacity-0"
+                                    style="animation: 0.08s ease 0s 1 normal forwards running typeIn;">E</span><span
+                                    class="inline-block typewriter-letter opacity-0"
+                                    style="animation: 0.08s ease 0.08s 1 normal forwards running typeIn;">v</span><span
+                                    class="inline-block typewriter-letter opacity-0"
+                                    style="animation: 0.08s ease 0.16s 1 normal forwards running typeIn;">e</span><span
+                                    class="inline-block typewriter-letter opacity-0"
+                                    style="animation: 0.08s ease 0.24s 1 normal forwards running typeIn;">r</span><span
+                                    class="inline-block typewriter-letter opacity-0"
+                                    style="animation: 0.08s ease 0.32s 1 normal forwards running typeIn;">y</span><span
+                                    class="inline-block typewriter-letter opacity-0"
+                                    style="animation: 0.08s ease 0.4s 1 normal forwards running typeIn;">t</span><span
+                                    class="inline-block typewriter-letter opacity-0"
+                                    style="animation: 0.08s ease 0.48s 1 normal forwards running typeIn;">h</span><span
+                                    class="inline-block typewriter-letter opacity-0"
+                                    style="animation: 0.08s ease 0.56s 1 normal forwards running typeIn;">i</span><span
+                                    class="inline-block typewriter-letter opacity-0"
+                                    style="animation: 0.08s ease 0.64s 1 normal forwards running typeIn;">n</span><span
+                                    class="inline-block typewriter-letter opacity-0"
+                                    style="animation: 0.08s ease 0.72s 1 normal forwards running typeIn;">g</span><span
+                                    class="inline-block typewriter-letter opacity-0"
+                                    style="animation: 0.08s ease 0.8s 1 normal forwards running typeIn;">&nbsp;</span></span>
+                            <div class="relative inline-block">
+                                <div class="absolute inset-0 bg-[#eebc29] transition-all duration-500 ease-out"
+                                    style="width: 0%; animation: 2.24s ease-in-out 0.56s 1 normal forwards running bgExpand;">
+                                </div>
+                                <div class="relative  min-w-[220px]"><span
+                                        class="inline-block typewriter-letter text-black font-extrabold opacity-0"
+                                        style="animation: 0.08s ease 0.56s 1 normal forwards running typeIn; position: relative; z-index: 10;">V</span><span
+                                        class="inline-block typewriter-letter text-black font-extrabold opacity-0"
+                                        style="animation: 0.08s ease 0.64s 1 normal forwards running typeIn; position: relative; z-index: 10;">i</span><span
+                                        class="inline-block typewriter-letter text-black font-extrabold opacity-0"
+                                        style="animation: 0.08s ease 0.72s 1 normal forwards running typeIn; position: relative; z-index: 10;">d</span><span
+                                        class="inline-block typewriter-letter text-black font-extrabold opacity-0"
+                                        style="animation: 0.08s ease 0.8s 1 normal forwards running typeIn; position: relative; z-index: 10;">e</span><span
+                                        class="inline-block typewriter-letter text-black font-extrabold opacity-0"
+                                        style="animation: 0.08s ease 0.88s 1 normal forwards running typeIn; position: relative; z-index: 10;">o</span>
+                                </div>
+                            </div><br>
+                        </h1>
+                        <h1 class="text-6xl md:text-6xl lg:text-6xl font-black  leading-tight text-center">
+                            <div class="relative inline-block">
+                                <div class="absolute inset-0 bg-[#eebc29] transition-all duration-500 ease-out"
+                                    style="width: 0%; animation: 1.28s ease-in-out 3s 1 normal forwards running bgExpand;">
+                                </div>
+                                <div class="relative  min-w-[130px]"><span
+                                        class="inline-block typewriter-letter text-black font-extrabold opacity-0"
+                                        style="animation: 0.08s ease 3s 1 normal forwards running typeIn; position: relative; z-index: 10;">O</span><span
+                                        class="inline-block typewriter-letter text-black font-extrabold opacity-0"
+                                        style="animation: 0.08s ease 3.08s 1 normal forwards running typeIn; position: relative; z-index: 10;">N</span><span
+                                        class="inline-block typewriter-letter text-black font-extrabold opacity-0"
+                                        style="animation: 0.08s ease 3.16s 1 normal forwards running typeIn; position: relative; z-index: 10;">E</span><span
+                                        class="inline-block typewriter-letter text-black font-extrabold opacity-0"
+                                        style="animation: 0.08s ease 3.24s 1 normal forwards running typeIn; position: relative; z-index: 10;">&nbsp;</span>
+                                </div>
+                            </div><span class="px-4 py-4 text-white min-w-[250px]"><span
+                                    class="inline-block typewriter-letter opacity-0"
+                                    style="animation: 0.08s ease 3.32s 1 normal forwards running typeIn;">S</span><span
+                                    class="inline-block typewriter-letter opacity-0"
+                                    style="animation: 0.08s ease 3.4s 1 normal forwards running typeIn;">t</span><span
+                                    class="inline-block typewriter-letter opacity-0"
+                                    style="animation: 0.08s ease 3.48s 1 normal forwards running typeIn;">u</span><span
+                                    class="inline-block typewriter-letter opacity-0"
+                                    style="animation: 0.08s ease 3.56s 1 normal forwards running typeIn;">d</span><span
+                                    class="inline-block typewriter-letter opacity-0"
+                                    style="animation: 0.08s ease 3.64s 1 normal forwards running typeIn;">i</span><span
+                                    class="inline-block typewriter-letter opacity-0"
+                                    style="animation: 0.08s ease 3.72s 1 normal forwards running typeIn;">o</span></span><span
+                                class="mt-10 ml-5 w-[3px] h-16 bg-yellow-500 inline-block animate-cursor opacity-0"
+                                style="animation: 0.3s ease 4.2s 1 normal forwards running fadeIn, 1s ease 4.5s infinite normal none running cursor; position: relative;"></span>
+                        </h1>
+                    </div>
+                    <div class="max-w-3xl mx-auto asjdo74">
+                        <p
+                            class="text-xl md:text-2xl lg:text-3xl text-gray-200 mb-20 leading-relaxed font-light text-center pl-22">
+                            Visual stories that perform. Delivering cinematic<br><span
+                                class="text-xl md:text-2xl lg:text-3xl text-gray-200 mb-12 leading-relaxed font-light text-center pl-15">excellence
+                                with commercial intelligence.</span></p>
+                    </div>
+                    <div class="max-w-3xl mx-auto asjdo75 ">
+                        <p class="">
+                            Visual stories that perform. Delivering cinematic excellence
+                                with commercial intelligence.</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center " style="margin:10px 0;"><a id="call_me_to_more" href=""
+                            class="group relative px-8 md:px-12 py-4 md:py-5 bg-gradient-to-r from-yellow-600 to-yellow-500 rounded-full font-bold text-lg text-white hover:shadow-2xl hover:shadow-blue-500/40 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 overflow-hidden w-full sm:w-auto">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-phone w-5 h-5 md:w-6 md:h-6 relative z-10"
+                                aria-hidden="true">
+                                <path
+                                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
+                                </path>
+                            </svg><span class="relative z-10 bg-orange"
+                                style="font-family: sans-serif; font-weight: 400; font-size: 1.125rem;">Call Now</span>
+                            <div class="absolute inset-0 border-2 border-white/30 rounded-full animate-ping opacity-0 group-hover:opacity-50"
+                                style="font-family: sans-serif; font-weight: 400;"></div>
+                        </a><a href="/contact"
+                            class="group px-8 md:px-12 py-4 md:py-5 border-2 border-white/30 rounded-full font-bold text-lg text-white hover:bg-white/10 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm flex items-center justify-center gap-2 w-full sm:w-auto"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-mail w-5 h-5" aria-hidden="true">
+                                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                            </svg>Contact Us</a></div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto ">
+                        <div
+                            class="backdrop-blur-sm counter-box rounded-xl md:rounded-2xl p-4 md:p-6 hover:border-white/40 transition-all duration-300 hover:scale-105 text-center">
+                            <div class="text-3xl md:text-4xl lg:text-5xl font-bold  mb-2 text-yellow-600"
+                                style="font-family: &quot;Playfair Display&quot;, serif; font-weight: 700;"><span
+                                    class="counter" data-target="500">0</span>+</div>
+                            <div class="text-gray-300 text-sm md:text-base mt-1 text-orange"
+                                style="font-family: &quot;Source Sans 3&quot;, sans-serif; font-weight: 700;">Projects
+                            </div>
+                        </div>
+                        <div
+                            class="backdrop-blur-sm counter-box rounded-xl md:rounded-2xl p-4 md:p-6 hover:border-white/40 transition-all duration-300 hover:scale-105 text-center">
+                            <div class="text-3xl md:text-4xl lg:text-5xl font-bold  mb-2 text-yellow-600"
+                                style="font-family: &quot;Playfair Display&quot;, serif; font-weight: 700;"><span
+                                    class="counter" data-target="150">0</span>+</div>
+                            <div class="text-gray-300 text-sm md:text-base mt-1 text-orange"
+                                style="font-family: &quot;Source Sans 3&quot;, sans-serif; font-weight: 700;">Happy
+                                Clients</div>
+                        </div>
+                        <div
+                            class="backdrop-blur-sm counter-box rounded-xl md:rounded-2xl p-4 md:p-6 hover:border-white/40 transition-all duration-300 hover:scale-105 text-center">
+                            <div class="text-3xl md:text-4xl lg:text-5xl font-bold  mb-2 text-yellow-600"
+                                style="font-family: &quot;Playfair Display&quot;, serif; font-weight: 700;"><span
+                                    class="counter" data-target="25">0</span>+</div>
+                            <div class="text-gray-300 text-sm md:text-base mt-1 text-orange"
+                                style="font-family: &quot;Source Sans 3&quot;, sans-serif; font-weight: 700;">Industry
+                                Awards</div>
+                        </div>
+                        <div
+                            class="backdrop-blur-sm counter-box rounded-xl md:rounded-2xl p-4 md:p-6 hover:border-white/40 transition-all duration-300 hover:scale-105 text-center">
+                            <div class="text-3xl md:text-4xl lg:text-5xl font-bold  mb-2 text-yellow-600"
+                                style="font-family: &quot;Playfair Display&quot;, serif; font-weight: 700;"><span
+                                    class="counter" data-target="8">0</span>+</div>
+                            <div class="text-gray-300 text-sm md:text-base mt-1 text-orange"
+                                style="font-family: &quot;Source Sans 3&quot;, sans-serif; font-weight: 700;">Years
+                                Excellence</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+                <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+                    <div class="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const counterBoxes = document.querySelectorAll(".counter-box");
+
+                const runCounter = (box) => {
+                    const counter = box.querySelector(".counter");
+
+                    let target = +counter.getAttribute("data-target");
+                    let count = 0;
+                    let speed = 100;
+
+                    const updateCount = () => {
+                        let increment = target / speed;
+
+                        if (count < target) {
+                            count += increment;
+                            counter.innerText = Math.ceil(count);
+                            setTimeout(updateCount, 60);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+
+                    updateCount();
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            runCounter(entry.target);
+                            observer.unobserve(entry.target); // sirf ek baar chale
+                        }
+                    });
+                }, {
+                    threshold: 0.5
+                });
+
+                counterBoxes.forEach(box => {
+                    observer.observe(box);
+                });
+            });
+        </script>
+
+        <!-- section 2 -->
+        <div class="relative overflow-hidden mt-0"
+            style="background-image: linear-gradient(130deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 18%, rgba(27, 27, 27, 0.35) 38%, rgba(15, 15, 13, 0.55) 55%, rgba(14, 13, 13, 0.75) 70%, rgba(43, 42, 41, 0.85) 85%, rgb(0, 0, 0) 100%), url(&quot;assets/footer_bg-BPhS4X1b.jpg&quot;); background-size: cover; background-repeat: no-repeat; background-position: center center;">
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div
+                    class="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float">
+                </div>
+                <div class="absolute top-40 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"
+                    style="animation-delay: 1s;"></div>
+                <div class="absolute -bottom-20 left-1/2 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"
+                    style="animation-delay: 2s;"></div>
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center mb-16"><br>
+                    <div
+                        class="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-600 to-yellow-400 px-4 py-2 rounded-full mb-6 animate-fade-in">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-sparkles w-4 h-4 text-white-600 animate-pulse" aria-hidden="true">
+                            <path
+                                d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z">
+                            </path>
+                            <path d="M20 2v4"></path>
+                            <path d="M22 4h-4"></path>
+                            <circle cx="4" cy="20" r="2"></circle>
+                        </svg><span class="text-sm text-white font-semibold text-blue-700 tracking-wide">TRUSTED BY
+                            INDUSTRY LEADERS</span>
+                    </div>
+                    <h2 class="text-3xl md:text-3xl font-bold text-white mb-4 animate-slide-up">Trusted by Leading
+                        Brands</h2>
+                    <p class="text-white text-lg md:text-xl max-w-2xl mx-auto animate-slide-up pl-10 p_version11"
+                        style="animation-delay: 0.1s;">Partnering with industry leaders to create impactful visual
+                        stories</p>
+                    <p class="text-white text-lg md:text-xl max-w-2xl mx-auto animate-slide-up  p_version12"
+                        style="animation-delay: 0.1s;">Partnering with industry leaders to create impactful visual
+                        stories</p>
+                </div>
+                <section class="relative py-16 overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+                    <div
+                        class="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none">
+                    </div>
+                    <div
+                        class="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none">
+                    </div>
+                    <style>
+                        @keyframes marquee-left {
+                            0% {
+                                transform: translateX(0);
+                            }
+
+                            100% {
+                                transform: translateX(-50%);
+                            }
+                        }
+
+                        @keyframes marquee-right {
+                            0% {
+                                transform: translateX(-50%);
+                            }
+
+                            100% {
+                                transform: translateX(0);
+                            }
+                        }
+
+                        .marquee-left {
+                            animation: marquee-left 35s linear infinite;
+                            will-change: transform;
+                            backface-visibility: hidden;
+                            transform: translateZ(0);
+                        }
+
+                        .marquee-right {
+                            animation: marquee-right 40s linear infinite;
+                            will-change: transform;
+                            backface-visibility: hidden;
+                            transform: translateZ(0);
+                        }
+
+                        .marquee-container {
+                            mask-image: linear-gradient(to right,
+                                    transparent 0%,
+                                    black 10%,
+                                    black 90%,
+                                    transparent 100%);
+                        }
+
+                        .marquee-container:hover .marquee-left,
+                        .marquee-container:hover .marquee-right {
+                            animation-play-state: paused;
+                        }
+
+                        /* Smooth performance optimization */
+                        .marquee-left,
+                        .marquee-right {
+                            -webkit-backface-visibility: hidden;
+                            -webkit-perspective: 1000px;
+                            perspective: 1000px;
+                        }
+                    </style>
+                    <div class="space-y-8">
+                        <div class="marquee-container relative overflow-hidden">
+                            <div class="marquee-left flex gap-5 w-max">
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/1-DnSlOvlP.png" alt="Partner 1"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/2-CqWLUh6G.png" alt="Partner 2"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-600 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/3-C0UoxgA1.png" alt="Partner 3"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/4-7GULLmPC.png" alt="Partner 4"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/5-BXKCc1zF.png" alt="Partner 5"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/6-C5VDGDZF.png" alt="Partner 6"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/7-lANRRnvw.png" alt="Partner 7"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/8-BC6NNpoF.png" alt="Partner 8"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/1-DnSlOvlP.png" alt="Partner 1"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/2-CqWLUh6G.png" alt="Partner 2"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-600 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/3-C0UoxgA1.png" alt="Partner 3"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/4-7GULLmPC.png" alt="Partner 4"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/5-BXKCc1zF.png" alt="Partner 5"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/6-C5VDGDZF.png" alt="Partner 6"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/7-lANRRnvw.png" alt="Partner 7"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/8-BC6NNpoF.png" alt="Partner 8"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="marquee-container relative overflow-hidden">
+                            <div class="marquee-right flex gap-5 w-max">
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/9-BPUIHpmH.png" alt="Partner 1"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/10-DQvSp32w.png" alt="Partner 2"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-600 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/11-B0oxODcl.png" alt="Partner 3"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/12-BHc54wxv.png" alt="Partner 4"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/13-D-kOlWye.png" alt="Partner 5"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/14-CuzCmUQW.png" alt="Partner 6"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/15-xsD2Df_a.png" alt="Partner 7"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/16-DsO99oGs.png" alt="Partner 8"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/9-BPUIHpmH.png" alt="Partner 1"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/10-DQvSp32w.png" alt="Partner 2"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-600 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/11-B0oxODcl.png" alt="Partner 3"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/12-BHc54wxv.png" alt="Partner 4"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/13-D-kOlWye.png" alt="Partner 5"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/14-CuzCmUQW.png" alt="Partner 6"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/15-xsD2Df_a.png" alt="Partner 7"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                                <div
+                                    class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                    </div>
+                                    <div class="relative flex items-center justify-center h-20"><img
+                                            src="assets/16-DsO99oGs.png" alt="Partner 8"
+                                            class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            loading="lazy"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section><br>
+                <div class="flex flex-wrap justify-center gap-4 sm:gap-8 mb-20">
+                    <div
+                        class="backdrop-blur-md bg-[#222222]/5 rounded-xl w-[calc(50%-0.5rem)] sm:w-42 h-42 flex flex-col items-center justify-center border border-[#f2f2f2]">
+                        <div class="text-xl font-bold text-[#f2f2f2] mb-2"><span class="counter"
+                                data-target="10">0</span>+</div>
+                        <div class="text-sm text-white text-center ">Years of Experience</div>
+                    </div>
+                    <div
+                        class="backdrop-blur-md bg-[#222222]/5 rounded-xl w-[calc(50%-0.5rem)] sm:w-42 h-42 flex flex-col items-center justify-center border border-[#f2f2f2]">
+                        <div class="text-xl font-bold text-[#f2f2f2] mb-2"><span class="counter"
+                                data-target="200">0</span>+</div>
+                        <div class="text-sm text-white text-center ">Successful Projects</div>
+                    </div>
+                    <div
+                        class="backdrop-blur-md bg-[#222222]/5 rounded-xl w-[calc(50%-0.5rem)] sm:w-42 h-42 flex flex-col items-center justify-center border border-[#f2f2f2]">
+                        <div class="text-xl font-bold text-[#f2f2f2] mb-2"><span class="counter"
+                                data-target="150">0</span>+</div>
+                        <div class="text-sm text-white text-center ">Happy Clients</div>
+                    </div>
+                    <div
+                        class="backdrop-blur-md bg-[#222222]/5 rounded-xl w-[calc(50%-0.5rem)] sm:w-42 h-42 flex flex-col items-center justify-center border border-[#f2f2f2]">
+                        <div class="text-xl font-bold text-[#f2f2f2] mb-2"><span class="counter"
+                                data-target="160">0</span>+</div>
+                        <div class="text-sm text-white text-center ">5 Star Reviews</div>
+                    </div>
+                </div>
+            </div><br>
+        </div>
+
+        <!-- section 3 -->
+          
+        <style>
+            
+            /* Small Mobile */
+            .p_version12{
+                display:none;
+            }
+            
+           
+        @media screen and (max-width: 880px) {
+            .p_version11{
+                display:none;
+            }
+            .p_version12{
+                display:block;
+            }
+            
+        }
+        </style>
+        <section class="py-24  relative overflow-hidden" initial="[object Object]" animate="[object Object]"
+            transition="[object Object]"
+            style="background-image: linear-gradient(150deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 18%, rgba(41, 40, 39, 0.35) 38%, rgba(24, 23, 20, 0.55) 55%, rgba(3, 3, 3, 0.75) 70%, rgba(20, 20, 20, 0.85) 85%, rgb(0, 0, 0) 100%), url(&quot;assets/slide-1-scaled-CExHPPCg.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; will-change: transform, filter;">
+            <div class="absolute inset-0 opacity-5">
+                <div class="absolute inset-0"
+                    style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0px); background-size: 40px 40px;">
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16">
+                    <p
+                        class="p_version11 text-white text-xl  text-base mb-4 tracking-wide text-justify-center flex items-center gap-2 justify-center">
+                        Explore our portfolio of award-winning projects that showcase our commitment
+                        to<br><span></span>cinematic excellence and storytelling mastery.</p>
+                    <p
+                        class="p_version12 text-white text-xl  text-base mb-4 tracking-wide text-justify-center flex items-center gap-2 justify-center">
+                        Explore our portfolio of award-winning projects that showcase our commitment
+                        tocinematic excellence and storytelling mastery.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 mb-12">
+                    <div
+                        class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 hover:shadow-2xl transition-all duration-500">
+                        <div class="relative h-80 overflow-hidden"><img
+                                src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&amp;fit=crop&amp;q=80&amp;w=1200"
+                                alt="Commercial Production"
+                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 rounded-[20px]">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                            <div class="absolute top-6 left-6">
+                                <div
+                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500 text-white text-sm font-semibold shadow-lg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-award w-4 h-4" aria-hidden="true">
+                                        <path
+                                            d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526">
+                                        </path>
+                                        <circle cx="12" cy="8" r="6"></circle>
+                                    </svg>Award Winner
+                                </div>
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 p-8">
+                                <div class="mb-3"><span
+                                        class="text-orange-500 font-semibold text-sm tracking-wider uppercase">Commercial
+                                        Production</span></div>
+                                <p class="text-white text-base mb-6 leading-relaxed">A transformative brand story that
+                                    achieved 5M+ views and 300% engagement increase.</p><button
+                                    class="inline-flex items-center gap-2 text-white font-medium hover:gap-4 transition-all duration-300">View
+                                    Project<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-chevron-right w-5 h-5" aria-hidden="true">
+                                        <path d="m9 18 6-6-6-6"></path>
+                                    </svg></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 hover:shadow-2xl transition-all duration-500">
+                        <div class="relative h-80 overflow-hidden rounded-[20px]"><img
+                                src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&amp;fit=crop&amp;q=80&amp;w=1200"
+                                alt="Documentary"
+                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 rounded-[20px]">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-8">
+                                <div class="mb-3"><span
+                                        class="text-orange-500 font-semibold text-sm tracking-wider uppercase">Documentary</span>
+                                </div>
+                                <h3 class="text-white text-2xl font-bold mb-3">Voices of Change</h3>
+                                <p class="text-white text-base mb-6 leading-relaxed">An inspiring documentary that
+                                    premiered at international film festivals.</p><button
+                                    class="inline-flex items-center gap-2 text-white font-medium hover:gap-4 transition-all duration-300">View
+                                    Project<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-chevron-right w-5 h-5" aria-hidden="true">
+                                        <path d="m9 18 6-6-6-6"></path>
+                                    </svg></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center"><button onclick="contact_function()"
+                        class="hoverEffacrt_2203 px-10 py-4 bg-white text-gray-900 rounded-xl font-semibold text-base hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1">Explore
+                        Full Portfolio</button></div>
+            </div>
+        </section>
+
+        <!-- section 4 -->
+        <div class="py-10 md:py-24 bg-gradient-to-b from-gray-300/35 to bg-white relative overflow-hidden mt-0"
+            initial="[object Object]" animate="[object Object]" transition="[object Object]"
+            style="background-image: linear-gradient(150deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 18%, rgba(17, 17, 17, 0.767) 38%, rgba(44, 44, 44, 0.733) 55%, rgba(0, 0, 0, 0.75) 70%, rgba(10, 10, 10, 0.85) 85%, rgb(0, 0, 0) 100%), url(&quot;assets/footer_bg-BPhS4X1b.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; will-change: transform, filter;">
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div
+                    class="absolute top-10 left-10 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float">
+                </div>
+                <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float"
+                    style="animation-delay: 2s;"></div>
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center mb-16 animate-fade-in">
+                    <div
+                        class="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-600 to-rgba(157, 115, 24, 0.8) 85% px-4 py-2 rounded-full mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-sparkles w-4 h-4 text-black animate-pulse" aria-hidden="true">
+                            <path
+                                d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z">
+                            </path>
+                            <path d="M20 2v4"></path>
+                            <path d="M22 4h-4"></path>
+                            <circle cx="4" cy="20" r="2"></circle>
+                        </svg><span class="text-sm font-semibold text-black tracking-wide">CLIENT TESTIMONIALS</span>
+                    </div>
+                    <h2 class="text-4xl md:text-4xl font-bold text-white mb-4">What Our Clients Say</h2>
+                    <p class="text-white  md:text-xl max-w-3xl mx-auto pl-20 p_version11">Trusted by leading brands and creators
+                        across India for delivering <br><span class="text-center pl-25">exceptional video content that
+                            drives results.</span></p>
+                    <p class="text-white  md:text-xl max-w-3xl mx-auto p_version12">Trusted by leading brands and creators
+                        across India for delivering <span class="text-center ">exceptional video content that
+                            drives results.</span></p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                    <div class="group relative bg-white hover:bg-yellow-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up"
+                        style="animation-delay: 0s;">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="flex gap-1 mb-6 relative z-10">
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 0ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 100ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 200ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 300ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 400ms;">⭐</div>
+                        </div>
+                        <p class="text-black text-lg leading-relaxed mb-8 relative z-10">"Daur Productions transformed
+                            our brand story into a cinematic masterpiece. The attention to detail and creative vision
+                            exceeded all expectations. Our campaign achieved record engagement."</p>
+                        <div class="flex items-center gap-4 relative z-10">
+                            <div
+                                class="w-14 h-14 rounded-full bg-gradient-to-br from-rgba(101, 72, 9, 0.95) 95%, flex items-center justify-center hover:text-white font-bold text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                RK</div>
+                            <div>
+                                <div class="font-bold text-gray-900 text-lg">Rajesh Kumar</div>
+                                <div class="text-black text-sm">Marketing Director, TechCorp India</div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute top-6 right-6 text-6xl text-blue-100 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+                            "</div>
+                    </div>
+                    <div class="group relative bg-white hover:bg-yellow-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up"
+                        style="animation-delay: 0.2s;">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-yellow-400/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="flex gap-1 mb-6 relative z-10">
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 0ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 100ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 200ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 300ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 400ms;">⭐</div>
+                        </div>
+                        <p class="text-black text-lg leading-relaxed mb-8 relative z-10">"Professional, creative, and
+                            results-driven. The team's technical expertise combined with artistic vision delivered
+                            content that truly resonates with our audience. Highly recommended!"</p>
+                        <div class="flex items-center gap-4 relative z-10">
+                            <div
+                                class="w-14 h-14 rounded-full bg-gradient-to-br from-rgba(101, 72, 9, 0.95) 95%, flex items-center justify-center font-bold text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                PS</div>
+                            <div>
+                                <div class="font-bold text-black text-lg">Priya Sharma</div>
+                                <div class="text-black text-sm">Creative Head, Lifestyle Brands</div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute top-6 right-6 text-6xl text-purple-100 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+                            "</div>
+                    </div>
+                    <div class="group relative bg-white hover:bg-yellow-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up"
+                        style="animation-delay: 0.4s;">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-yellow-400/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="flex gap-1 mb-6 relative z-10">
+                            <div class="text-black animate-scale-in" style="animation-delay: 0ms;">⭐</div>
+                            <div class="text-black animate-scale-in" style="animation-delay: 100ms;">⭐</div>
+                            <div class="text-black animate-scale-in" style="animation-delay: 200ms;">⭐</div>
+                            <div class="text-black animate-scale-in" style="animation-delay: 300ms;">⭐</div>
+                            <div class="text-black animate-scale-in" style="animation-delay: 400ms;">⭐</div>
+                        </div>
+                        <p class="text-black text-lg leading-relaxed mb-8 relative z-10">"From concept to final
+                            delivery, Daur Productions demonstrated exceptional professionalism. Their ability to
+                            understand our vision and execute flawlessly made the entire process seamless."</p>
+                        <div class="flex items-center gap-4 relative z-10">
+                            <div
+                                class="w-14 h-14 rounded-full bg-gradient-to-br from-rgba(101, 72, 9, 0.95) 95%, flex items-center justify-center font-bold text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                AP</div>
+                            <div>
+                                <div class="font-bold text-black text-lg">Amit Patel</div>
+                                <div class="text-black text-sm">CEO, StartupHub</div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute top-6 right-6 text-6xl text-black opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+                            "</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- section 5 -->
+
+
+    </main>
+
+
+
+    <!-- ── FOOTER / CONTACT ── -->
+
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+    <style>
+        .dropdwon_footer ul {
+            list-style: none;
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        .dropdwon_footer ul li {
+            padding: 8px 5px;
+        }
+
+        .aswawnone {
+            display: none;
+        }
+
+        .downarrow {
+            /* transform: rotate(180deg); */
+            transition: 0.3s;
+        }
+
+        /* #waxdaw{
+  transition: transform 0.3s ease;
+}
+
+.downarrow{
+  transform: rotate(180deg);
+} */
+
+
+        .awsad14 {
+            transition: 0.3s ease;
+            padding: 15px 20px;
+            /* background: rgba(255, 255, 255, 0.2); */
+
+            background: rgba(255, 255, 255, 0);
+            backdrop-filter: blur(10px);
+            border-radius: 15px !important;
+        }
+
+        .awsad13 {
+            transition: 0.3s ease;
+            padding: 15px 20px;
+            /* background: rgba(255, 255, 255, 0.2); */
+
+            background: rgb(255 255 255 / 8%);
+            backdrop-filter: blur(10px);
+            border-radius: 15px !important;
+        }
+
+        /* new code  */
+.ADOAJOWE{
+  display: flex;
+  gap: 10px;
+  
+}
+.ADOAJOWE input{
+  background-color: var(--grad-lan);
+  border: 1px solid #665;
+  border-radius: 5px;
+}
+.ADOAJOWE input::placeholder{
+color: rgba(255, 255, 255, 0.678);
+padding-left: 5px;
+font-family: var(--poppins);
+font-size: 12px;
+}
+
+.ADOAJOWE button{
+background: var(--yellow);
+padding:8px 15px;
+border: none;
+border-radius: 15px;
+
+}
+    </style>
+    <section id="contact">
+        <div class="awsad13">
+            <div class="footer-grid">
+                <div class="footer-brand reveal">
+          <div class="logo">
+            <div style="width:110px;margin-left: 35px;">
+            <img style="width: 95%;" src="assets/footer_logo.png" alt="">
+          </div>
+          </div>
+          <p>Revolutionizing video dubbing with AI-powered technology. Making content globally accessible.</p>
+          <div class="footer-copyright" style="color: white;"><span>
+              <p>Stay updated with our latest</p>
+            </span>
+            <span class="ADOAJOWE"><input type="email" placeholder="Enter The Email "><button type="submit">submit</button></span>
+          </div>
+        </div>
+
+        <div class="footer-col reveal delay-1">
+          <h4>Useful  Links</h4>
+          <ul class="footer-links">
+            <li><a href="/">Business Academy</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/">Digital</a></li>
+            <li><a href="/">Creative</a></li>
+            <li><a href="/">FAQs</a></li>
+            
+          </ul>
+        </div>
+
+        <div class="footer-col reveal delay-2">
+          <h4>Daur Production</h4>
+          <ul class="footer-links">
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/">Daur Production Studio</a></li>
+            <li><a href="/">Why Daur Production?</a></li>
+            <!-- <li><a href="about">FAQs</a></li> -->
+            
+          </ul>
+          <!-- <div class="social-icons">
+            <a href="#" class="social-icon" title="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon" title="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon" title="YouTube">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22.54 6.42A2.78 2.78 0 0 0 20.59 4.5C19 4 12 4 12 4s-7 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.5C5 20 12 20 12 20s7 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                <polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="currentColor" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon" title="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+          </div> -->
+        </div>
+
+        <div class="footer-col reveal delay-3">
+          <h4>Contact Info</h4>
+          <div class="contact-items">
+
+            
+            <div class="contact-item">
+              <span class="contact-item-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </span>
+              2nd Floor, Welldone Tech Park,
+Unit No. 213 & 214,
+Badshahpur Sohna Rd Hwy, Sector 48,
+Gurugram, Haryana 122018 
+            </div>
+            <div class="contact-item">
+              <span class="contact-item-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </span>
+              hello@daurproduction.com
+            </div>
+            <div class="contact-item" id="call_me_to_more">
+              <span class="contact-item-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.08 6.08l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2z" />
+                </svg>
+              </span>
+              099147 66103
+            </div>
+            <!-- <div class="contact-item">
+              <span class="contact-item-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </span>
+              Delhi, India
+            </div> -->
+          </div>
+        </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom" style="color: white;">Made with passion by Daur Productions</div>
+        </div>
+    </section>
+
+    <script>
+        let waxdaw = document.getElementById("waxdaw");
+        let sawekmo = document.getElementById("sawekmo");
+        let dropdwon_footer = document.querySelector(".dropdwon_footer");
+
+        sawekmo.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            dropdwon_footer.classList.toggle("aswawnone");
+            waxdaw.style.transform = ' rotate(180deg)';
+        });
+
+
+        // routing with js for footer
+        document.querySelectorAll(".nav_link_footer").forEach((item) => {
+
+            item.addEventListener("click", () => {
+
+                window.location.href = item.dataset.link;
+
+            });
+
+        });
+    </script>
+
+
+<!-- call and whatsapp icons start -->
+    <style>
+        /* ── CHAT WIDGET ── */
+        .chat-widget {
+            position: fixed;
+            bottom: 90px;
+            left: 20px;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 16px 18px;
+            max-width: 240px;
+            font-size: 13px;
+            color: #333;
+            line-height: 1.6;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            z-index: 100;
+            animation: chatPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s both;
+        }
+
+        @keyframes chatPop {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .chat-widget::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 20px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid var(--white);
+        }
+
+        /* Floating buttons */
+        .float-whatsapp {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 52px;
+            height: 52px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            animation: pulse-green 2s infinite;
+            cursor: pointer;
+            transition: transform 0.3s;
+            border-radius: 50% !important;
+            text-decoration: none;
+        }
+
+        .float-whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse-green {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+            }
+
+            70% {
+                box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .float-chat {
+            border-radius: 50% !important;
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            width: 52px;
+            height: 52px;
+            background: rgb(201, 133, 7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(26, 159, 224, 0.4);
+            animation: pulse-blue 2s infinite 0.5s;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .float-chat:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse-blue {
+            0% {
+                box-shadow: 0 0 0 0 rgba(224, 157, 13, 0.5);
+            }
+
+            70% {
+                box-shadow: 0 0 0 12px rgba(224, 132, 26, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(224, 155, 26, 0);
+            }
+        }
+
+        .badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            width: 18px;
+            height: 18px;
+            background: #ff3b3b;
+            border-radius: 50%;
+            font-size: 10px;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid white;
+            /* border-radius: 50% !important; */
+        }
+    </style>
+    <!-- +91 6283915317 -->
+    <a id="whatsappBtn" class="float-whatsapp" target="_blank" title="WhatsApp">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <div class="float-chat" id="chat_box" title="Chat">
+        <a href="tel:+916283915317">
+            <!-- <div class="badge">1</div> -->
+            <svg style="animation: ringing 1s infinite; width: 30px;text-align: center;display: flex;align-items: center;justify-items: center;justify-content: center;align-content: center;"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ffffff" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone-call">
+
+                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+                <g id="SVGRepo_iconCarrier">
+
+                    <path
+                        d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+
+                </g>
+
+            </svg></a>
+    </div>
+
+    <script>
+        let number = "916283915317";
+        let message = "Hello, Sir";
+
+        let url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+
+        document.getElementById("whatsappBtn").href = url;
+         document.getElementById("call_me_to_more")
+      .addEventListener("click", () => {
+        window.location.href = "tel:+916283915317";
+      });
+    </script>
+
+<!-- call and whatsapp icons end -->
+
+
+<!-- form box hera start -->
+    <style>
+        /* * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        } */
+
+        .form_box {
+            width: 100%;
+            height: 100vh;
+            background: #000000b6;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            display: none;
+            opacity: 0;
+            transform: translateY(-15px);
+
+            transition:
+                opacity 0.3s ease,
+                transform 0.3s ease;
+        }
+
+
+        .form_box.active {
+            display: flex;
+
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .box64 {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .bos63 {
+            position: absolute;
+            top: -60px;
+            right: 30px;
+
+            width: 40px;
+            height: 40px;
+
+            border: 2px solid #dddada;
+            border-radius: 50% !important;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            cursor: pointer;
+        }
+
+        .closebtn {
+            color: white;
+            font-size: 18px;
+            padding-top: 3px;
+        }
+
+        .form_ {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .losecc {
+            width: 400px;
+            background: #111;
+            padding: 40px;
+            border-radius: 20px !important;
+            border: 1px solid #333;
+        }
+
+        .losecc h2 {
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .input_box {
+            margin-bottom: 15px;
+        }
+
+        .input_box input {
+            width: 100%;
+            padding: 14px;
+
+            background: #191919;
+            border: 1px solid #333;
+
+            color: white;
+            font-size: 16px;
+
+            border-radius: 10px !important;
+            outline: none;
+        }
+
+        .input_box input:focus {
+            border-color: #a8230b;
+        }
+
+        .sendbtn {
+            width: 100%;
+            padding: 14px;
+
+            background: #fcac02;
+
+            border: none;
+            color: white;
+            border-radius: 10px !important;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .sendbtn:hover {
+            opacity: .9;
+        }
+    </style>
+
+    <div class="form_box">
+
+        <div class="box64">
+
+            <span class="bos63">
+                <h2 class="closebtn">✕</h2>
+            </span>
+
+            <div class="form_">
+
+                <div class="losecc">
+
+                    <h2>Contact For More Infomation </h2>
+
+                    <div class="input_box">
+                        <input type="text" id="username" placeholder="Your Name">
+                    </div>
+
+                    <div class="input_box">
+                        <input type="tel" id="usernumber" placeholder="Your Number">
+                    </div>
+
+                    <button class="sendbtn">
+                        Submit
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function contact_function() {
+
+            let form = document.querySelector(".form_box");
+
+            if (form.classList.contains("active")) {
+
+                form.style.opacity = "0";
+                form.style.transform = "translateY(-15px)";
+
+                setTimeout(() => {
+                    form.classList.remove("active");
+                }, 300);
+
+            } else {
+
+                form.classList.add("active");
+
+                setTimeout(() => {
+                    form.style.opacity = "1";
+                    form.style.transform = "translateY(0)";
+                }, 10);
+            }
+        }
+
+
+
+
+        let sendbtn = document.querySelector(".sendbtn");
+
+        sendbtn.addEventListener("click", () => {
+
+            let name =
+                document.getElementById("username").value.trim();
+
+            let number =
+                document.getElementById("usernumber").value.trim();
+
+            if (name === "" || number === "") {
+                alert("Fill all fields");
+                return;
+            }
+
+            // yaha apna whatsapp number
+            let whatsapp = "919876543210";
+
+            let msg = `Hello Sir/Madam,\n\nMy name is ${name}, and my contact number is ${number}.\n\nI would like to get some guidance regarding your services.\nPlease let me know how I should proceed.\n\nThank you.`;
+            window.open(
+                `https://wa.me/${whatsapp}?text=${encodeURIComponent(msg)}`,
+                "_blank"
+            );
+
+        });
+
+
+
+        // close
+        document
+            .querySelector(".bos63")
+            .addEventListener("click", () => {
+
+                document
+                    .querySelector(".form_box")
+                    .style.display = "none";
+
+            });
+
+    </script>
+    <!-- from box end -->
+
+
+
+
+    <script>
+        // ── PARTICLES ──
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 20; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDuration = (8 + Math.random() * 12) + 's';
+                p.style.animationDelay = (Math.random() * 10) + 's';
+                p.style.opacity = Math.random() * 0.6;
+                container.appendChild(p);
+            }
+        }
+        createParticles();
+
+        // ── SCROLL REVEAL ──
+        const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+        const observer93 = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12 });
+        reveals.forEach(el => observer93.observe(el));
+
+    </script>
+
+
+    <script src="js/nav.js"></script>
+
+</body>
+
+</html>

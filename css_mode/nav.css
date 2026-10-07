@@ -1,0 +1,344 @@
+root {
+    --yellow: #F5C518;
+    --dark: #0d0d0d;
+    --dark2: #161616;
+    --dark3: #1e1e1e;
+    --dark4: #252525;
+    --white: #ffffff;
+    --gray: #888888;
+    --gray2: #555;
+    --border: rgba(255, 255, 255, 0.08);
+    --grad-lan: linear-gradient(90deg, #000000ff, #140d06, #000000, #040403, #32260Aff, #282621, #080808);
+    --grad-padd: 20px 25px;
+    --poppins: 'Poppins', sans-serif;
+}
+
+
+/* ── NAV ── */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(13, 13, 13, 0.95) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 70px;
+    transition: background 0.3s;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo-main {
+    /* font-family: 'Bebas Neue', sans-serif; */
+    font-size: 30px;
+    color: var(--yellow);
+    letter-spacing: 3px;
+}
+
+.logo-sub {
+    font-size: 8px;
+    letter-spacing: 5px;
+    color: var(--white);
+    font-weight: 600;
+    margin-top: -2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--yellow);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--yellow);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links li.active a {
+    color: var(--yellow);
+}
+
+.nav-links li.active a::after {
+    width: 100%;
+}
+
+.nav-cta {
+    background: var(--yellow);
+    color: var(--dark);
+    border: none;
+    padding: 10px 22px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.3s, transform 0.2s;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.nav-cta:hover {
+    background: #e6b800;
+    transform: translateY(-1px);
+}
+
+
+
+
+/* ========================================================= */
+#servicesPc:hover .dropdown_1 {
+    display: block;
+}
+
+
+.dropdown_1 {
+    display: none;
+    /* background: rebeccapurple; */
+    position: absolute;
+    backdrop-filter: blur(0);
+    background-color: rgb(0, 0, 0);
+    border-radius: 8px !important;
+    box-shadow: 0px 1px 3px 0px white;
+}
+
+.dropdown_1 ul {
+    list-style: none;
+    padding: 5px;
+}
+
+.dropdown_1 ul li {
+    /* padding: 5px 0; */
+    padding: 15px 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown_1 ul li::before {
+    content: '';
+
+    background-color: var(--yellow);
+    padding: 1px;
+    height: 80%;
+    position: absolute;
+    top: 5px;
+    left: -50px;
+    border-radius: 10px;
+}
+
+.dropdown_1 ul li:hover::before {
+    left: 3px;
+    transition: 0.4s;
+}
+
+.dropdown_1 ul li a {
+    font-size: 14px;
+    /* padding: 1px; */
+}
+
+
+/*    ====  Movile  Dropdwon  ====    */
+.unshow_smmb {
+    display: none;
+    transition: 0.3s;
+
+}
+
+
+.dropdown_2 {
+    transition: 0.3s;
+    /* display: none; */
+    /* background: rebeccapurple; */
+    /* position: absolute; */
+    backdrop-filter: blur(0);
+    background-color: rgba(0, 0, 0, 0.158);
+    position: relative;
+}
+
+.dropdown_2 ul {
+    list-style: none;
+    padding: 5px;
+}
+
+.dropdown_2 ul li {
+    /* padding: 5px 0; */
+    padding: 15px 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown_2 ul li::before {
+    content: '';
+
+    background-color: var(--yellow);
+    padding: 1px;
+    height: 80%;
+    position: absolute;
+    top: 5px;
+    left: -50px;
+    border-radius: 10px;
+}
+
+.dropdown_2 ul li:hover::before {
+    left: 3px;
+    transition: 0.4s;
+}
+
+.dropdown_2 ul li a {
+    font-size: 14px;
+    /* padding: 1px; */
+}
+
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.delay-1 {
+    transition-delay: 0.1s;
+}
+
+.delay-2 {
+    transition-delay: 0.2s;
+}
+
+.delay-3 {
+    transition-delay: 0.3s;
+}
+
+.delay-4 {
+    transition-delay: 0.4s;
+}
+
+.delay-5 {
+    transition-delay: 0.5s;
+}
+
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    transition: all 0.3s;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Nav */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(13, 13, 13, 0.98);
+    backdrop-filter: blur(12px);
+    z-index: 999;
+    padding: 24px 40px;
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mobile-nav.open {
+    display: flex;
+}
+
+.mobile-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.mobile-nav a:hover {
+    color: var(--yellow);
+}

@@ -1,0 +1,2765 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="assets/Daur-Logo-B530W0NU.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daur Production</title>
+     <link rel="icon" type="image/png" href="favicon_img/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="favicon_img/favicon.svg" />
+  <link rel="shortcut icon" href="favicon_img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_img/apple-touch-icon.png" />
+  <link rel="manifest" href="favicon_img/site.webmanifest" />
+    <link rel="stylesheet" href="css_mode/nav.css">
+    <script src="https://kit.fontawesome.com/87cb04b335.js" crossorigin="anonymous"></script>
+    <script src="js.js"></script>
+    <script type="module" crossorigin src="assets/index-DJX6Ryb6.js"></script>
+    <link rel="stylesheet" crossorigin href="assets/index-C4DKkz-q.css">
+    <link rel="stylesheet" crossorigin href="css.css">
+    <style>
+            
+            /* Small Mobile */
+            .p_version12{
+                display:none;
+            }
+            
+           
+        @media screen and (max-width: 880px) {
+            .p_version11{
+                display:none;
+            }
+            .p_version12{
+                display:block;
+            }
+            
+        }
+        </style>
+</head>
+
+<body>
+    <header style="background-color: white;">
+        <style>
+            :root {
+                --yellow: #F5C518;
+                --dark: #0d0d0d;
+                --dark2: #161616;
+                --dark3: #1e1e1e;
+                --dark4: #252525;
+                --white: #ffffff;
+                --gray: #888888;
+                --gray2: #555;
+                --border: rgba(255, 255, 255, 0.08);
+                --grad-lan: linear-gradient(90deg, #000000ff, #140d06, #000000, #040403, #32260Aff, #282621, #080808);
+                --grad-padd: 20px 25px;
+
+
+
+
+                --dp-yellow: #F5C518;
+                --dp-yellow-dark: #d4a800;
+                --dp-black: #0a0a0a;
+                --dp-dark: #161510;
+                --dp-dark2: #1a1a1a;
+                --dp-gray: #888888;
+                --dp-light-gray: #f5f5f5;
+                --dp-white: #ffffff;
+                --dp-text: #222222;
+                /* --dp-font-display: 'Bebas Neue', sans-serif; */
+                /* --dp-font-body: 'Barlow', sans-serif; */
+                --dp-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                --dp-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+                --poppins: 'Poppins', sans-serif;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+
+
+            /* ── SCROLL REVEAL ── */
+            .reveal {
+                opacity: 0;
+                transform: translateY(40px);
+                transition: opacity 0.7s ease, transform 0.7s ease;
+            }
+
+            .reveal.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .reveal-left {
+                opacity: 0;
+                transform: translateX(-50px);
+                transition: opacity 0.7s ease, transform 0.7s ease;
+            }
+
+            .reveal-left.visible {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .reveal-right {
+                opacity: 0;
+                transform: translateX(50px);
+                transition: opacity 0.7s ease, transform 0.7s ease;
+            }
+
+            .reveal-right.visible {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .delay-1 {
+                transition-delay: 0.1s;
+            }
+
+            .delay-2 {
+                transition-delay: 0.2s;
+            }
+
+            .delay-3 {
+                transition-delay: 0.3s;
+            }
+
+            .delay-4 {
+                transition-delay: 0.4s;
+            }
+
+            .delay-5 {
+                transition-delay: 0.5s;
+            }
+
+            /* ── NAV ── */
+            nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 1000;
+                /* background: rgba(13, 13, 13, 0.95); */
+                backdrop-filter: blur(12px);
+                border-bottom: 1px solid var(--border);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                /* padding: 0 40px; */
+                height: 70px;
+                transition: background 0.3s;
+                width: 100%;
+                background-color: rgb(0, 0, 0);
+            }
+
+            .logo {
+                display: flex;
+                flex-direction: column;
+                line-height: 1;
+            }
+
+            .logo-main {
+                font-family: 'Bebas Neue', sans-serif;
+                font-size: 30px;
+                color: var(--yellow);
+                letter-spacing: 3px;
+            }
+
+            .logo-sub {
+                font-size: 8px;
+                letter-spacing: 5px;
+                color: var(--white);
+                font-weight: 600;
+                margin-top: -2px;
+            }
+
+            .nav-links {
+                display: flex;
+                gap: 32px;
+                list-style: none;
+            }
+
+            .nav-links a {
+                color: var(--white);
+                text-decoration: none;
+                font-size: 13px;
+                font-weight: 500;
+                letter-spacing: 0.5px;
+                transition: color 0.3s;
+                position: relative;
+            }
+
+            .nav-links a::after {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: var(--yellow);
+                transition: width 0.3s;
+            }
+
+            .nav-links a:hover {
+                color: var(--yellow);
+            }
+
+            .nav-links a:hover::after {
+                width: 100%;
+            }
+
+            .nav-links li.active a {
+                color: var(--yellow);
+            }
+
+            .nav-links li.active a::after {
+                width: 100%;
+            }
+
+            .nav-cta {
+                background: var(--yellow);
+                color: var(--dark);
+                border: none;
+                padding: 10px 22px;
+                font-size: 13px;
+                font-weight: 700;
+                font-family: 'Montserrat', sans-serif;
+                cursor: pointer;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                transition: background 0.3s, transform 0.2s;
+                text-decoration: none;
+                letter-spacing: 0.5px;
+            }
+
+            .nav-cta:hover {
+                background: #e6b800;
+                transform: translateY(-1px);
+            }
+
+            /* Hamburger */
+            .hamburger {
+                display: none;
+                flex-direction: column;
+                gap: 5px;
+                cursor: pointer;
+                padding: 4px;
+            }
+
+            .hamburger span {
+                display: block;
+                width: 24px;
+                height: 2px;
+                background: var(--white);
+                transition: all 0.3s;
+            }
+
+            .hamburger.open span:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+
+            .hamburger.open span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.open span:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+
+            /* Mobile Nav */
+            .mobile-nav {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(13, 13, 13, 0.98);
+                backdrop-filter: blur(12px);
+                z-index: 999;
+                padding: 24px 40px;
+                border-bottom: 1px solid var(--border);
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .mobile-nav.open {
+                display: flex;
+            }
+
+            .mobile-nav a {
+                color: var(--white);
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                transition: color 0.3s;
+            }
+
+            .mobile-nav a:hover {
+                color: var(--yellow);
+            }
+
+            /* ── HERO ── */
+
+            /* ── FOOTER ── */
+            #contact {
+                background: var(--grad-lan);
+                padding: var(--grad-padd);
+                /* padding: 80px 80px 40px; */
+            }
+
+            .footer-grid {
+                display: grid;
+                grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+                gap: 60px;
+                margin-bottom: 60px;
+            }
+
+            .footer-brand p {
+                font-size: 13px;
+                color: rgba(255, 255, 255, 0.5);
+                line-height: 1.9;
+                margin: 20px 0;
+                max-width: 240px;
+            }
+
+            .footer-copyright {
+                font-size: 12px;
+                color: var(--gray2);
+                margin-top: 16px;
+            }
+
+            .footer-col h4 {
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 2.5px;
+                color: var(--yellow);
+                text-transform: uppercase;
+                margin-bottom: 24px;
+            }
+
+            .footer-links {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            .footer-links a {
+                color: rgba(255, 255, 255, 0.55);
+                text-decoration: none;
+                font-size: 13px;
+                transition: color 0.3s;
+            }
+
+            .footer-links a:hover {
+                color: var(--yellow);
+            }
+
+            .social-icons {
+                display: flex;
+                gap: 12px;
+                margin-top: 4px;
+            }
+
+            .social-icon {
+                width: 38px;
+                height: 38px;
+                border-radius: 8px;
+                border: 1.5px solid rgba(255, 255, 255, 0.15);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: rgba(255, 255, 255, 0.6);
+                text-decoration: none;
+                transition: all 0.3s;
+                font-size: 13px;
+                font-weight: 700;
+            }
+
+            .social-icon:hover {
+                border-color: var(--yellow);
+                color: var(--yellow);
+                background: rgba(245, 197, 24, 0.08);
+                transform: translateY(-2px);
+            }
+
+            .contact-items {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .contact-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                font-size: 13px;
+                color: rgba(255, 255, 255, 0.6);
+                line-height: 1.6;
+            }
+
+            .contact-item-icon {
+                color: var(--yellow);
+                margin-top: 2px;
+                flex-shrink: 0;
+            }
+
+            .footer-divider {
+                height: 1px;
+                background: var(--border);
+                margin-bottom: 30px;
+            }
+
+            .footer-bottom {
+                text-align: center;
+                font-size: 12px;
+                color: var(--gray2);
+            }
+
+            /* ── CURSOR ── */
+            .cursor {
+                position: fixed;
+                width: 8px;
+                height: 8px;
+                background: var(--yellow);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                transition: transform 0.1s;
+                mix-blend-mode: difference;
+            }
+
+            .cursor-ring {
+                position: fixed;
+                width: 32px;
+                height: 32px;
+                border: 1.5px solid rgba(245, 197, 24, 0.5);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9998;
+                transition: all 0.12s ease;
+            }
+
+            /* ── PARTICLE DOTS ── */
+            .particles {
+                position: absolute;
+                inset: 0;
+                overflow: hidden;
+                pointer-events: none;
+                z-index: 4;
+            }
+
+            .particle {
+                position: absolute;
+                width: 2px;
+                height: 2px;
+                background: rgba(245, 197, 24, 0.6);
+                border-radius: 50%;
+                animation: particleFloat linear infinite;
+            }
+
+            @keyframes particleFloat {
+                0% {
+                    transform: translateY(100vh) translateX(0);
+                    opacity: 0;
+                }
+
+                10% {
+                    opacity: 1;
+                }
+
+                90% {
+                    opacity: 1;
+                }
+
+                100% {
+                    transform: translateY(-100px) translateX(30px);
+                    opacity: 0;
+                }
+            }
+
+            /* ── RESPONSIVE ── */
+            @media (max-width: 1200px) {
+                nav {
+                    /* padding: 0 30px; */
+                }
+
+                .hero-content {
+                    padding: 0 50px;
+                }
+
+                #about,
+                #services,
+                #work,
+                #clients,
+                #contact {
+                    padding-left: 50px;
+                    padding-right: 50px;
+                }
+
+                .services-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                    border-radius: 12px;
+                }
+
+                .service-card {
+                    border-bottom: 1px solid var(--border);
+                }
+
+                .service-card:nth-child(3) {
+                    border-right: none;
+                }
+
+                .service-card:nth-child(4),
+                .service-card:nth-child(5),
+                .service-card:nth-child(6) {
+                    border-bottom: none;
+                }
+
+                .work-card {
+                    min-width: calc(33.333% - 11px);
+                }
+
+                .footer-grid {
+                    grid-template-columns: 1fr 1fr;
+                    gap: 40px;
+                }
+            }
+
+            @media (max-width: 900px) {
+                .nav-links {
+                    display: none;
+                }
+
+                .nav-cta {
+                    display: none;
+                }
+
+                .hamburger {
+                    display: flex;
+                }
+
+                nav {
+                    /* padding: 0 24px; */
+                }
+
+                .hero-content {
+                    padding: 50px 24px;
+                    max-width: 100%;
+                }
+
+                .hero-camera-svg {
+                    display: none;
+                }
+
+                #home {
+                    justify-content: center;
+                    align-items: flex-end;
+                    padding-bottom: 60px;
+                }
+
+                .hero-bg {
+                    background: radial-gradient(ellipse 80% 80% at 50% 50%, rgba(245, 197, 24, 0.1) 0%, transparent 70%);
+                }
+
+                .about-grid {
+                    grid-template-columns: 1fr;
+                    gap: 40px;
+                }
+
+                .about-left p {
+                    max-width: 100%;
+                }
+
+                .stats-grid {
+                    padding: 30px 20px;
+                }
+
+                .stat-number {
+                    font-size: 32px;
+                }
+
+                #about,
+                #services,
+                #work,
+                #contact {
+                    padding: 70px 24px;
+                }
+
+                #clients {
+                    padding: 40px 24px;
+                }
+
+                .services-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                .service-card:nth-child(2) {
+                    border-right: none;
+                }
+
+                .service-card:nth-child(3) {
+                    border-right: 1px solid var(--border);
+                }
+
+                .service-card:nth-child(4) {
+                    border-right: none;
+                }
+
+                .service-card:nth-child(5) {
+                    border-right: 1px solid var(--border);
+                    border-bottom: none;
+                }
+
+                .service-card:nth-child(6) {
+                    border-right: none;
+                    border-bottom: none;
+                }
+
+                .service-card {
+                    border-bottom: 1px solid var(--border);
+                }
+
+                .work-card {
+                    min-width: calc(50% - 8px);
+                }
+
+                .clients-inner {
+                    flex-direction: column;
+                    gap: 20px;
+                    align-items: flex-start;
+                }
+
+                .trusted-label {
+                    border-right: none;
+                    padding-right: 0;
+                    border-right: 1px solid #666;
+                    border-bottom: 1px solid var(--border);
+                    padding-bottom: 16px;
+                }
+
+                .footer-grid {
+                    grid-template-columns: 1fr 1fr;
+                    gap: 40px;
+                }
+            }
+
+            @media (max-width: 600px) {
+                .hero-title {
+                    font-size: clamp(36px, 10vw, 52px);
+                }
+
+                .stats-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
+                .stat-item:not(:last-child)::after {
+                    display: none;
+                }
+
+                .stat-number {
+                    font-size: 28px;
+                }
+
+                .stat-label {
+                    font-size: 9px;
+                    letter-spacing: 1px;
+                }
+
+                .stat-icon {
+                    width: 40px;
+                    height: 40px;
+                }
+
+                .awsad13 {
+                    padding: 10px;
+                }
+
+                .services-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .service-card {
+                    border-right: none !important;
+                }
+
+                .work-card {
+                    min-width: calc(75% - 8px);
+                }
+
+                .carousel-btn {
+                    display: flex;
+                }
+
+                .footer-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .work-header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 16px;
+                }
+
+                .hero-buttons {
+                    gap: 16px;
+                }
+
+                .btn-primary {
+                    padding: 12px 20px;
+                    font-size: 12px;
+                }
+            }
+        </style>
+        <!-- <div style="padding: 0 5px 20px 5px;backdrop-filter: blur(0);"> -->
+        <nav id="navbar" style="border-radius: 15px;">
+            <a href="/" class="logo" style="text-decoration:none;">
+                <div style="width:50px;padding-left:6px;margin-left:15px;">
+            <img style="width: 70%;" src="assets/Daur-Production.webp" alt="">
+          </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li id="servicesPc"><a href="#">Services</a><i style="color: white;" class="fa-solid fa-angle-down"></i>
+                    <div class="dropdown_1">
+                        <ul>
+                            <li><a href="/production">Video Production</a></li>
+                            <li><a href="/voice-recording-studio-in-delhi">Voice Over</a></li>
+                            <li><a href="/ai-video-production-services">AI Service</a></li>
+                            <li><a href="/voiceove_course">Our Course</a></li>
+                            <li class="active"><a href="/localization">Localization</a></li>
+                        </ul>
+
+                    </div>
+                </li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+
+            <a href="" id="call_me_to_more" class="nav-cta">Let's Talk &nbsp;↗</a>
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+
+        <!-- Mobile Nav -->
+        <div class="mobile-nav" id="mobileNav">
+            <a href="/" >Home</a>
+            <a href="/about" >About</a>
+            <a href="#" id="servicesmb">Services <i class="fa-solid fa-angle-down"></i> </a>
+            <div class="dropdown_2 unshow_smmb">
+                <ul>
+                    <li><a href="/production">Video Production</a></li>
+                    <li><a href="/voice-recording-studio-in-delhi">Voice Over</a></li>
+                    <li><a href="/ai-video-production-services">AI Service</a></li>
+                    <li><a href="/voiceove_course">Our Course</a></li>
+                    <li><a href="/localization">Localization</a></li>
+                </ul>
+
+            </div>
+            <a href="#work" >Work</a>
+            <a href="#clients" >Clients</a>
+            <a href="/contact" >Contact</a>
+            <a href="" id="call_me_to_more" class="btn-primary" style="width:fit-content;" >Let's Talk
+                ↗</a>
+        </div>
+
+
+        <!-- <script>
+
+
+            let aewcce55 = document.getElementById("aewcce55")
+
+
+            aewcce55.addEventListener("click", () => {
+                console.log("99")
+            })
+        </script> -->
+        <!-- </div> -->
+
+
+
+    </header>
+
+
+    <main>
+        <div class="h-10"></div>
+
+        <!-- section 1 -->
+        <div class="min-h-screen bg-slate-950">
+             <!-- section 1 -->
+            <style>
+                /* --- SCOPED HERO SECTION STYLES --- */
+                #custom-hero-section {
+                    position: relative;
+                    width: 100%;
+                    min-height: 100vh;
+                    background-color: #000000;
+                    color: #ffffff;
+                    display: flex;
+                    align-items: center;
+                    overflow: hidden;
+                    box-sizing: border-box;
+                }
+
+                #custom-hero-section * {
+                    box-sizing: border-box;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                /* Background Image Wrapper (For Parallax Effect) */
+                #custom-hero-section .bg-wrapper {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 60%;
+                    height: 100%;
+                    /* Increased height for smooth scroll movement */
+                    /* YAHAN APNI IMAGE KA PATH DALEN */
+                    background-image: url('assets/Section-04-CstNeamc.png');
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    z-index: 1;
+                    transform: translateY(0);
+                    will-change: transform;
+                }
+
+                /* Black overlay to maintain contrast */
+                #custom-hero-section .bg-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(90deg, rgba(0, 0, 0, 0.692) 30%, rgba(0, 0, 0, 0.158) 100%);
+                    z-index: 2;
+                }
+
+                /* Main Container */
+                #custom-hero-section .hero-container {
+                    position: relative;
+                    width: 100%;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 10px 20px;
+                    z-index: 3;
+                    display: flex;
+                    align-items: center;
+                }
+
+                /* Text Content Area */
+                #custom-hero-section .hero-content {
+                    max-width: 600px;
+                    opacity: 0;
+                    transform: translateY(40px);
+                    transition: opacity 1s ease, transform 1s ease;
+                }
+
+                /* Animation class triggered by JS */
+                #custom-hero-section .hero-content.animate-in {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+                /* Small Tag */
+                #custom-hero-section .course-tag {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    color: #ffcc00;
+                    font-size: 14px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    margin-bottom: 20px;
+                }
+
+                #custom-hero-section .course-tag::before {
+                    content: "";
+                    display: inline-block;
+                    width: 8px;
+                    height: 8px;
+                    background-color: #ffcc00;
+                }
+
+                /* Main Heading */
+                #custom-hero-section .hero-title {
+                    font-size: 56px;
+                    font-weight: 800;
+                    line-height: 1.15;
+                    margin-bottom: 24px;
+                }
+
+                #custom-hero-section .hero-title span {
+                    color: #ffcc00;
+                }
+
+                /* Description Paragraph */
+                #custom-hero-section .hero-desc {
+                    font-size: 18px;
+                    line-height: 1.6;
+                    color: #cccccc;
+                    max-width: 500px;
+                }
+
+                /* --- RESPONSIVE BREAKPOINTS (ALL DEVICES) --- */
+                @media (max-width: 1024px) {
+                    #custom-hero-section .hero-title {
+                        font-size: 46px;
+                    }
+
+                    #custom-hero-section .hero-desc {
+                        font-size: 16px;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    #custom-hero-section {
+                        min-height: 57vh;
+                        /* Reduces height on tablets */
+                    }
+
+                    #custom-hero-section .bg-overlay {
+                        background: rgba(0, 0, 0, 0.247);
+                        /* Darker overlay for readability on mobile */
+                    }
+
+                    #custom-hero-section .hero-title {
+                        font-size: 38px;
+                    }
+
+                    #custom-hero-section .bg-wrapper {
+                        background-size: cover;
+                        width: 100%;
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    #custom-hero-section {
+                        min-height: 57vh;
+                        align-items: flex-end;
+                        /* Pushes content down slightly on small screens */
+                        padding-bottom: 60px;
+                    }
+
+                    #custom-hero-section .hero-title {
+                        font-size: 32px;
+                        margin-bottom: 16px;
+                    }
+
+                    #custom-hero-section .hero-desc {
+                        font-size: 14px;
+                    }
+
+                    #custom-hero-section .course-tag {
+                        font-size: 12px;
+                        margin-bottom: 12px;
+                    }
+                }
+            </style>
+
+            <section id="custom-hero-section">
+                <div class="bg-wrapper" id="hero-parallax-bg"></div>
+                <div class="bg-overlay"></div>
+
+                <div class="hero-container">
+                    <div class="hero-content" id="hero-animated-content">
+                        <div class="course-tag">GLOBAL </div>
+                        <h1 class="hero-title">STORIES EVERY <br>LANGUAGE <span>ONE PLATFORM</span></h1>
+                        <p class="hero-desc">Specializing in film production and professional voice dubbing, we deliver
+                            immersive narratives through
+                            meticulous direction, sound precision, and visual excellence.
+
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <script>
+                (function () {
+                    const heroSection = document.getElementById('custom-hero-section');
+                    const bgImage = document.getElementById('hero-parallax-bg');
+                    const content = document.getElementById('hero-animated-content');
+
+                    // 1. Entrance Animation using Intersection Observer (Triggers when section is visible)
+                    const observerOptions = {
+                        root: null,
+                        threshold: 0.2 // Trigger when 20% of the section is visible
+                    };
+
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                content.classList.add('animate-in');
+                            }
+                        });
+                    }, observerOptions);
+
+                    observer.observe(heroSection);
+
+                    // 2. Smooth Scroll Parallax Effect
+                    window.addEventListener('scroll', () => {
+                        const sectionRect = heroSection.getBoundingClientRect();
+                        const viewHeight = window.innerHeight;
+
+                        // Check if the section is inside the viewport
+                        if (sectionRect.top < viewHeight && sectionRect.bottom > 0) {
+                            // Calculate how much the section has scrolled relative to the viewport
+                            const scrolledPercentage = (viewHeight - sectionRect.top) / (viewHeight + sectionRect.height);
+
+                            // Move background image slowly (adjust 50 for more/less intensity)
+                            const yTranslation = (scrolledPercentage * 60) - 30;
+
+                            bgImage.style.transform = `translateY(${yTranslation}px)`;
+                        }
+                    });
+                })();
+            </script>
+            
+            
+            <div class="relative overflow-hidden mt-0"
+                style="background-image: linear-gradient(130deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 18%, rgba(7, 7, 7, 0.35) 38%, rgba(19, 18, 18, 0.55) 55%, rgba(2, 2, 2, 0.75) 70%, rgba(15, 15, 15, 0.85) 85%, rgb(0, 0, 0) 100%), url(&quot;assets/footer_bg-BPhS4X1b.jpg&quot;); background-size: cover; background-repeat: no-repeat; background-position: center center;">
+                <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                    <div
+                        class="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float">
+                    </div>
+                    <div class="absolute top-40 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"
+                        style="animation-delay: 1s;"></div>
+                    <div class="absolute -bottom-20 left-1/2 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"
+                        style="animation-delay: 2s;"></div>
+                </div>
+                <div class="container mx-auto px-4 relative z-10">
+                    <div class="text-center mb-16"><br>
+                        <div
+                            class="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-600 to-yellow-400 px-4 py-2 rounded-full mb-6 animate-fade-in">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-sparkles w-4 h-4 text-white-600 animate-pulse" aria-hidden="true">
+                                <path
+                                    d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z">
+                                </path>
+                                <path d="M20 2v4"></path>
+                                <path d="M22 4h-4"></path>
+                                <circle cx="4" cy="20" r="2"></circle>
+                            </svg><span class="text-sm text-white font-semibold text-blue-700 tracking-wide">TRUSTED BY
+                                INDUSTRY LEADERS</span>
+                        </div>
+                        <h2 class="text-3xl md:text-3xl font-bold text-white mb-4 animate-slide-up">Trusted by Leading
+                            Brands</h2>
+                        <p class="text-white text-lg md:text-xl max-w-2xl mx-auto animate-slide-up pl-10"
+                            style="animation-delay: 0.1s;">Partnering with industry leaders to create impactful visual
+                            stories</p>
+                    </div>
+                    <section class="relative py-16 overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+                        <div
+                            class="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none">
+                        </div>
+                        <div
+                            class="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none">
+                        </div>
+                        <style>
+                            @keyframes marquee-left {
+                                0% {
+                                    transform: translateX(0);
+                                }
+
+                                100% {
+                                    transform: translateX(-50%);
+                                }
+                            }
+
+                            @keyframes marquee-right {
+                                0% {
+                                    transform: translateX(-50%);
+                                }
+
+                                100% {
+                                    transform: translateX(0);
+                                }
+                            }
+
+                            .marquee-left {
+                                animation: marquee-left 35s linear infinite;
+                                will-change: transform;
+                                backface-visibility: hidden;
+                                transform: translateZ(0);
+                            }
+
+                            .marquee-right {
+                                animation: marquee-right 40s linear infinite;
+                                will-change: transform;
+                                backface-visibility: hidden;
+                                transform: translateZ(0);
+                            }
+
+                            .marquee-container {
+                                mask-image: linear-gradient(to right,
+                                        transparent 0%,
+                                        black 10%,
+                                        black 90%,
+                                        transparent 100%);
+                            }
+
+                            .marquee-container:hover .marquee-left,
+                            .marquee-container:hover .marquee-right {
+                                animation-play-state: paused;
+                            }
+
+                            /* Smooth performance optimization */
+                            .marquee-left,
+                            .marquee-right {
+                                -webkit-backface-visibility: hidden;
+                                -webkit-perspective: 1000px;
+                                perspective: 1000px;
+                            }
+                        </style>
+                        <div class="space-y-8">
+                            <div class="marquee-container relative overflow-hidden">
+                                <div class="marquee-left flex gap-5 w-max">
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/1-DnSlOvlP.png" alt="Partner 1"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/2-CqWLUh6G.png" alt="Partner 2"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-600 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/3-C0UoxgA1.png" alt="Partner 3"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/4-7GULLmPC.png" alt="Partner 4"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/5-BXKCc1zF.png" alt="Partner 5"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/6-C5VDGDZF.png" alt="Partner 6"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/7-lANRRnvw.png" alt="Partner 7"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/8-BC6NNpoF.png" alt="Partner 8"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/1-DnSlOvlP.png" alt="Partner 1"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/2-CqWLUh6G.png" alt="Partner 2"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-600 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/3-C0UoxgA1.png" alt="Partner 3"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/4-7GULLmPC.png" alt="Partner 4"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/5-BXKCc1zF.png" alt="Partner 5"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/6-C5VDGDZF.png" alt="Partner 6"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/7-lANRRnvw.png" alt="Partner 7"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/8-BC6NNpoF.png" alt="Partner 8"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="marquee-container relative overflow-hidden">
+                                <div class="marquee-right flex gap-5 w-max">
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/9-BPUIHpmH.png" alt="Partner 1"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/10-DQvSp32w.png" alt="Partner 2"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-600 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/11-B0oxODcl.png" alt="Partner 3"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/12-BHc54wxv.png" alt="Partner 4"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/13-D-kOlWye.png" alt="Partner 5"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/14-CuzCmUQW.png" alt="Partner 6"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/15-xsD2Df_a.png" alt="Partner 7"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/16-DsO99oGs.png" alt="Partner 8"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/9-BPUIHpmH.png" alt="Partner 1"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/10-DQvSp32w.png" alt="Partner 2"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-600 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/11-B0oxODcl.png" alt="Partner 3"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/12-BHc54wxv.png" alt="Partner 4"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/13-D-kOlWye.png" alt="Partner 5"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/14-CuzCmUQW.png" alt="Partner 6"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/15-xsD2Df_a.png" alt="Partner 7"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                    <div
+                                        class="group relative bg-[#f2f2f2] rounded-[20px] min-w-[220px] p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex-shrink-0">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-[20px] opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                                        </div>
+                                        <div class="relative flex items-center justify-center h-20"><img
+                                                src="assets/16-DsO99oGs.png" alt="Partner 8"
+                                                class="max-w-full max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section><br>
+                    <div class="flex flex-wrap justify-center gap-4 sm:gap-8 mb-20">
+                        <div
+                            class="backdrop-blur-md bg-[#222222]/5 rounded-xl w-[calc(50%-0.5rem)] sm:w-42 h-42 flex flex-col items-center justify-center border border-[#f2f2f2]">
+                            <div class="text-xl font-bold text-[#f2f2f2] mb-2"><span>10</span>+</div>
+                            <div class="text-sm text-white text-center ">Years of Experience</div>
+                        </div>
+                        <div
+                            class="backdrop-blur-md bg-[#222222]/5 rounded-xl w-[calc(50%-0.5rem)] sm:w-42 h-42 flex flex-col items-center justify-center border border-[#f2f2f2]">
+                            <div class="text-xl font-bold text-[#f2f2f2] mb-2"><span>200</span>+</div>
+                            <div class="text-sm text-white text-center ">Successful Projects</div>
+                        </div>
+                        <div
+                            class="backdrop-blur-md bg-[#222222]/5 rounded-xl w-[calc(50%-0.5rem)] sm:w-42 h-42 flex flex-col items-center justify-center border border-[#f2f2f2]">
+                            <div class="text-xl font-bold text-[#f2f2f2] mb-2"><span>150</span>+</div>
+                            <div class="text-sm text-white text-center ">Happy Clients</div>
+                        </div>
+                        <div
+                            class="backdrop-blur-md bg-[#222222]/5 rounded-xl w-[calc(50%-0.5rem)] sm:w-42 h-42 flex flex-col items-center justify-center border border-[#f2f2f2]">
+                            <div class="text-xl font-bold text-[#f2f2f2] mb-2"><span>160</span>+</div>
+                            <div class="text-sm text-white text-center ">5 Star Reviews</div>
+                        </div>
+                    </div>
+                </div><br>
+            </div>
+            <div class="relative py-24 overflow-hidden" style="background-color: rgb(0, 0, 0);">
+                <div class="absolute inset-0">
+                    <div class="absolute inset-0"
+                        style="background: linear-gradient(rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.95) 20%, rgba(15, 15, 15, 0.15) 40%, rgba(0, 0, 0, 0.4) 60%, rgba(17, 17, 17, 0.6) 75%, rgba(0, 0, 0, 0.8) 85%, rgba(20, 20, 20, 0.95) 95%, rgb(0, 0, 0) 100%);">
+                    </div>
+                </div>
+                <div class="absolute top-0 right-0 w-96 h-96 opacity-20"
+                    style="background-color: rgb(14, 14, 14); filter: blur(100px);"></div>
+                <div class="absolute bottom-0 left-0 w-96 h-96 opacity-30"
+                    style="background-color: rgb(15, 15, 15); filter: blur(100px);"></div>
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <div class="relative order-2 lg:order-1">
+                            <div class="relative">
+                                <div class="absolute -inset-4 rounded-3xl blur-2xl opacity-40"
+                                    style="background: linear-gradient(135deg, rgb(15, 15, 15) 0%, rgb(7, 7, 7) 50%, rgb(12, 12, 12) 100%);">
+                                </div>
+                                <div class="relative rounded-3xl shadow-2xl p-8 border"
+                                    style="background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(30, 30, 30, 0.9) 100%); border-color: rgba(238, 188, 41, 0.2);">
+                                    <div class="aspect-video rounded-2xl flex items-center justify-center"
+                                        style="background: linear-gradient(135deg, rgb(238, 188, 41) 0%, rgb(212, 160, 36) 100%);">
+                                        <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&amp;h=600&amp;fit=crop"
+                                            alt="Global Localization"
+                                            class="w-full h-auto rounded-2xl object-cover shadow-lg">
+                                    </div>
+                                    <div class="absolute -bottom-6 -right-6 rounded-2xl p-6 shadow-2xl border"
+                                        style="background: linear-gradient(135deg, rgb(238, 188, 41) 0%, rgb(212, 160, 36) 100%); box-shadow: rgba(238, 188, 41, 0.5) 0px 20px 50px; border-color: rgba(255, 255, 255, 0.3);">
+                                        <div class="text-black font-black text-3xl">15+</div>
+                                        <div class="text-black/90 text-xs font-medium">Years</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-6 order-1 lg:order-2">
+                            <div class="inline-block">
+                                <div class="font-black text-sm tracking-widest" style="color: rgb(238, 188, 41);">
+                                    INDUSTRY-LEADING SERVICES</div>
+                            </div>
+                            <h2 class="text-3xl lg:text-3xl font-black text-white leading-tight">Production-Grade <span
+                                    style="color: rgb(238, 188, 41);">Localization</span></h2>
+                            <p class="text-gray-300 leading-relaxed text-lg pl-10 p_version11">End-to-end cinematic localization
+                                solutions trusted by major studios worldwide</p>
+                            <p class="text-gray-300 leading-relaxed text-lg p_version12">End-to-end cinematic localization
+                                solutions trusted by major studios worldwide</p>
+                            <div class="grid grid-cols-1 gap-6 pt-4">
+                                <div class="group flex items-start gap-4 backdrop-blur-xl rounded-2xl p-6 border transition-all"
+                                    style="background-color: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.1);">
+                                    <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform"
+                                        style="background: linear-gradient(135deg, rgb(238, 188, 41) 0%, rgb(212, 160, 36) 100%); box-shadow: rgba(238, 188, 41, 0.5) 0px 10px 30px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-white" width="24"
+                                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-message-square w-7 h-7 text-black" aria-hidden="true">
+                                            <path
+                                                d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-white mb-2 text-lg">Cinematic Dubbing</h3>
+                                        <p class="text-gray-300 text-sm">Professional voice actors with studio-grade
+                                            quality for film &amp; TV</p>
+                                    </div>
+                                </div>
+                                <div class="group flex items-start gap-4 backdrop-blur-xl rounded-2xl p-6 border transition-all"
+                                    style="background-color: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.1);">
+                                    <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform"
+                                        style="background: linear-gradient(135deg, rgb(212, 160, 36) 0%, rgb(157, 115, 24) 100%); box-shadow: rgba(212, 160, 36, 0.5) 0px 10px 30px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-headphones w-7 h-7 text-white" aria-hidden="true">
+                                            <path
+                                                d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-white mb-2 text-lg">Script Adaptation</h3>
+                                        <p class="text-gray-300 text-sm">Cultural adaptation &amp; translation
+                                            preserving artistic intent</p>
+                                    </div>
+                                </div>
+                                <div class="group flex items-start gap-4 backdrop-blur-xl rounded-2xl p-6 border transition-all"
+                                    style="background-color: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.1);">
+                                    <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform"
+                                        style="background: linear-gradient(135deg, rgb(238, 188, 41) 0%, rgb(212, 160, 36) 100%); box-shadow: rgba(238, 188, 41, 0.5) 0px 10px 30px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-white" width="24"
+                                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-headphones w-7 h-7 text-black" aria-hidden="true">
+                                            <path
+                                                d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-white mb-2 text-lg">Full Localization</h3>
+                                        <p class="text-gray-300 text-sm">End-to-end localization for global distribution
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-6"><a
+                                    href="/contact"
+                                    class="group relative text-black px-10 py-5 rounded-2xl font-bold flex items-center gap-3 hover:shadow-2xl transition-all duration-300 hover:scale-105 overflow-hidden"
+                                    style="background: linear-gradient(135deg, rgb(238, 188, 41) 0%, rgb(212, 160, 36) 100%); box-shadow: rgba(238, 188, 41, 0.3) 0px 10px 30px;"><span
+                                        class="relative z-10">Contact us</span><svg xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-arrow-right w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform"
+                                        aria-hidden="true">
+                                        <path d="M5 12h14"></path>
+                                        <path d="m12 5 7 7-7 7"></path>
+                                    </svg></a>
+                                <div class="flex items-center gap-4 backdrop-blur-xl rounded-2xl px-6 py-4 border" id="call_me_to_more"
+                                    style="background-color: rgba(255, 255, 255, 0.05); border-color: rgba(238, 188, 41, 0.2);">
+                                    <div class="w-14 h-14 rounded-xl flex items-center justify-center shadow-lg"
+                                        style="background: linear-gradient(135deg, rgb(238, 188, 41) 0%, rgb(212, 160, 36) 100%); box-shadow: rgba(238, 188, 41, 0.5) 0px 10px 30px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-phone w-7 h-7 text-black" aria-hidden="true">
+                                            <path
+                                                d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-gray-400 font-medium" >Call us:</div>
+                                        <div class="font-bold text-white text-lg">+91 6283915317</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .marquee-left {
+                    animation: marquee-left 30s linear infinite;
+                    will-change: transform;
+                }
+
+                .marquee-right {
+                    animation: marquee-right 35s linear infinite;
+                    will-change: transform;
+                }
+
+                @keyframes marquee-left {
+                    from {
+                        transform: translateX(0);
+                    }
+
+                    to {
+                        transform: translateX(-50%);
+                    }
+                }
+
+                @keyframes marquee-right {
+                    from {
+                        transform: translateX(-50%);
+                    }
+
+                    to {
+                        transform: translateX(0);
+                    }
+                }
+            </style>
+        </div>
+
+        <!-- section 2 -->
+        <section class="relative py-24 px-4 md:px-8 lg:px-16"
+            style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 18%, rgba(12, 12, 12, 0.35) 38%, rgba(19, 19, 18, 0.55) 55%, rgba(26, 25, 25, 0.75) 70%, rgba(15, 15, 15, 0.85) 85%, rgb(0, 0, 0) 100%), url(&quot;assets/footer_bg-BPhS4X1b.jpg&quot;); background-size: cover; background-repeat: no-repeat; background-position: center center;">
+            <div class="absolute inset-0" initial="[object Object]" animate="[object Object]"
+                transition="[object Object]"
+                style="background-image: linear-gradient(130deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 18%, rgba(24, 24, 23, 0.35) 38%, rgba(19, 19, 18, 0.55) 55%, rgba(20, 20, 20, 0.75) 70%, rgba(14, 13, 13, 0.85) 85%, rgb(0, 0, 0) 100%), url(&quot;assets/footer_bg-BPhS4X1b.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; will-change: transform, filter;">
+            </div>
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                    <div class="group relative">
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-r from-transparent hover:via-yellow-600/40 to-transparent opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300">
+                        </div>
+                        <div
+                            class="relative bg-white hover:bg-yellow-600 rounded-2xl p-8 border hover:border-yellow-500 shadow-lg hover:shadow-yellow-900/30 hover:shadow-xl hover:shadow-yellow-900/40 transition-all duration-300">
+                            <h3 class="text-2xl font-bold text-black mb-4">Studio Quality</h3>
+                            <p class="text- leading-relaxed mb-6">Dolby Atmos &amp; 5.1 surround sound
+                                support.</p>
+                            <div class="inline-flex items-center gap-2 text-sm font-medium text-whi"><span>Read
+                                    More</span><span>→</span></div>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group relative">
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-r from-transparent via-yellow-600/40 to-transparent opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300">
+                        </div>
+                        <div
+                            class="relative bg-white hover:bg-yellow-600 rounded-2xl p-8 border hover:border-yellow-500 shadow-lg hover:shadow-yellow-900/30 hover:shadow-xl hover:shadow-yellow-900/40 transition-all duration-300">
+                            <h3 class="text-2xl font-bold text-black mb-4">Industry Experts</h3>
+                            <p class="text-whi-100 leading-relaxed mb-6">Award-winning directors &amp; voice actors.
+                            </p>
+                            <div class="inline-flex items-center gap-2 text-sm font-medium text-whit"><span>Read
+                                    More</span><span>→</span></div>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group relative">
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-r from-transparent via-yellow-600/40 to-transparent opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300">
+                        </div>
+                        <div
+                            class="relative bg-white hover:bg-yellow-600 rounded-2xl p-8 border hover:border-yellow-500 shadow-lg hover:shadow-yellow-900/30 hover:shadow-xl hover:shadow-yellow-900/40 transition-all duration-300">
+                            <h3 class="text-2xl font-bold text-black mb-4">Fast Turnaround</h3>
+                            <p class="text-yello-100 leading-relaxed mb-6">72-hour delivery for urgent projects.</p>
+                            <div class="inline-flex items-center gap-2 text-sm font-medium text-whie"><span>Read
+                                    More</span><span>→</span></div>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group relative">
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-r from-transparent via-yellow-600/40 to-transparent opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300">
+                        </div>
+                        <div
+                            class="relative bg-white hover:bg-yellow-600 rounded-2xl p-8 border hover:border-yellow-500 shadow-lg hover:shadow-yellow-900/30 hover:shadow-xl hover:shadow-yellow-900/40 transition-all duration-300">
+                            <h3 class="text-2xl font-bold text-black mb-4">Secure Pipeline</h3>
+                            <p class="text-yelow-100 leading-relaxed mb-6">NDA-protected workflows for unreleased
+                                content.</p>
+                            <div class="inline-flex items-center gap-2 text-sm font-medium txt-white"><span>Read
+                                    More</span><span>→</span></div>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center"><button
+                        class="px-10 py-4 bg-gradient-to-r   bg-white hover:bg-yellow-600 text-whie rounded-full hover:shadow-2xl hover:shadow-yellow-500/30 transition-all duration-300 font-semibold text-lg">Explore
+                        All Services</button></div>
+            </div>
+        </section>
+
+        <!-- section 3 -->
+        <section class="relative py-24 px-4 md:px-8 lg:px-16" initial="[object Object]" animate="[object Object]"
+            transition="[object Object]"
+            style="background-image: linear-gradient(270deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 18%, rgba(15, 15, 15, 0.35) 38%, rgba(20, 20, 20, 0.55) 55%, rgba(20, 20, 20, 0.75) 70%, rgba(22, 22, 22, 0.85) 85%, rgb(0, 0, 0) 100%), url(&quot;assets/footer_bg-BPhS4X1b.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; will-change: transform, filter;">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16" style="opacity: 1;">
+                    <h2 class="text-4xl md:text-4xl font-bold mb-8"><span class="text-white">Our Work </span><span
+                            class="bg-gradient-to-r from-slate-700 via-gray-600 to-slate-800 bg-clip-text text-white">in
+                            Action</span></h2>
+                    <p class="text-xl text-white max-w-2xl mx-auto pl-15 p_version11">Premium cinematic localization projects for
+                        global distribution</p>
+                    <p class="text-xl text-white max-w-2xl mx-auto p_version12">Premium cinematic localization projects for
+                        global distribution</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="group relative rounded-2xl overflow-hidden cursor-pointer shadow-xl shadow-slate-400/10 hover:shadow-3xl hover:shadow-yellow-500/20 transition-all duration-300"
+                        style="opacity: 1; transform: none;">
+                        <div class="relative overflow-hidden rounded-2xl"><img src="assets/slide-1-scaled-CExHPPCg.jpg"
+                                alt="Feature Film" class="w-full h-64 object-cover">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-800/40 to-transparent">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="w-20 h-20 bg-gradient-to-r from-slate-700 to-gray-600 rounded-full flex items-center justify-center shadow-2xl border-2 border-white"
+                                    tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-play w-8 h-8 text-white ml-1" aria-hidden="true">
+                                        <path
+                                            d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z">
+                                        </path>
+                                    </svg></div>
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+                                <div class="flex items-center justify-between mb-3"><span
+                                        class="px-3 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium text-white">Action</span><span
+                                        class="px-3 py-1.5 bg-gradient-to-r from-slate-700/80 to-gray-600/80 backdrop-blur-sm rounded-lg text-xs text-white">Warner
+                                        Bros</span></div>
+                                <h3 class="text-xl font-bold text-white mb-3">Feature Film</h3>
+                                <div class="flex items-center gap-3 text-white/90 text-sm"><span
+                                        class="font-medium">English</span><svg xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
+                                        <path d="M5 12h14"></path>
+                                        <path d="m12 5 7 7-7 7"></path>
+                                    </svg><span class="font-medium">Spanish</span><span
+                                        class="ml-auto flex items-center gap-2 bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-lg"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-clock w-4 h-4" aria-hidden="true">
+                                            <path d="M12 6v6l4 2"></path>
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                        </svg>2:30</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group relative rounded-2xl overflow-hidden cursor-pointer shadow-xl shadow-slate-400/10 hover:shadow-3xl hover:shadow-yellow-500/20 transition-all duration-300"
+                        style="opacity: 1; transform: none;">
+                        <div class="relative overflow-hidden rounded-2xl"><img src="assets/studio-1-MXEUKz-6.jpg"
+                                alt="Documentary Series" class="w-full h-64 object-cover">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-800/40 to-transparent">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="w-20 h-20 bg-gradient-to-r from-slate-700 to-gray-600 rounded-full flex items-center justify-center shadow-2xl border-2 border-white"
+                                    tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-play w-8 h-8 text-white ml-1" aria-hidden="true">
+                                        <path
+                                            d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z">
+                                        </path>
+                                    </svg></div>
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+                                <div class="flex items-center justify-between mb-3"><span
+                                        class="px-3 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium text-white">Documentary</span><span
+                                        class="px-3 py-1.5 bg-gradient-to-r from-slate-700/80 to-gray-600/80 backdrop-blur-sm rounded-lg text-xs text-white">Netflix</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-3">Documentary Series</h3>
+                                <div class="flex items-center gap-3 text-white/90 text-sm"><span
+                                        class="font-medium">English</span><svg xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
+                                        <path d="M5 12h14"></path>
+                                        <path d="m12 5 7 7-7 7"></path>
+                                    </svg><span class="font-medium">Hindi</span><span
+                                        class="ml-auto flex items-center gap-2 bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-lg"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-clock w-4 h-4" aria-hidden="true">
+                                            <path d="M12 6v6l4 2"></path>
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                        </svg>5:45</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group relative rounded-2xl overflow-hidden cursor-pointer shadow-xl shadow-slate-400/10 hover:shadow-3xl hover:shadow-yellow-500/20 transition-all duration-300"
+                        style="opacity: 1; transform: none;">
+                        <div class="relative overflow-hidden rounded-2xl"><img src="assets/studio-3-Ci04etpT.jpg"
+                                alt="TV Series" class="w-full h-64 object-cover">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-800/40 to-transparent">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="w-20 h-20 bg-gradient-to-r from-slate-700 to-gray-600 rounded-full flex items-center justify-center shadow-2xl border-2 border-white"
+                                    tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-play w-8 h-8 text-white ml-1" aria-hidden="true">
+                                        <path
+                                            d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z">
+                                        </path>
+                                    </svg></div>
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+                                <div class="flex items-center justify-between mb-3"><span
+                                        class="px-3 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium text-white">Drama</span><span
+                                        class="px-3 py-1.5 bg-gradient-to-r from-slate-700/80 to-gray-600/80 backdrop-blur-sm rounded-lg text-xs text-white">HBO</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-3">TV Series</h3>
+                                <div class="flex items-center gap-3 text-white/90 text-sm"><span
+                                        class="font-medium">English</span><svg xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-arrow-right w-4 h-4" aria-hidden="true">
+                                        <path d="M5 12h14"></path>
+                                        <path d="m12 5 7 7-7 7"></path>
+                                    </svg><span class="font-medium">Japanese</span><span
+                                        class="ml-auto flex items-center gap-2 bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-lg"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-clock w-4 h-4" aria-hidden="true">
+                                            <path d="M12 6v6l4 2"></path>
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                        </svg>3:15</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section 4 -->
+        <section class="relative py-24 px-4 md:px-8 lg:px-16" initial="[object Object]" animate="[object Object]"
+            transition="[object Object]"
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 18%, rgba(22, 22, 22, 0.35) 38%, rgba(20, 20, 20, 0.55) 55%, rgba(8, 8, 8, 0.75) 70%, rgba(19, 19, 19, 0.85) 85%, rgb(0, 0, 0) 100%), url(&quot;assets/slide-1-scaled-CExHPPCg.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; will-change: transform, filter;">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="mb-12" style="opacity: 1; transform: none;">
+                    <div class="inline-flex items-center gap-3 mb-8 px-8 py-4 bg-gradient-to-r from-yellow-600 to-rgba(157, 115, 24, 0.8) 85% backdrop-blur-sm rounded-full border border-gray-300/50 shadow-lg"
+                        style="transform: translateY(-4.60453px);"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-award w-6 h-6 text-white " aria-hidden="true">
+                            <path
+                                d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526">
+                            </path>
+                            <circle cx="12" cy="8" r="6"></circle>
+                        </svg><span
+                            class="font-semibold bg-gradient-to-r from-yellow-600 to-rgba(157, 115, 24, 0.8) 85% bg-clip-text text-white">TRUSTED
+                            BY MAJOR STUDIOS</span></div>
+                    <h2 class="text-4xl md:text-4xl font-bold mb-8"><span class="text-white">Ready for </span><span
+                            class="bg-gradient-to-r from-slate-700 via-gray-600 to-slate-800 bg-clip-text text-white"><span
+                                class="owjokss">Global
+                                Distribution?</span></span></h2>
+                    <p class="text-xl text-white mb-12 max-w-2xl mx-auto pl-5">Join major studios and production houses
+                        in delivering localized content</p>
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center"><a href="/contact"><button
+                                class="px-12 py-5  bg-white hover:bg-gradient-to-r  from-yellow-600 to-rgba(157, 115, 24, 0.8) 85% text-whit rounded-full border-2 border-black hover:shadow-2xl hover:shadow-slate-500/30 transition-all duration-300 font-semibold text-lg group"
+                                style="border-radius: 5px !important;" tabindex="0" style="transform: none;"><span
+                                    class="flex items-center justify-center gap-3">Request Quote<span
+                                        style="transform: translateX(1.34813px);">→</span></span></button></a><a
+                            href="/contact"><button style="border-radius: 5px !important;"
+                                class="px-12 py-5 bg-white  bg-white hover:bg-gradient-to-r to-yellow-600 from-rgba(157, 115, 24, 0.8) 85% text-slate-700 border-2 border-black rounded-full transition-all duration-300 font-semibold text-lg shadow-lg shadow-slate-300/10 hover:shadow-xl hover:shadow-slate-400/20"
+                                tabindex="0">Schedule Demo</button></a></div>
+                </div>
+                <div class="flex flex-wrap justify-center gap-10 text-slate-600" style="opacity: 1; transform: none;">
+                    <div class="flex items-center gap-3 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-gray-200 shadow-sm"
+                        style="opacity: 1;">
+                        <div class="text-slate-700"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield w-5 h-5"
+                                aria-hidden="true">
+                                <path
+                                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                                </path>
+                            </svg></div><span class="font-medium">NDA Protected</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-gray-200 shadow-sm"
+                        style="opacity: 1;">
+                        <div class="text-slate-700"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users w-5 h-5"
+                                aria-hidden="true">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                            </svg></div><span class="font-medium">Dedicated Team</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-gray-200 shadow-sm"
+                        style="opacity: 1;">
+                        <div class="text-slate-700"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-headphones w-5 h-5"
+                                aria-hidden="true">
+                                <path
+                                    d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3">
+                                </path>
+                            </svg></div><span class="font-medium">24/7 Support</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section 5 -->
+        <div class="py-10 md:py-24 bg-gradient-to-b from-gray-300/35 to bg-white relative overflow-hidden mt-0"
+            initial="[object Object]" animate="[object Object]" transition="[object Object]"
+            style="background-image: linear-gradient(130deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 18%, rgba(10, 10, 10, 0.35) 38%, rgba(12, 12, 12, 0.55) 55%, rgba(17, 17, 17, 0.75) 70%, rgba(7, 7, 7, 0.85) 85%, rgb(0, 0, 0) 100%), url(&quot;assets/footer_bg-BPhS4X1b.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; will-change: transform, filter;">
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div
+                    class="absolute top-10 left-10 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float">
+                </div>
+                <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float"
+                    style="animation-delay: 2s;"></div>
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center mb-16 animate-fade-in">
+                    <div
+                        class="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-600 to-rgba(157, 115, 24, 0.8) 85% px-4 py-2 rounded-full mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-sparkles w-4 h-4 text-black animate-pulse" aria-hidden="true">
+                            <path
+                                d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z">
+                            </path>
+                            <path d="M20 2v4"></path>
+                            <path d="M22 4h-4"></path>
+                            <circle cx="4" cy="20" r="2"></circle>
+                        </svg><span class="text-sm font-semibold text-black tracking-wide">CLIENT TESTIMONIALS</span>
+                    </div>
+                    <h2 class="text-4xl md:text-4xl font-bold text-white mb-4">What Our Clients Say</h2>
+                    <p class="text-white  md:text-xl max-w-3xl mx-auto pl-20 p_version11">Trusted by leading brands and creators
+                        across India for delivering <br><span class="text-center pl-25">exceptional video content that
+                            drives results.</span></p>
+                    <p class="text-white  md:text-xl max-w-3xl mx-auto p_version12">Trusted by leading brands and creators
+                        across India for delivering exceptional video content that
+                            drives results.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                    <div class="group relative bg-white hover:bg-yellow-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up"
+                        style="animation-delay: 0s;">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="flex gap-1 mb-6 relative z-10">
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 0ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 100ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 200ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 300ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 400ms;">⭐</div>
+                        </div>
+                        <p class="text-black text-lg leading-relaxed mb-8 relative z-10">"Daur Productions transformed
+                            our brand story into a cinematic masterpiece. The attention to detail and creative vision
+                            exceeded all expectations. Our campaign achieved record engagement."</p>
+                        <div class="flex items-center gap-4 relative z-10">
+                            <div
+                                class="w-14 h-14 rounded-full bg-gradient-to-br from-rgba(101, 72, 9, 0.95) 95%, flex items-center justify-center text-whe font-bold text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                RK</div>
+                            <div>
+                                <div class="font-bold text-gray-900 text-lg">Rajesh Kumar</div>
+                                <div class="text-black text-sm">Marketing Director, TechCorp India</div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute top-6 right-6 text-6xl text-blue-100 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+                            "</div>
+                    </div>
+                    <div class="group relative bg-white hover:bg-yellow-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up"
+                        style="animation-delay: 0.2s;">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-yellow-400/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="flex gap-1 mb-6 relative z-10">
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 0ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 100ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 200ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 300ms;">⭐</div>
+                            <div class="text-orange-400 animate-scale-in" style="animation-delay: 400ms;">⭐</div>
+                        </div>
+                        <p class="text-black text-lg leading-relaxed mb-8 relative z-10">"Professional, creative, and
+                            results-driven. The team's technical expertise combined with artistic vision delivered
+                            content that truly resonates with our audience. Highly recommended!"</p>
+                        <div class="flex items-center gap-4 relative z-10">
+                            <div
+                                class="w-14 h-14 rounded-full bg-gradient-to-br from-rgba(101, 72, 9, 0.95) 95%, flex items-center justify-center text-wte font-bold text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                PS</div>
+                            <div>
+                                <div class="font-bold text-black text-lg">Priya Sharma</div>
+                                <div class="text-black text-sm">Creative Head, Lifestyle Brands</div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute top-6 right-6 text-6xl text-purple-100 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+                            "</div>
+                    </div>
+                    <div class="group relative bg-white hover:bg-yellow-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up"
+                        style="animation-delay: 0.4s;">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-yellow-400/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="flex gap-1 mb-6 relative z-10">
+                            <div class="text-black animate-scale-in" style="animation-delay: 0ms;">⭐</div>
+                            <div class="text-black animate-scale-in" style="animation-delay: 100ms;">⭐</div>
+                            <div class="text-black animate-scale-in" style="animation-delay: 200ms;">⭐</div>
+                            <div class="text-black animate-scale-in" style="animation-delay: 300ms;">⭐</div>
+                            <div class="text-black animate-scale-in" style="animation-delay: 400ms;">⭐</div>
+                        </div>
+                        <p class="text-black text-lg leading-relaxed mb-8 relative z-10">"From concept to final
+                            delivery, Daur Productions demonstrated exceptional professionalism. Their ability to
+                            understand our vision and execute flawlessly made the entire process seamless."</p>
+                        <div class="flex items-center gap-4 relative z-10">
+                            <div
+                                class="w-14 h-14 rounded-full bg-gradient-to-br from-rgba(101, 72, 9, 0.95) 95%, flex items-center justify-center text-wite font-bold text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                AP</div>
+                            <div>
+                                <div class="font-bold text-black text-lg">Amit Patel</div>
+                                <div class="text-black text-sm">CEO, StartupHub</div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute top-6 right-6 text-6xl text-black opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+                            "</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- section 6 -->
+    </main>
+
+
+    <!-- ── FOOTER / CONTACT ── -->
+
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+    <style>
+        .dropdwon_footer ul {
+            list-style: none;
+            padding: 5px;
+        }
+
+        .dropdwon_footer ul li {
+            padding: 8px 5px;
+        }
+
+        .aswawnone {
+            display: none;
+        }
+
+        .downarrow {
+            /* transform: rotate(180deg); */
+            transition: 0.3s;
+        }
+
+        /* #waxdaw{
+  transition: transform 0.3s ease;
+}
+
+.downarrow{
+  transform: rotate(180deg);
+} */
+
+
+        .awsad14 {
+            transition: 0.3s ease;
+            padding: 15px 20px;
+            /* background: rgba(255, 255, 255, 0.2); */
+
+            background: rgba(255, 255, 255, 0);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+        }
+
+        .awsad13 {
+            transition: 0.3s ease;
+            padding: 15px 20px;
+            /* background: rgba(255, 255, 255, 0.2); */
+
+            background: rgb(255 255 255 / 8%);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+        }
+
+        /* new code  */
+.ADOAJOWE{
+  display: flex;
+  gap: 10px;
+  
+}
+.ADOAJOWE input{
+  background-color: var(--grad-lan);
+  border: 1px solid #665;
+  border-radius: 5px;
+}
+.ADOAJOWE input::placeholder{
+color: rgba(255, 255, 255, 0.678);
+padding-left: 5px;
+font-family: var(--poppins);
+font-size: 12px;
+}
+
+.ADOAJOWE button{
+background: var(--yellow);
+padding:8px 15px;
+border: none;
+border-radius: 15px;
+
+}
+    </style>
+
+
+
+    <section id="contact">
+        <div class="awsad13">
+            <div class="footer-grid">
+               <div class="footer-brand reveal">
+          <div class="logo">
+            <div style="width:110px;margin-left: 35px;">
+            <img style="width: 95%;" src="assets/footer_logo.png" alt="">
+          </div>
+          </div>
+          <p>Revolutionizing video dubbing with AI-powered technology. Making content globally accessible.</p>
+          <div class="footer-copyright" style="color: white;"><span>
+              <p>Stay updated with our latest</p>
+            </span>
+            <span class="ADOAJOWE"><input type="email" placeholder="Enter The Email "><button type="submit">submit</button></span>
+          </div>
+        </div>
+
+        <div class="footer-col reveal delay-1">
+          <h4>Useful  Links</h4>
+          <ul class="footer-links">
+            <li><a href="/">Business Academy</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/">Digital</a></li>
+            <li><a href="/">Creative</a></li>
+            <li><a href="/">FAQs</a></li>
+            
+          </ul>
+        </div>
+
+        <div class="footer-col reveal delay-2">
+          <h4>Daur Production</h4>
+          <ul class="footer-links">
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/">Daur Production Studio</a></li>
+            <li><a href="/">Why Daur Production?</a></li>
+            <!-- <li><a href="about">FAQs</a></li> -->
+            
+          </ul>
+          <!-- <div class="social-icons">
+            <a href="#" class="social-icon" title="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon" title="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon" title="YouTube">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22.54 6.42A2.78 2.78 0 0 0 20.59 4.5C19 4 12 4 12 4s-7 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.5C5 20 12 20 12 20s7 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                <polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="currentColor" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon" title="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+          </div> -->
+        </div>
+
+        <div class="footer-col reveal delay-3">
+          <h4>Contact Info</h4>
+          <div class="contact-items">
+
+            
+            <div class="contact-item">
+              <span class="contact-item-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </span>
+              2nd Floor, Welldone Tech Park,
+Unit No. 213 & 214,
+Badshahpur Sohna Rd Hwy, Sector 48,
+Gurugram, Haryana 122018 
+            </div>
+            <div class="contact-item">
+              <span class="contact-item-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </span>
+              hello@daurproduction.com
+            </div>
+            <div class="contact-item" id="call_me_to_more">
+              <span class="contact-item-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.08 6.08l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2z" />
+                </svg>
+              </span>
+              099147 66103
+            </div>
+            <!-- <div class="contact-item">
+              <span class="contact-item-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </span>
+              Delhi, India
+            </div> -->
+          </div>
+        </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom" style="color: white;">Made with passion by Daur Productions</div>
+        </div>
+    </section>
+
+
+    <script>
+        let waxdaw = document.getElementById("waxdaw");
+        let sawekmo = document.getElementById("sawekmo");
+        let dropdwon_footer = document.querySelector(".dropdwon_footer");
+
+        sawekmo.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            dropdwon_footer.classList.toggle("aswawnone");
+            waxdaw.style.transform = ' rotate(180deg)';
+        });
+
+
+
+        // routing with js for footer
+        document.querySelectorAll(".nav_link_footer").forEach((item) => {
+
+            item.addEventListener("click", () => {
+
+                window.location.href = item.dataset.link;
+
+            });
+
+        });
+    </script>
+
+
+<!-- call and whatsapp icons start -->
+    <style>
+        /* ── CHAT WIDGET ── */
+        .chat-widget {
+            position: fixed;
+            bottom: 90px;
+            left: 20px;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 16px 18px;
+            max-width: 240px;
+            font-size: 13px;
+            color: #333;
+            line-height: 1.6;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            z-index: 100;
+            animation: chatPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s both;
+        }
+
+        @keyframes chatPop {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .chat-widget::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 20px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid var(--white);
+        }
+
+        /* Floating buttons */
+        .float-whatsapp {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 52px;
+            height: 52px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            animation: pulse-green 2s infinite;
+            cursor: pointer;
+            transition: transform 0.3s;
+            border-radius: 50% !important;
+            text-decoration: none;
+        }
+
+        .float-whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse-green {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+            }
+
+            70% {
+                box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .float-chat {
+            border-radius: 50% !important;
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            width: 52px;
+            height: 52px;
+            background: rgb(201, 133, 7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(26, 159, 224, 0.4);
+            animation: pulse-blue 2s infinite 0.5s;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .float-chat:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse-blue {
+            0% {
+                box-shadow: 0 0 0 0 rgba(224, 157, 13, 0.5);
+            }
+
+            70% {
+                box-shadow: 0 0 0 12px rgba(224, 132, 26, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(224, 155, 26, 0);
+            }
+        }
+
+        .badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            width: 18px;
+            height: 18px;
+            background: #ff3b3b;
+            border-radius: 50%;
+            font-size: 10px;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid white;
+            /* border-radius: 50% !important; */
+        }
+    </style>
+    <!-- +91 6283915317 -->
+    <a id="whatsappBtn" class="float-whatsapp" target="_blank" title="WhatsApp">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <div class="float-chat" id="chat_box" title="Chat">
+        <a href="tel:+916283915317">
+            <!-- <div class="badge">1</div> -->
+            <svg style="animation: ringing 1s infinite; width: 30px;text-align: center;display: flex;align-items: center;justify-items: center;justify-content: center;align-content: center;"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ffffff" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone-call">
+
+                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+                <g id="SVGRepo_iconCarrier">
+
+                    <path
+                        d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+
+                </g>
+
+            </svg></a>
+    </div>
+
+    <script>
+        let number = "916283915317";
+        let message = "Hello, Sir";
+
+        let url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+
+        document.getElementById("whatsappBtn").href = url;
+
+         document.getElementById("call_me_to_more")
+      .addEventListener("click", () => {
+        window.location.href = "tel:+916283915317";
+      });
+    </script>
+
+<!-- call and whatsapp icons end -->
+
+<!-- form box hera start -->
+    <style>
+        /* * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        } */
+
+        .form_box {
+            width: 100%;
+            height: 100vh;
+            background: #000000b6;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            display: none;
+            opacity: 0;
+            transform: translateY(-15px);
+
+            transition:
+                opacity 0.3s ease,
+                transform 0.3s ease;
+        }
+
+
+        .form_box.active {
+            display: flex;
+
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .box64 {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .bos63 {
+            position: absolute;
+            top: -60px;
+            right: 30px;
+
+            width: 40px;
+            height: 40px;
+
+            border: 2px solid #dddada;
+            border-radius: 50% !important;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            cursor: pointer;
+        }
+
+        .closebtn {
+            color: white;
+            font-size: 18px;
+            padding-top: 3px;
+        }
+
+        .form_ {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .losecc {
+            width: 400px;
+            background: #111;
+            padding: 40px;
+            border-radius: 20px !important;
+            border: 1px solid #333;
+        }
+
+        .losecc h2 {
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .input_box {
+            margin-bottom: 15px;
+        }
+
+        .input_box input {
+            width: 100%;
+            padding: 14px;
+
+            background: #191919;
+            border: 1px solid #333;
+
+            color: white;
+            font-size: 16px;
+
+            border-radius: 10px !important;
+            outline: none;
+        }
+
+        .input_box input:focus {
+            border-color: #a8230b;
+        }
+
+        .sendbtn {
+            width: 100%;
+            padding: 14px;
+
+            background: #fcac02;
+
+            border: none;
+            color: white;
+            border-radius: 10px !important;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .sendbtn:hover {
+            opacity: .9;
+        }
+    </style>
+
+    <div class="form_box">
+
+        <div class="box64">
+
+            <span class="bos63">
+                <h2 class="closebtn">✕</h2>
+            </span>
+
+            <div class="form_">
+
+                <div class="losecc">
+
+                    <h2>Contact For More Infomation </h2>
+
+                    <div class="input_box">
+                        <input type="text" id="username" placeholder="Your Name">
+                    </div>
+
+                    <div class="input_box">
+                        <input type="tel" id="usernumber" placeholder="Your Number">
+                    </div>
+
+                    <button class="sendbtn">
+                        Submit
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function contact_function() {
+
+            let form = document.querySelector(".form_box");
+
+            if (form.classList.contains("active")) {
+
+                form.style.opacity = "0";
+                form.style.transform = "translateY(-15px)";
+
+                setTimeout(() => {
+                    form.classList.remove("active");
+                }, 300);
+
+            } else {
+
+                form.classList.add("active");
+
+                setTimeout(() => {
+                    form.style.opacity = "1";
+                    form.style.transform = "translateY(0)";
+                }, 10);
+            }
+        }
+
+
+
+
+        let sendbtn = document.querySelector(".sendbtn");
+
+        sendbtn.addEventListener("click", () => {
+
+            let name =
+                document.getElementById("username").value.trim();
+
+            let number =
+                document.getElementById("usernumber").value.trim();
+
+            if (name === "" || number === "") {
+                alert("Fill all fields");
+                return;
+            }
+
+            // yaha apna whatsapp number
+            let whatsapp = "919876543210";
+
+            let msg = `Hello Sir/Madam,\n\nMy name is ${name}, and my contact number is ${number}.\n\nI would like to get some guidance regarding your services.\nPlease let me know how I should proceed.\n\nThank you.`;
+            window.open(
+                `https://wa.me/${whatsapp}?text=${encodeURIComponent(msg)}`,
+                "_blank"
+            );
+
+        });
+
+
+
+        // close
+        document
+            .querySelector(".bos63")
+            .addEventListener("click", () => {
+
+                document
+                    .querySelector(".form_box")
+                    .style.display = "none";
+
+            });
+
+    </script>
+    <!-- from box end -->
+
+
+
+
+
+    <script>
+        // ── PARTICLES ──
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 20; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDuration = (8 + Math.random() * 12) + 's';
+                p.style.animationDelay = (Math.random() * 10) + 's';
+                p.style.opacity = Math.random() * 0.6;
+                container.appendChild(p);
+            }
+        }
+        createParticles();
+
+        // ── SCROLL REVEAL ──
+        const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+        const observer93 = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12 });
+        reveals.forEach(el => observer93.observe(el));
+
+    </script>
+
+
+    <script src="js/nav.js"></script>
+</body>
+
+</html>
