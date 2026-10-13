@@ -6,11 +6,11 @@
     <link rel="icon" type="image/svg+xml" href="assets/Daur-Logo-B530W0NU.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daur Production</title>
-     <link rel="icon" type="image/png" href="favicon_img/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="favicon_img/favicon.svg" />
-  <link rel="shortcut icon" href="favicon_img/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon_img/apple-touch-icon.png" />
-  <link rel="manifest" href="favicon_img/site.webmanifest" />
+    <link rel="icon" type="image/png" href="favicon_img/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon_img/favicon.svg" />
+    <link rel="shortcut icon" href="favicon_img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_img/apple-touch-icon.png" />
+    <link rel="manifest" href="favicon_img/site.webmanifest" />
     <link rel="stylesheet" href="css_mode/nav.css">
     <script src="https://kit.fontawesome.com/87cb04b335.js" crossorigin="anonymous"></script>
     <script src="js.js"></script>
@@ -18,26 +18,138 @@
     <link rel="stylesheet" crossorigin href="assets/index-C4DKkz-q.css">
     <link rel="stylesheet" crossorigin href="css.css">
     <style>
-            
-            /* Small Mobile */
-            .p_version12{
-                display:none;
-            }
-            
-           
-        @media screen and (max-width: 880px) {
-            .p_version11{
-                display:none;
-            }
-            .p_version12{
-                display:block;
-            }
-            
+        /* Small Mobile */
+        .p_version12 {
+            display: none;
         }
-        </style>
+
+
+        @media screen and (max-width: 880px) {
+            .p_version11 {
+                display: none;
+            }
+
+            .p_version12 {
+                display: block;
+            }
+
+        }
+    </style>
 </head>
 
 <body>
+
+
+    <!-- Custom Cursor (desktop only) -->
+    <style>
+        /* ── CURSOR ── */
+        .cursor {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: var(--yellow);
+            border-radius: 50% !important;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s;
+            mix-blend-mode: difference;
+        }
+
+        .cursor-ring {
+            position: fixed;
+            width: 32px;
+            height: 32px;
+            border: 1.5px solid rgba(245, 197, 24, 0.5);
+            border-radius: 50% !important;
+            pointer-events: none;
+            z-index: 9998;
+            transition: all 0.12s ease;
+        }
+
+        /* ── PARTICLE DOTS ── */
+        .particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 4;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(245, 197, 24, 0.6);
+            border-radius: 50%;
+            animation: particleFloat linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100px) translateX(30px);
+                opacity: 0;
+            }
+        }
+    </style>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+    <script>// ── CURSOR ──
+        const cursor = document.getElementById('cursor');
+        const ring = document.getElementById('cursorRing');
+        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+        document.addEventListener('mousemove', e => {
+            mouseX = e.clientX; mouseY = e.clientY;
+            cursor.style.left = mouseX - 4 + 'px';
+            cursor.style.top = mouseY - 4 + 'px';
+        });
+
+        function animateRing() {
+            ringX += (mouseX - ringX - 16) * 0.12;
+            ringY += (mouseY - ringY - 16) * 0.12;
+            ring.style.left = ringX + 'px';
+            ring.style.top = ringY + 'px';
+            requestAnimationFrame(animateRing);
+        }
+        animateRing();
+
+        // Hide cursor on mobile
+        if ('ontouchstart' in window) {
+            cursor.style.display = 'none';
+            ring.style.display = 'none';
+        }
+
+        // ── PARTICLES ──
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 20; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDuration = (8 + Math.random() * 12) + 's';
+                p.style.animationDelay = (Math.random() * 10) + 's';
+                p.style.opacity = Math.random() * 0.6;
+                container.appendChild(p);
+            }
+        }
+        createParticles();
+    </script>
+
+
+
     <header style="background-color: white;">
         <style>
             :root {
@@ -718,8 +830,8 @@
         <nav id="navbar" style="border-radius: 15px;">
             <a href="/" class="logo" style="text-decoration:none;">
                 <div style="width:50px;padding-left:6px;margin-left:15px;">
-            <img style="width: 70%;" src="assets/Daur-Production.webp" alt="">
-          </div>
+                    <img style="width: 70%;" src="assets/Daur-Production.webp" alt="">
+                </div>
             </a>
 
             <ul class="nav-links">
@@ -790,31 +902,32 @@
     <main>
         <!-- section 1 -->
         <style>
-            .play-btn{
-    animation: rotateBtn 4s linear infinite;
-}
+            .play-btn {
+                animation: rotateBtn 4s linear infinite;
+            }
 
-@keyframes rotateBtn{
-    from{
-        transform: rotate(360deg);
-    }
-    to{
-        transform: rotate(0deg);
-    }
-}
+            @keyframes rotateBtn {
+                from {
+                    transform: rotate(360deg);
+                }
 
-.pnatsd{
-    padding:30px 55px 68px 55px;
-}
+                to {
+                    transform: rotate(0deg);
+                }
+            }
+
+            .pnatsd {
+                padding: 30px 55px 68px 55px;
+            }
 
 
-/* Mobile */
-@media screen and (max-width: 600px) {
-    .pnatsd{
-    padding:5rem 0;
-}
- 
-}
+            /* Mobile */
+            @media screen and (max-width: 600px) {
+                .pnatsd {
+                    padding: 5rem 0;
+                }
+
+            }
         </style>
         <div class="h-10"></div>
         <div class="min-h-screen text-white relative overflow-hidden pnatsd">
@@ -879,7 +992,7 @@
                                     class="px-7 py-3.5 bg-transparent hover:bg-gray-800/30 text-white font-bold transition-all flex items-center gap-2.5 border border-gray-600 text-[15px]"
                                     tabindex="0"
                                     style="border-radius: 10px; border-color: oklch(0.446 0.03 256.802); transform: none;">
-                                    <div style="transform: rotate(51.48deg);"><svg xmlns="http://www.w3.org/2000/svg"
+                                    <div style=""><svg xmlns="http://www.w3.org/2000/svg"
                                             width="24" height="24" viewBox="0 0 24 24" fill="white"
                                             stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                             stroke-linejoin="round" class="lucide lucide-play w-[18px] h-[18px]"
@@ -893,9 +1006,10 @@
                                 style="opacity: 1; transform: none;"><a href="tel:6283915317"
                                     class="px-7 py-3 bg-yellow-500 hover:bg-yellow-600 text-black font-bold transition-all flex items-center gap-2.5 text-[15px]"
                                     tabindex="0" style="border-radius: 10px; transform: none;">
-                                    <div id="call_me_to_more" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    <div id="call_me_to_more" style="transform: none;"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round"
                                             class="lucide lucide-phone w-[18px] h-[18px]" aria-hidden="true">
                                             <path
                                                 d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
@@ -916,7 +1030,7 @@
                             <div class="flex gap-12 pt-4 grid grid-cols-2 md:grid-cols-3" style="opacity: 1;">
                                 <div class="flex items-center gap-2.5">
                                     <div class="w-6 h-6 rounded-full bg-yellow-500 flex items-center justify-center"
-                                        style="transform: rotate(274.32deg);"><svg class="w-4 h-4 text-black"
+                                        ><svg class="w-4 h-4 text-black"
                                             fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd"
                                                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -926,7 +1040,7 @@
                                 </div>
                                 <div class="flex items-center gap-2.5">
                                     <div class="w-6 h-6 rounded-full bg-yellow-500 flex items-center justify-center"
-                                        style="transform: rotate(214.32deg);"><svg class="w-4 h-4 text-black"
+                                        ><svg class="w-4 h-4 text-black"
                                             fill="currentColor" viewBox="0 0 20 20">
                                             <path
                                                 d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z">
@@ -962,10 +1076,10 @@
                                             </div>
                                             <div class="flex items-center gap-3"><span
                                                     class="text-gray-400 text-sm font-medium"></span>
-                                                    <!---->
-                                                    <button onclick="voice_play_function(9)"
-                                                    class="play-btn w-11 h-11 bg-yellow-500 hover:bg-yellow-600 rounded-full flex items-center justify-center transition-colors"
-                                                    tabindex="0" style="transform: rotate(308.592deg);"><svg
+                                                <!---->
+                                                <button onclick="voice_play_function(9)"
+                                                    class=" w-11 h-11 bg-yellow-500 hover:bg-yellow-600 rounded-full flex items-center justify-center transition-colors"
+                                                    tabindex="0" ><svg
                                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                         viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -974,7 +1088,8 @@
                                                         <path
                                                             d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z">
                                                         </path>
-                                                    </svg></button></div>
+                                                    </svg></button>
+                                            </div>
                                         </div>
                                         <div class="h-16 rounded-lg overflow-hidden"><img src="assets/voiceoverimg.png"
                                                 alt="Waveform" class="w-full h-full object-cover"></div>
@@ -988,10 +1103,10 @@
                                             </div>
                                             <div class="flex items-center gap-3"><span
                                                     class="text-gray-400 text-sm font-medium"></span>
-                                                    <!---->
-                                                    <button onclick="voice_play_function(2)"
-                                                    class="play-btn w-11 h-11 bg-yellow-500 hover:bg-yellow-600 rounded-full flex items-center justify-center transition-colors"
-                                                    tabindex="0" style="transform: rotate(308.592deg);"><svg
+                                                <!---->
+                                                <button onclick="voice_play_function(2)"
+                                                    class=" w-11 h-11 bg-yellow-500 hover:bg-yellow-600 rounded-full flex items-center justify-center transition-colors"
+                                                    tabindex="0" ><svg
                                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                         viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -1000,7 +1115,8 @@
                                                         <path
                                                             d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z">
                                                         </path>
-                                                    </svg></button></div>
+                                                    </svg></button>
+                                            </div>
                                         </div>
                                         <div class="h-16 rounded-lg overflow-hidden"><img src="assets/voiceoverimg.png"
                                                 alt="Waveform" class="w-full h-full object-cover"></div>
@@ -1014,10 +1130,10 @@
                                             </div>
                                             <div class="flex items-center gap-3"><span
                                                     class="text-gray-400 text-sm font-medium"></span>
-                                                    <!---->
-                                                    <button onclick="voice_play_function(4)"
-                                                    class="play-btn w-11 h-11 bg-yellow-500 hover:bg-yellow-600 rounded-full flex items-center justify-center transition-colors"
-                                                    tabindex="0" style="transform: rotate(308.592deg);"><svg
+                                                <!---->
+                                                <button onclick="voice_play_function(4)"
+                                                    class=" w-11 h-11 bg-yellow-500 hover:bg-yellow-600 rounded-full flex items-center justify-center transition-colors"
+                                                    tabindex="0" ><svg
                                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                         viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -1026,7 +1142,8 @@
                                                         <path
                                                             d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z">
                                                         </path>
-                                                    </svg></button></div>
+                                                    </svg></button>
+                                            </div>
                                         </div>
                                         <div class="h-16 rounded-lg overflow-hidden"><img src="assets/voiceoverimg.png"
                                                 alt="Waveform" class="w-full h-full object-cover"></div>
@@ -1153,12 +1270,12 @@
                             </svg>
                         </div><span>Female Voice Artists</span>
                     </button></div>
-                    
+
                 <!-- Voice Contect -->
                 <div class="animate-fade-in-up" id="male_btn-contect">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <div class="group relative animate-fade-in-up" onclick="voice_play_function(4)"><audio src="/audio/male1.mp3"
-                                preload="metadata"></audio>
+                        <div class="group relative animate-fade-in-up" onclick="voice_play_function(4)"><audio
+                                src="/audio/male1.mp3" preload="metadata"></audio>
                             <div
                                 class="relative bg-[#000] h-[120px] rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
                                 <div class="p-3">
@@ -1282,8 +1399,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="group relative animate-fade-in-up" onclick="voice_play_function(5)"><audio src="/audio/male2.mp3"
-                                preload="metadata"></audio>
+                        <div class="group relative animate-fade-in-up" onclick="voice_play_function(5)"><audio
+                                src="/audio/male2.mp3" preload="metadata"></audio>
                             <div
                                 class="relative bg-[#000] h-[120px] rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
                                 <div class="p-3">
@@ -1407,8 +1524,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="group relative animate-fade-in-up" onclick="voice_play_function(6)"><audio src="/audio/male3.mp3"
-                                preload="metadata"></audio>
+                        <div class="group relative animate-fade-in-up" onclick="voice_play_function(6)"><audio
+                                src="/audio/male3.mp3" preload="metadata"></audio>
                             <div
                                 class="relative bg-[#000] h-[120px] rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
                                 <div class="p-3">
@@ -1532,8 +1649,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="group relative animate-fade-in-up" onclick="voice_play_function(7)"><audio src="/audio/male4.mp3"
-                                preload="metadata"></audio>
+                        <div class="group relative animate-fade-in-up" onclick="voice_play_function(7)"><audio
+                                src="/audio/male4.mp3" preload="metadata"></audio>
                             <div
                                 class="relative bg-[#000] h-[120px] rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
                                 <div class="p-3">
@@ -1661,8 +1778,8 @@
                 </div>
                 <div class="animate-fade-in-up" id="female_btn-contect" style="display:none;">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <div class="group relative animate-fade-in-up" onclick="voice_play_function(1)"><audio src="/audio/male1.mp3"
-                                preload="metadata"></audio>
+                        <div class="group relative animate-fade-in-up" onclick="voice_play_function(1)"><audio
+                                src="/audio/male1.mp3" preload="metadata"></audio>
                             <div
                                 class="relative bg-[#000] h-[120px] rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
                                 <div class="p-3">
@@ -1786,8 +1903,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="group relative animate-fade-in-up" onclick="voice_play_function(2)"><audio src="/audio/male2.mp3"
-                                preload="metadata"></audio>
+                        <div class="group relative animate-fade-in-up" onclick="voice_play_function(2)"><audio
+                                src="/audio/male2.mp3" preload="metadata"></audio>
                             <div
                                 class="relative bg-[#000] h-[120px] rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
                                 <div class="p-3">
@@ -1911,8 +2028,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="group relative animate-fade-in-up" onclick="voice_play_function(3)"><audio src="/audio/male3.mp3"
-                                preload="metadata"></audio>
+                        <div class="group relative animate-fade-in-up" onclick="voice_play_function(3)"><audio
+                                src="/audio/male3.mp3" preload="metadata"></audio>
                             <div
                                 class="relative bg-[#000] h-[120px] rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
                                 <div class="p-3">
@@ -2036,8 +2153,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="group relative animate-fade-in-up" onclick="voice_play_function(8)"><audio src="/audio/male4.mp3"
-                                preload="metadata"></audio>
+                        <div class="group relative animate-fade-in-up" onclick="voice_play_function(8)"><audio
+                                src="/audio/male4.mp3" preload="metadata"></audio>
                             <div
                                 class="relative bg-[#000] h-[120px] rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
                                 <div class="p-3">
@@ -2165,7 +2282,7 @@
                 </div>
             </div>
         </section>
-   
+
 
         <!-- section 3 -->
         <div class="relative overflow-hidden mt-0"
@@ -2693,36 +2810,36 @@
                             acting. By choosing the right voice over artist in Delhi through our platform, you ensure
                             your message isn't just heard, but truly felt across every demographic."</p>
                     </div>
-            </div>
+                </div>
             </div>
         </section>
-        
-        
-          <script>
-            
-            function male_box(){
-            let male_btn_contect =document.getElementById("male_btn-contect");
-            let female_btn_contect =document.getElementById("female_btn-contect");
+
+
+        <script>
+
+            function male_box() {
+                let male_btn_contect = document.getElementById("male_btn-contect");
+                let female_btn_contect = document.getElementById("female_btn-contect");
                 // console.log("male")
-                male_btn_contect.style.display="block";
-                female_btn_contect.style.display="none";
-                
+                male_btn_contect.style.display = "block";
+                female_btn_contect.style.display = "none";
+
             }
-            function female_box(){
-            let male_btn_contect =document.getElementById("male_btn-contect");
-            let female_btn_contect =document.getElementById("female_btn-contect");
+            function female_box() {
+                let male_btn_contect = document.getElementById("male_btn-contect");
+                let female_btn_contect = document.getElementById("female_btn-contect");
                 // console.log("female")
-                male_btn_contect.style.display="none";
-                female_btn_contect.style.display="block";
-                
+                male_btn_contect.style.display = "none";
+                female_btn_contect.style.display = "block";
+
             }
         </script>
 
 
         <!-- section 5 -->
-        
-        <section class="py-16 lg:py-24 relative overflow-hidden" style="background:linear-gradient(90deg, #000000ff, #140d06, #000000, #040403, #32260Aff, #282621, #080808);"
-            >
+
+        <section class="py-16 lg:py-24 relative overflow-hidden"
+            style="background:linear-gradient(90deg, #000000ff, #140d06, #000000, #040403, #32260Aff, #282621, #080808);">
             <div class="absolute inset-0 overflow-hidden">
                 <div class="absolute top-0 left-1/4 w-[800px] h-[800px] -translate-x-1/2 -translate-y-1/3"
                     style="background: radial-gradient(circle, rgba(189, 135, 43, 0.082) 0%, transparent 70%); filter: blur(100px); animation: 20s ease-in-out 0s infinite normal none running float;">
@@ -2734,7 +2851,8 @@
             <div class="container mx-auto px-4 relative z-10">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-bold mb-4 text-white">Comprehensive Voice Solutions</h2>
-                    <p class="max-w-3xl mx-auto pl-22 text-white p_version11">From voice overs to post-production, we deliver
+                    <p class="max-w-3xl mx-auto pl-22 text-white p_version11">From voice overs to post-production, we
+                        deliver
                         end-to-end
                         localization services <br><span class="pl-22">that bring content to life across cultures and
                             languages.</span></p>
@@ -3191,15 +3309,17 @@
                     </div>
                     <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 animate-slide-up">Why Choose Daur
                         Productions?</h2>
-                    <p class="text-white/80  max-w-3xl mx-auto animate-slide-up p_version11" style="animation-delay: 0.1s;">In an
+                    <p class="text-white/80  max-w-3xl mx-auto animate-slide-up p_version11"
+                        style="animation-delay: 0.1s;">In an
                         industry saturated with freelancers and robotic AI voices, Daur Productions prides itself
                         <br><span class="pl-22">on providing human connection combined with studio-quality
                             sounds.</span>
                     </p>
-                    <p class="text-white/80  max-w-3xl mx-auto animate-slide-up p_version12" style="animation-delay: 0.1s;">In an
+                    <p class="text-white/80  max-w-3xl mx-auto animate-slide-up p_version12"
+                        style="animation-delay: 0.1s;">In an
                         industry saturated with freelancers and robotic AI voices, Daur Productions prides itself
                         on providing human connection combined with studio-quality
-                            sounds.
+                        sounds.
                     </p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -3292,7 +3412,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center mt-12 animate-fade-in" style="animation-delay: 0.8s;"><button onclick="contact_function()"
+                <div class="text-center mt-12 animate-fade-in" style="animation-delay: 0.8s;"><button
+                        onclick="contact_function()"
                         class="group px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3 mx-auto bg-[#f2f2f2] hover:bg-yellow-600 hover:text-white"
                         style="color: rgb(30, 30, 30); box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 40px;"><span
                             class="relative z-10">Book a Consultation</span><span
@@ -3361,9 +3482,11 @@
                     </div>
                     <h2 class="text-4xl md:text-4xl font-bold text-white mb-6">What We <span
                             class="text-white">Do?</span></h2>
-                    <p class="text-xl text-[#cccccc] max-w-2xl mx-auto pl-22 p_version11">We've streamlined the pipeline so you
+                    <p class="text-xl text-[#cccccc] max-w-2xl mx-auto pl-22 p_version11">We've streamlined the pipeline
+                        so you
                         don't have to worry!</p>
-                    <p class="text-xl text-[#cccccc] max-w-2xl mx-auto p_version12">We've streamlined the pipeline so you
+                    <p class="text-xl text-[#cccccc] max-w-2xl mx-auto p_version12">We've streamlined the pipeline so
+                        you
                         don't have to worry!</p>
                 </div>
                 <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-7xl mx-auto">
@@ -4934,31 +5057,34 @@
             backdrop-filter: blur(10px);
             border-radius: 15px !important;
         }
+
         /* new code  */
-.ADOAJOWE{
-  display: flex;
-  gap: 10px;
-  
-}
-.ADOAJOWE input{
-  background-color: var(--grad-lan);
-  border: 1px solid #665;
-  border-radius: 5px;
-}
-.ADOAJOWE input::placeholder{
-color: rgba(255, 255, 255, 0.678);
-padding-left: 5px;
-font-family: var(--poppins);
-font-size: 12px;
-}
+        .ADOAJOWE {
+            display: flex;
+            gap: 10px;
 
-.ADOAJOWE button{
-background: var(--yellow);
-padding:8px 15px;
-border: none;
-border-radius: 15px;
+        }
 
-}
+        .ADOAJOWE input {
+            background-color: var(--grad-lan);
+            border: 1px solid #665;
+            border-radius: 5px;
+        }
+
+        .ADOAJOWE input::placeholder {
+            color: rgba(255, 255, 255, 0.678);
+            padding-left: 5px;
+            font-family: var(--poppins);
+            font-size: 12px;
+        }
+
+        .ADOAJOWE button {
+            background: var(--yellow);
+            padding: 8px 15px;
+            border: none;
+            border-radius: 15px;
+
+        }
     </style>
 
 
@@ -4966,42 +5092,43 @@ border-radius: 15px;
         <div class="awsad13">
             <div class="footer-grid">
                 <div class="footer-brand reveal">
-          <div class="logo">
-            <div style="width:110px;margin-left: 35px;">
-            <img style="width: 95%;" src="assets/footer_logo.png" alt="">
-          </div>
-          </div>
-          <p>Revolutionizing video dubbing with AI-powered technology. Making content globally accessible.</p>
-          <div class="footer-copyright" style="color: white;"><span>
-              <p>Stay updated with our latest</p>
-            </span>
-            <span class="ADOAJOWE"><input type="email" placeholder="Enter The Email "><button type="submit">submit</button></span>
-          </div>
-        </div>
+                    <div class="logo">
+                        <div style="width:110px;margin-left: 35px;">
+                            <img style="width: 95%;" src="assets/footer_logo.png" alt="">
+                        </div>
+                    </div>
+                    <p>Revolutionizing video dubbing with AI-powered technology. Making content globally accessible.</p>
+                    <div class="footer-copyright" style="color: white;"><span>
+                            <p>Stay updated with our latest</p>
+                        </span>
+                        <span class="ADOAJOWE"><input type="email" placeholder="Enter The Email "><button
+                                type="submit">submit</button></span>
+                    </div>
+                </div>
 
-        <div class="footer-col reveal delay-1">
-          <h4>Useful  Links</h4>
-          <ul class="footer-links">
-            <li><a href="/">Business Academy</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/">Digital</a></li>
-            <li><a href="/">Creative</a></li>
-            <li><a href="/">FAQs</a></li>
-            
-          </ul>
-        </div>
+                <div class="footer-col reveal delay-1">
+                    <h4>Useful Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Business Academy</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/">Digital</a></li>
+                        <li><a href="/">Creative</a></li>
+                        <li><a href="/">FAQs</a></li>
 
-        <div class="footer-col reveal delay-2">
-          <h4>Daur Production</h4>
-          <ul class="footer-links">
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/contact">Contact Us</a></li>
-            <li><a href="/">Daur Production Studio</a></li>
-            <li><a href="/">Why Daur Production?</a></li>
-            <!-- <li><a href="about">FAQs</a></li> -->
-            
-          </ul>
-          <!-- <div class="social-icons">
+                    </ul>
+                </div>
+
+                <div class="footer-col reveal delay-2">
+                    <h4>Daur Productions</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/">Daur Production Studio</a></li>
+                        <li><a href="/">Why Daur Production?</a></li>
+                        <!-- <li><a href="about">FAQs</a></li> -->
+
+                    </ul>
+                    <!-- <div class="social-icons">
             <a href="#" class="social-icon" title="Instagram">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="2" width="20" height="20" rx="5" />
@@ -5028,44 +5155,48 @@ border-radius: 15px;
               </svg>
             </a>
           </div> -->
-        </div>
+                </div>
 
-        <div class="footer-col reveal delay-3">
-          <h4>Contact Info</h4>
-          <div class="contact-items">
+                <div class="footer-col reveal delay-3">
+                    <h4>Contact Info</h4>
+                    <div class="contact-items">
 
-            
-            <div class="contact-item">
-              <span class="contact-item-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-              </span>
-              2nd Floor, Welldone Tech Park,
-Unit No. 213 & 214,
-Badshahpur Sohna Rd Hwy, Sector 48,
-Gurugram, Haryana 122018 
-            </div>
-            <div class="contact-item">
-              <span class="contact-item-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                  <polyline points="22,6 12,13 2,6" />
-                </svg>
-              </span>
-              hello@daurproduction.com
-            </div>
-            <div class="contact-item" id="call_me_to_more">
-              <span class="contact-item-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path
-                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.08 6.08l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2z" />
-                </svg>
-              </span>
-              099147 66103
-            </div>
-            <!-- <div class="contact-item">
+
+                        <div class="contact-item">
+                            <span class="contact-item-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </span>
+                            2nd Floor, Welldone Tech Park,
+                            Unit No. 213 & 214,
+                            Badshahpur Sohna Rd Hwy, Sector 48,
+                            Gurugram, Haryana 122018
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-item-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                            </span>
+                            hello@daurproduction.com
+                        </div>
+                        <div class="contact-item" id="call_me_to_more">
+                            <span class="contact-item-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.08 6.08l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2z" />
+                                </svg>
+                            </span>
+                            099147 66103
+                        </div>
+                        <!-- <div class="contact-item">
               <span class="contact-item-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
@@ -5074,8 +5205,8 @@ Gurugram, Haryana 122018
               </span>
               Delhi, India
             </div> -->
-          </div>
-        </div>
+                    </div>
+                </div>
             </div>
             <div class="footer-divider"></div>
             <div class="footer-bottom" style="color: white;">Made with passion by Daur Productions</div>
@@ -5107,7 +5238,7 @@ Gurugram, Haryana 122018
     </script>
 
 
-<!-- call and whatsapp icons start -->
+    <!-- call and whatsapp icons start -->
     <style>
         /* ── CHAT WIDGET ── */
         .chat-widget {
@@ -5281,293 +5412,293 @@ Gurugram, Haryana 122018
 
         document.getElementById("whatsappBtn").href = url;
 
-         document.getElementById("call_me_to_more")
-      .addEventListener("click", () => {
-        window.location.href = "tel:+916283915317";
-      });
+        document.getElementById("call_me_to_more")
+            .addEventListener("click", () => {
+                window.location.href = "tel:+916283915317";
+            });
     </script>
 
-<!-- call and whatsapp icons end -->
+    <!-- call and whatsapp icons end -->
 
 
 
-<!-- Audio Play Contect Start-->
+    <!-- Audio Play Contect Start-->
 
-<style>
-    
-    /* ========================= */
-/* OVERLAY */
-/* ========================= */
+    <style>
+        /* ========================= */
+        /* OVERLAY */
+        /* ========================= */
 
-.voice-popup-overlay{
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100vh;
+        .voice-popup-overlay {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100vh;
 
-    background: rgba(0,0,0,0.75);
-    backdrop-filter: blur(8px);
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    opacity: 0;
-    visibility: hidden;
+            opacity: 0;
+            visibility: hidden;
 
-    transition: 0.4s ease;
-    z-index: 99999;
+            transition: 0.4s ease;
+            z-index: 99999;
 
-    padding: 20px;
-}
+            padding: 20px;
+        }
 
-/* OPEN */
-.voice-popup-overlay.active{
-    opacity: 1;
-    visibility: visible;
-}
+        /* OPEN */
+        .voice-popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
 
-/* ========================= */
-/* BOX */
-/* ========================= */
+        /* ========================= */
+        /* BOX */
+        /* ========================= */
 
-.voice-popup-box{
-    width: 100%;
-    max-width: 500px;
+        .voice-popup-box {
+            width: 100%;
+            max-width: 500px;
 
-    background: #0b0f17;
-    border-radius: 20px;
+            background: #0b0f17;
+            border-radius: 20px;
 
-    padding: 30px 25px;
+            padding: 30px 25px;
 
-    position: relative;
+            position: relative;
 
-    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
 
-    animation: popupAnim 0.4s ease;
-}
+            animation: popupAnim 0.4s ease;
+        }
 
-/* Animation */
-@keyframes popupAnim{
-    from{
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    to{
-        transform: scale(1);
-        opacity: 1;
-    }
-}
+        /* Animation */
+        @keyframes popupAnim {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
 
-/* ========================= */
-/* CLOSE BTN */
-/* ========================= */
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
 
-.voice-close-btn{
-    position: absolute;
-    top: 12px;
-    right: 12px;
+        /* ========================= */
+        /* CLOSE BTN */
+        /* ========================= */
 
-    width: 40px;
-    height: 40px;
+        .voice-close-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
 
-    border: none;
-    border-radius: 50%;
+            width: 40px;
+            height: 40px;
 
-    background: #1b2332;
-    color: white;
+            border: none;
+            border-radius: 50%;
 
-    cursor: pointer;
-    font-size: 18px;
-}
+            background: #1b2332;
+            color: white;
 
-/* ========================= */
-/* TITLE */
-/* ========================= */
+            cursor: pointer;
+            font-size: 18px;
+        }
 
-#voice_user_name{
-    color: white;
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 24px;
-}
+        /* ========================= */
+        /* TITLE */
+        /* ========================= */
 
-/* ========================= */
-/* AUDIO */
-/* ========================= */
+        #voice_user_name {
+            color: white;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
 
-#main_voice_player{
-    width: 100%;
-}
+        /* ========================= */
+        /* AUDIO */
+        /* ========================= */
 
-/* ========================= */
-/* MOBILE */
-/* ========================= */
+        #main_voice_player {
+            width: 100%;
+        }
 
-@media(max-width:600px){
+        /* ========================= */
+        /* MOBILE */
+        /* ========================= */
 
-    .voice-popup-box{
-        padding: 25px 18px;
-        border-radius: 16px;
-    }
+        @media(max-width:600px) {
 
-    #voice_user_name{
-        font-size: 20px;
-    }
+            .voice-popup-box {
+                padding: 25px 18px;
+                border-radius: 16px;
+            }
 
-}
-</style>
+            #voice_user_name {
+                font-size: 20px;
+            }
 
-<div id="voice_popup_overlay" class="voice-popup-overlay">
-    
-    <div class="voice-popup-box">
+        }
+    </style>
 
-        <!-- Close BTN -->
-        <button class="voice-close-btn" onclick="close_voice_popup()">
-            ✕
-        </button>
+    <div id="voice_popup_overlay" class="voice-popup-overlay">
 
-        <!-- Name -->
-        <h2 id="voice_user_name">Voice Playing...</h2>
+        <div class="voice-popup-box">
 
-        <!-- Audio -->
-        <audio id="main_voice_player" controls autoplay>
-            <source id="main_voice_source" src="" type="audio/mpeg">
-        </audio>
+            <!-- Close BTN -->
+            <button class="voice-close-btn" onclick="close_voice_popup()">
+                ✕
+            </button>
+
+            <!-- Name -->
+            <h2 id="voice_user_name">Voice Playing...</h2>
+
+            <!-- Audio -->
+            <audio id="main_voice_player" controls autoplay>
+                <source id="main_voice_source" src="" type="audio/mpeg">
+            </audio>
+
+        </div>
 
     </div>
 
-</div>
+
+    <script>
+
+        /* ========================= */
+        /* AUDIO DATA */
+        /* ========================= */
+
+        const voice_list = {
+
+            1: {
+                name: "Sneha Kapoor",
+                audio: "female/BANSAL AATA.mp3"
+            },
+
+            2: {
+                name: "Anjali Rao",
+                audio: "female/COMMERCIAL_VO.mp3"
+            },
+
+            3: {
+                name: "Priya Mehta",
+                audio: "female/IVRS_KRSNAA_DIAGNOSTICS.mp3"
+            },
+
+            4: {
+                name: "Rahul Verma",
+                audio: "male/POSHAK_EVAM_CYCLE_YOJNA_40_SEC.mp3"
+            },
+            5: {
+                name: "Arjun Sharma",
+                audio: "male/NARRATION.mp3"
+            },
+            6: {
+                name: "Vikram Nair",
+                audio: "male/HINDI_NARRATION.mp3"
+            },
+            7: {
+                name: "Abhi Kumar",
+                audio: "male/AUDIO_BOOK_MVO_SAMPLE_1.mp3"
+            },
+            8: {
+                name: "Pihu Saini",
+                audio: "female/UNACADEMY_ADV_VO.mp3"
+            },
+            9: {
+                name: "Ajay Singh",
+                audio: "male/PIVOT.mp3"
+            }
+
+        };
 
 
-<script>
-    
-    /* ========================= */
-/* AUDIO DATA */
-/* ========================= */
+        /* ========================= */
+        /* MAIN FUNCTION */
+        /* ========================= */
 
-const voice_list = {
+        function voice_play_function(voice_code) {
 
-    1: {
-        name: "Sneha Kapoor",
-        audio: "female/BANSAL AATA.mp3"
-    },
+            const popup = document.getElementById("voice_popup_overlay");
 
-    2: {
-        name: "Anjali Rao",
-        audio: "female/COMMERCIAL_VO.mp3"
-    },
+            const player = document.getElementById("main_voice_player");
 
-    3: {
-        name: "Priya Mehta",
-        audio: "female/IVRS_KRSNAA_DIAGNOSTICS.mp3"
-    },
+            const source = document.getElementById("main_voice_source");
 
-    4: {
-        name: "Rahul Verma",
-        audio: "male/POSHAK_EVAM_CYCLE_YOJNA_40_SEC.mp3"
-    },
-    5: {
-        name: "Arjun Sharma",
-        audio: "male/NARRATION.mp3"
-    },
-    6: {
-        name: "Vikram Nair",
-        audio: "male/HINDI_NARRATION.mp3"
-    },
-    7: {
-        name: "Abhi Kumar",
-        audio: "male/AUDIO_BOOK_MVO_SAMPLE_1.mp3"
-    },
-    8: {
-        name: "Pihu Saini",
-        audio: "female/UNACADEMY_ADV_VO.mp3"
-    },
-    9: {
-        name: "Ajay Singh",
-        audio: "male/PIVOT.mp3"
-    }
-
-};
+            const title = document.getElementById("voice_user_name");
 
 
-/* ========================= */
-/* MAIN FUNCTION */
-/* ========================= */
+            // DATA
+            const voiceData = voice_list[voice_code];
 
-function voice_play_function(voice_code){
+            // NAME
+            title.innerText = voiceData.name;
 
-    const popup = document.getElementById("voice_popup_overlay");
+            // AUDIO
+            source.src = voiceData.audio;
 
-    const player = document.getElementById("main_voice_player");
+            // Reload Audio
+            player.load();
 
-    const source = document.getElementById("main_voice_source");
+            // Play
+            player.play();
 
-    const title = document.getElementById("voice_user_name");
+            // OPEN POPUP
+            popup.classList.add("active");
 
-
-    // DATA
-    const voiceData = voice_list[voice_code];
-
-    // NAME
-    title.innerText = voiceData.name;
-
-    // AUDIO
-    source.src = voiceData.audio;
-
-    // Reload Audio
-    player.load();
-
-    // Play
-    player.play();
-
-    // OPEN POPUP
-    popup.classList.add("active");
-
-}
+        }
 
 
-/* ========================= */
-/* CLOSE FUNCTION */
-/* ========================= */
+        /* ========================= */
+        /* CLOSE FUNCTION */
+        /* ========================= */
 
-function close_voice_popup(){
+        function close_voice_popup() {
 
-    const popup = document.getElementById("voice_popup_overlay");
+            const popup = document.getElementById("voice_popup_overlay");
 
-    const player = document.getElementById("main_voice_player");
+            const player = document.getElementById("main_voice_player");
 
-    popup.classList.remove("active");
+            popup.classList.remove("active");
 
-    // Stop Audio
-    player.pause();
+            // Stop Audio
+            player.pause();
 
-    player.currentTime = 0;
+            player.currentTime = 0;
 
-}
+        }
 
 
-/* ========================= */
-/* CLICK OUTSIDE CLOSE */
-/* ========================= */
+        /* ========================= */
+        /* CLICK OUTSIDE CLOSE */
+        /* ========================= */
 
-document.getElementById("voice_popup_overlay")
-.addEventListener("click", function(e){
+        document.getElementById("voice_popup_overlay")
+            .addEventListener("click", function (e) {
 
-    if(e.target.id === "voice_popup_overlay"){
+                if (e.target.id === "voice_popup_overlay") {
 
-        close_voice_popup();
+                    close_voice_popup();
 
-    }
+                }
 
-});
-</script>
+            });
+    </script>
 
-<!-- Audio Play Contect End-->
+    <!-- Audio Play Contect End-->
 
 
 
-<!-- form box hera start -->
+    <!-- form box hera start -->
     <style>
         /* * {
             margin: 0;

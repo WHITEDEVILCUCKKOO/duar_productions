@@ -21,6 +21,115 @@
 </head>
 
 <body>
+
+    
+    <!-- Custom Cursor (desktop only) -->
+    <style>
+        /* ── CURSOR ── */
+        .cursor {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: var(--yellow);
+            border-radius: 50% !important;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s;
+            mix-blend-mode: difference;
+        }
+
+        .cursor-ring {
+            position: fixed;
+            width: 32px;
+            height: 32px;
+            border: 1.5px solid rgba(245, 197, 24, 0.5);
+            border-radius: 50% !important;
+            pointer-events: none;
+            z-index: 9998;
+            transition: all 0.12s ease;
+        }
+
+        /* ── PARTICLE DOTS ── */
+        .particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 4;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(245, 197, 24, 0.6);
+            border-radius: 50%;
+            animation: particleFloat linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100px) translateX(30px);
+                opacity: 0;
+            }
+        }
+    </style>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+    <script>// ── CURSOR ──
+        const cursor = document.getElementById('cursor');
+        const ring = document.getElementById('cursorRing');
+        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+        document.addEventListener('mousemove', e => {
+            mouseX = e.clientX; mouseY = e.clientY;
+            cursor.style.left = mouseX - 4 + 'px';
+            cursor.style.top = mouseY - 4 + 'px';
+        });
+
+        function animateRing() {
+            ringX += (mouseX - ringX - 16) * 0.12;
+            ringY += (mouseY - ringY - 16) * 0.12;
+            ring.style.left = ringX + 'px';
+            ring.style.top = ringY + 'px';
+            requestAnimationFrame(animateRing);
+        }
+        animateRing();
+
+        // Hide cursor on mobile
+        if ('ontouchstart' in window) {
+            cursor.style.display = 'none';
+            ring.style.display = 'none';
+        }
+
+        // ── PARTICLES ──
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 20; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDuration = (8 + Math.random() * 12) + 's';
+                p.style.animationDelay = (Math.random() * 10) + 's';
+                p.style.opacity = Math.random() * 0.6;
+                container.appendChild(p);
+            }
+        }
+        createParticles();
+    </script>
     <header style="background-color: white;">
         <style>
             :root {
@@ -3471,7 +3580,7 @@ border-radius: 15px;
         </div>
 
         <div class="footer-col reveal delay-2">
-          <h4>Daur Production</h4>
+          <h4>Daur Productions</h4>
           <ul class="footer-links">
             <li><a href="/about">About Us</a></li>
             <li><a href="/contact">Contact Us</a></li>
