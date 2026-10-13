@@ -6,11 +6,11 @@
     <link rel="icon" type="image/svg+xml" href="assets/Daur-Logo-B530W0NU.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daur Production</title>
-     <link rel="icon" type="image/png" href="favicon_img/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="favicon_img/favicon.svg" />
-  <link rel="shortcut icon" href="favicon_img/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon_img/apple-touch-icon.png" />
-  <link rel="manifest" href="favicon_img/site.webmanifest" />
+    <link rel="icon" type="image/png" href="favicon_img/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon_img/favicon.svg" />
+    <link rel="shortcut icon" href="favicon_img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_img/apple-touch-icon.png" />
+    <link rel="manifest" href="favicon_img/site.webmanifest" />
     <link rel="stylesheet" href="css_mode/nav.css">
     <script src="https://kit.fontawesome.com/87cb04b335.js" crossorigin="anonymous"></script>
     <script src="js.js"></script>
@@ -20,6 +20,116 @@
 </head>
 
 <body>
+
+
+    <!-- Custom Cursor (desktop only) -->
+    <style>
+        /* ── CURSOR ── */
+        .cursor {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: var(--yellow);
+            border-radius: 50% !important;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s;
+            mix-blend-mode: difference;
+        }
+
+        .cursor-ring {
+            position: fixed;
+            width: 32px;
+            height: 32px;
+            border: 1.5px solid rgba(245, 197, 24, 0.5);
+            border-radius: 50% !important;
+            pointer-events: none;
+            z-index: 9998;
+            transition: all 0.12s ease;
+        }
+
+        /* ── PARTICLE DOTS ── */
+        .particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 4;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(245, 197, 24, 0.6);
+            border-radius: 50%;
+            animation: particleFloat linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100px) translateX(30px);
+                opacity: 0;
+            }
+        }
+    </style>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+    <script>// ── CURSOR ──
+        const cursor = document.getElementById('cursor');
+        const ring = document.getElementById('cursorRing');
+        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+        document.addEventListener('mousemove', e => {
+            mouseX = e.clientX; mouseY = e.clientY;
+            cursor.style.left = mouseX - 4 + 'px';
+            cursor.style.top = mouseY - 4 + 'px';
+        });
+
+        function animateRing() {
+            ringX += (mouseX - ringX - 16) * 0.12;
+            ringY += (mouseY - ringY - 16) * 0.12;
+            ring.style.left = ringX + 'px';
+            ring.style.top = ringY + 'px';
+            requestAnimationFrame(animateRing);
+        }
+        animateRing();
+
+        // Hide cursor on mobile
+        if ('ontouchstart' in window) {
+            cursor.style.display = 'none';
+            ring.style.display = 'none';
+        }
+
+        // ── PARTICLES ──
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 20; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDuration = (8 + Math.random() * 12) + 's';
+                p.style.animationDelay = (Math.random() * 10) + 's';
+                p.style.opacity = Math.random() * 0.6;
+                container.appendChild(p);
+            }
+        }
+        createParticles();
+    </script>
+
     <header style="background-color: white;">
         <style>
             :root {
@@ -696,12 +806,13 @@
                 }
             }
         </style>
+
         <!-- <div style="padding: 0 5px 20px 5px;backdrop-filter: blur(0);"> -->
         <nav id="navbar" style="border-radius: 15px;">
             <a href="/" class="logo" style="text-decoration:none;">
                 <div style="width:50px;padding-left:6px;margin-left:15px;">
-            <img style="width: 70%;" src="assets/Daur-Production.webp" alt="">
-          </div>
+                    <img style="width: 70%;" src="assets/Daur-Production.webp" alt="">
+                </div>
             </a>
 
             <ul class="nav-links">
@@ -732,8 +843,8 @@
 
         <!-- Mobile Nav -->
         <div class="mobile-nav" id="mobileNav">
-            <a href="/" >Home</a>
-            <a href="/about" >About</a>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
             <a href="#" id="servicesmb">Services <i class="fa-solid fa-angle-down"></i> </a>
             <div class="dropdown_2 unshow_smmb">
                 <ul>
@@ -745,10 +856,10 @@
                 </ul>
 
             </div>
-            <a href="#work" >Work</a>
-            <a href="#clients" >Clients</a>
-            <a href="/contact" >Contact</a>
-            <a href="" id="call_me_to_more" class="btn-primary" style="width:fit-content;" >Let's Talk
+            <a href="#work">Work</a>
+            <a href="#clients">Clients</a>
+            <a href="/contact">Contact</a>
+            <a href="" id="call_me_to_more" class="btn-primary" style="width:fit-content;">Let's Talk
                 ↗</a>
         </div>
 
@@ -763,31 +874,33 @@
 
         <!-- section 1 -->
         <style>
-            .asjdo74{
-                padding-top:15px;
-                padding-bottom:0;
+            .asjdo74 {
+                padding-top: 15px;
+                padding-bottom: 0;
             }
-            .asjdo74 p{
-                margin:10px auto;
+
+            .asjdo74 p {
+                margin: 10px auto;
             }
-            .asjdo75{
-                display:none;
-                color:white;
-                margin-top:10px;
-                margin-bottom:20px;
-                font-size:16px;
+
+            .asjdo75 {
+                display: none;
+                color: white;
+                margin-top: 10px;
+                margin-bottom: 20px;
+                font-size: 16px;
             }
-            
+
             /* Tablet */
             @media screen and (max-width: 954px) {
-               .asjdo74{
-                   display:none;
-               }
-               .asjdo75{
-                   display:block;
-               }
+                .asjdo74 {
+                    display: none;
+                }
+
+                .asjdo75 {
+                    display: block;
+                }
             }
-            
         </style>
         <section
             class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-900">
@@ -830,157 +943,141 @@
                         style="left: 22.5564%; top: 58.4913%; animation-delay: 2.19527s; opacity: 0.64557;"></div>
                 </div>
             </div>
+
             <div class="relative z-20 max-w-7xl mx-auto px-4 w-full">
+
                 <div class="text-center w-full">
+
                     <div class="min-h-[250px] flex flex-col items-center justify-center" style="padding-top:3.5rem;">
-                        <h1 class="text-6xl md:text-6xl lg:text-6xl font-black  leading-tight text-center"><span
-                                class="text-white text-left min-w-[250px]"><span
-                                    class="inline-block typewriter-letter opacity-0"
-                                    style="animation: 0.08s ease 0s 1 normal forwards running typeIn;">E</span><span
-                                    class="inline-block typewriter-letter opacity-0"
-                                    style="animation: 0.08s ease 0.08s 1 normal forwards running typeIn;">v</span><span
-                                    class="inline-block typewriter-letter opacity-0"
-                                    style="animation: 0.08s ease 0.16s 1 normal forwards running typeIn;">e</span><span
-                                    class="inline-block typewriter-letter opacity-0"
-                                    style="animation: 0.08s ease 0.24s 1 normal forwards running typeIn;">r</span><span
-                                    class="inline-block typewriter-letter opacity-0"
-                                    style="animation: 0.08s ease 0.32s 1 normal forwards running typeIn;">y</span><span
-                                    class="inline-block typewriter-letter opacity-0"
-                                    style="animation: 0.08s ease 0.4s 1 normal forwards running typeIn;">t</span><span
-                                    class="inline-block typewriter-letter opacity-0"
-                                    style="animation: 0.08s ease 0.48s 1 normal forwards running typeIn;">h</span><span
-                                    class="inline-block typewriter-letter opacity-0"
-                                    style="animation: 0.08s ease 0.56s 1 normal forwards running typeIn;">i</span><span
-                                    class="inline-block typewriter-letter opacity-0"
-                                    style="animation: 0.08s ease 0.64s 1 normal forwards running typeIn;">n</span><span
-                                    class="inline-block typewriter-letter opacity-0"
-                                    style="animation: 0.08s ease 0.72s 1 normal forwards running typeIn;">g</span><span
-                                    class="inline-block typewriter-letter opacity-0"
-                                    style="animation: 0.08s ease 0.8s 1 normal forwards running typeIn;">&nbsp;</span></span>
-                            <div class="relative inline-block">
-                                <div class="absolute inset-0 bg-[#eebc29] transition-all duration-500 ease-out"
-                                    style="width: 0%; animation: 2.24s ease-in-out 0.56s 1 normal forwards running bgExpand;">
-                                </div>
-                                <div class="relative  min-w-[220px]"><span
-                                        class="inline-block typewriter-letter text-black font-extrabold opacity-0"
-                                        style="animation: 0.08s ease 0.56s 1 normal forwards running typeIn; position: relative; z-index: 10;">V</span><span
-                                        class="inline-block typewriter-letter text-black font-extrabold opacity-0"
-                                        style="animation: 0.08s ease 0.64s 1 normal forwards running typeIn; position: relative; z-index: 10;">i</span><span
-                                        class="inline-block typewriter-letter text-black font-extrabold opacity-0"
-                                        style="animation: 0.08s ease 0.72s 1 normal forwards running typeIn; position: relative; z-index: 10;">d</span><span
-                                        class="inline-block typewriter-letter text-black font-extrabold opacity-0"
-                                        style="animation: 0.08s ease 0.8s 1 normal forwards running typeIn; position: relative; z-index: 10;">e</span><span
-                                        class="inline-block typewriter-letter text-black font-extrabold opacity-0"
-                                        style="animation: 0.08s ease 0.88s 1 normal forwards running typeIn; position: relative; z-index: 10;">o</span>
-                                </div>
-                            </div><br>
+
+                        <h1 class="text-6xl md:text-6xl lg:text-6xl font-black leading-tight text-center">
+
+                            <span class="text-white">
+                                Everything
+                            </span>
+
+                            <span class="bg-[#eebc29] text-black font-extrabold px-2">
+                                Video
+                            </span>
+
+                            <br>
+
+                            <span class="bg-[#eebc29] text-black font-extrabold px-2">
+                                ONE
+                            </span>
+
+                            <span class="text-white px-4">
+                                Studio
+                            </span>
+
                         </h1>
-                        <h1 class="text-6xl md:text-6xl lg:text-6xl font-black  leading-tight text-center">
-                            <div class="relative inline-block">
-                                <div class="absolute inset-0 bg-[#eebc29] transition-all duration-500 ease-out"
-                                    style="width: 0%; animation: 1.28s ease-in-out 3s 1 normal forwards running bgExpand;">
-                                </div>
-                                <div class="relative  min-w-[130px]"><span
-                                        class="inline-block typewriter-letter text-black font-extrabold opacity-0"
-                                        style="animation: 0.08s ease 3s 1 normal forwards running typeIn; position: relative; z-index: 10;">O</span><span
-                                        class="inline-block typewriter-letter text-black font-extrabold opacity-0"
-                                        style="animation: 0.08s ease 3.08s 1 normal forwards running typeIn; position: relative; z-index: 10;">N</span><span
-                                        class="inline-block typewriter-letter text-black font-extrabold opacity-0"
-                                        style="animation: 0.08s ease 3.16s 1 normal forwards running typeIn; position: relative; z-index: 10;">E</span><span
-                                        class="inline-block typewriter-letter text-black font-extrabold opacity-0"
-                                        style="animation: 0.08s ease 3.24s 1 normal forwards running typeIn; position: relative; z-index: 10;">&nbsp;</span>
-                                </div>
-                            </div><span class="px-4 py-4 text-white min-w-[250px]"><span
-                                    class="inline-block typewriter-letter opacity-0"
-                                    style="animation: 0.08s ease 3.32s 1 normal forwards running typeIn;">S</span><span
-                                    class="inline-block typewriter-letter opacity-0"
-                                    style="animation: 0.08s ease 3.4s 1 normal forwards running typeIn;">t</span><span
-                                    class="inline-block typewriter-letter opacity-0"
-                                    style="animation: 0.08s ease 3.48s 1 normal forwards running typeIn;">u</span><span
-                                    class="inline-block typewriter-letter opacity-0"
-                                    style="animation: 0.08s ease 3.56s 1 normal forwards running typeIn;">d</span><span
-                                    class="inline-block typewriter-letter opacity-0"
-                                    style="animation: 0.08s ease 3.64s 1 normal forwards running typeIn;">i</span><span
-                                    class="inline-block typewriter-letter opacity-0"
-                                    style="animation: 0.08s ease 3.72s 1 normal forwards running typeIn;">o</span></span><span
-                                class="mt-10 ml-5 w-[3px] h-16 bg-yellow-500 inline-block animate-cursor opacity-0"
-                                style="animation: 0.3s ease 4.2s 1 normal forwards running fadeIn, 1s ease 4.5s infinite normal none running cursor; position: relative;"></span>
-                        </h1>
+
                     </div>
-                    <div class="max-w-3xl mx-auto asjdo74">
+
+
+                    <div class="max-w-3xl mx-auto">
                         <p
-                            class="text-xl md:text-2xl lg:text-3xl text-gray-200 mb-20 leading-relaxed font-light text-center pl-22">
-                            Visual stories that perform. Delivering cinematic<br><span
-                                class="text-xl md:text-2xl lg:text-3xl text-gray-200 mb-12 leading-relaxed font-light text-center pl-15">excellence
-                                with commercial intelligence.</span></p>
-                    </div>
-                    <div class="max-w-3xl mx-auto asjdo75 ">
-                        <p class="">
+                            class="text-xl md:text-2xl lg:text-3xl text-gray-200 mb-12 leading-relaxed font-light text-center">
                             Visual stories that perform. Delivering cinematic excellence
-                                with commercial intelligence.</p>
+                            with commercial intelligence.
+                        </p>
                     </div>
-                    <div class="flex flex-col sm:flex-row gap-6 justify-center " style="margin:10px 0;"><a id="call_me_to_more" href=""
-                            class="group relative px-8 md:px-12 py-4 md:py-5 bg-gradient-to-r from-yellow-600 to-yellow-500 rounded-full font-bold text-lg text-white hover:shadow-2xl hover:shadow-blue-500/40 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 overflow-hidden w-full sm:w-auto">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            </div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+
+
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center" style="margin:10px 0;">
+
+                        <a id="call_me_to_more" href=""
+                            class="px-8 md:px-12 py-4 md:py-5 bg-yellow-600 rounded-full font-bold text-lg text-white flex items-center justify-center gap-3 w-full sm:w-auto">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="lucide lucide-phone w-5 h-5 md:w-6 md:h-6 relative z-10"
-                                aria-hidden="true">
+                                stroke-linejoin="round" class="w-5 h-5 md:w-6 md:h-6">
                                 <path
                                     d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
                                 </path>
-                            </svg><span class="relative z-10 bg-orange"
-                                style="font-family: sans-serif; font-weight: 400; font-size: 1.125rem;">Call Now</span>
-                            <div class="absolute inset-0 border-2 border-white/30 rounded-full animate-ping opacity-0 group-hover:opacity-50"
-                                style="font-family: sans-serif; font-weight: 400;"></div>
-                        </a><a href="/contact"
-                            class="group px-8 md:px-12 py-4 md:py-5 border-2 border-white/30 rounded-full font-bold text-lg text-white hover:bg-white/10 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm flex items-center justify-center gap-2 w-full sm:w-auto"><svg
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            </svg>
+
+                            <span style="font-family:sans-serif; font-weight:400; font-size:1.125rem;">
+                                Call Now
+                            </span>
+
+                        </a>
+
+
+                        <a href="/contact"
+                            class="px-8 md:px-12 py-4 md:py-5 border-2 border-white/30 rounded-full font-bold text-lg text-white flex items-center justify-center gap-2 w-full sm:w-auto">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="lucide lucide-mail w-5 h-5" aria-hidden="true">
+                                stroke-linejoin="round" class="w-5 h-5">
                                 <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
                                 <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                            </svg>Contact Us</a></div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto ">
-                        <div
-                            class="backdrop-blur-sm counter-box rounded-xl md:rounded-2xl p-4 md:p-6 hover:border-white/40 transition-all duration-300 hover:scale-105 text-center">
-                            <div class="text-3xl md:text-4xl lg:text-5xl font-bold  mb-2 text-yellow-600"
-                                style="font-family: &quot;Playfair Display&quot;, serif; font-weight: 700;"><span
-                                    class="counter" data-target="500">0</span>+</div>
-                            <div class="text-gray-300 text-sm md:text-base mt-1 text-orange"
-                                style="font-family: &quot;Source Sans 3&quot;, sans-serif; font-weight: 700;">Projects
-                            </div>
-                        </div>
-                        <div
-                            class="backdrop-blur-sm counter-box rounded-xl md:rounded-2xl p-4 md:p-6 hover:border-white/40 transition-all duration-300 hover:scale-105 text-center">
-                            <div class="text-3xl md:text-4xl lg:text-5xl font-bold  mb-2 text-yellow-600"
-                                style="font-family: &quot;Playfair Display&quot;, serif; font-weight: 700;"><span
-                                    class="counter" data-target="150">0</span>+</div>
-                            <div class="text-gray-300 text-sm md:text-base mt-1 text-orange"
-                                style="font-family: &quot;Source Sans 3&quot;, sans-serif; font-weight: 700;">Happy
-                                Clients</div>
-                        </div>
-                        <div
-                            class="backdrop-blur-sm counter-box rounded-xl md:rounded-2xl p-4 md:p-6 hover:border-white/40 transition-all duration-300 hover:scale-105 text-center">
-                            <div class="text-3xl md:text-4xl lg:text-5xl font-bold  mb-2 text-yellow-600"
-                                style="font-family: &quot;Playfair Display&quot;, serif; font-weight: 700;"><span
-                                    class="counter" data-target="25">0</span>+</div>
-                            <div class="text-gray-300 text-sm md:text-base mt-1 text-orange"
-                                style="font-family: &quot;Source Sans 3&quot;, sans-serif; font-weight: 700;">Industry
-                                Awards</div>
-                        </div>
-                        <div
-                            class="backdrop-blur-sm counter-box rounded-xl md:rounded-2xl p-4 md:p-6 hover:border-white/40 transition-all duration-300 hover:scale-105 text-center">
-                            <div class="text-3xl md:text-4xl lg:text-5xl font-bold  mb-2 text-yellow-600"
-                                style="font-family: &quot;Playfair Display&quot;, serif; font-weight: 700;"><span
-                                    class="counter" data-target="8">0</span>+</div>
-                            <div class="text-gray-300 text-sm md:text-base mt-1 text-orange"
-                                style="font-family: &quot;Source Sans 3&quot;, sans-serif; font-weight: 700;">Years
-                                Excellence</div>
-                        </div>
+                            </svg>
+
+                            Contact Us
+
+                        </a>
+
                     </div>
+
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto">
+
+                        <div class="counter-box rounded-xl md:rounded-2xl p-4 md:p-6 text-center">
+
+                            <div class="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 text-yellow-600">
+                                500+
+                            </div>
+
+                            <div class="text-gray-300 text-sm md:text-base mt-1 text-orange">
+                                Projects
+                            </div>
+
+                        </div>
+
+
+                        <div class="counter-box rounded-xl md:rounded-2xl p-4 md:p-6 text-center">
+
+                            <div class="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 text-yellow-600">
+                                150+
+                            </div>
+
+                            <div class="text-gray-300 text-sm md:text-base mt-1 text-orange">
+                                Happy Clients
+                            </div>
+
+                        </div>
+
+
+                        <div class="counter-box rounded-xl md:rounded-2xl p-4 md:p-6 text-center">
+
+                            <div class="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 text-yellow-600">
+                                25+
+                            </div>
+
+                            <div class="text-gray-300 text-sm md:text-base mt-1 text-orange">
+                                Industry Awards
+                            </div>
+
+                        </div>
+
+
+                        <div class="counter-box rounded-xl md:rounded-2xl p-4 md:p-6 text-center">
+
+                            <div class="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 text-yellow-600">
+                                8+
+                            </div>
+
+                            <div class="text-gray-300 text-sm md:text-base mt-1 text-orange">
+                                Years Excellence
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
+
             </div>
             <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
                 <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
@@ -1031,6 +1128,10 @@
                 });
             });
         </script>
+
+     
+
+
 
         <!-- section 2 -->
         <div class="relative overflow-hidden mt-0"
@@ -1493,24 +1594,24 @@
         </div>
 
         <!-- section 3 -->
-          
+
         <style>
-            
             /* Small Mobile */
-            .p_version12{
-                display:none;
+            .p_version12 {
+                display: none;
             }
-            
-           
-        @media screen and (max-width: 880px) {
-            .p_version11{
-                display:none;
+
+
+            @media screen and (max-width: 880px) {
+                .p_version11 {
+                    display: none;
+                }
+
+                .p_version12 {
+                    display: block;
+                }
+
             }
-            .p_version12{
-                display:block;
-            }
-            
-        }
         </style>
         <section class="py-24  relative overflow-hidden" initial="[object Object]" animate="[object Object]"
             transition="[object Object]"
@@ -1626,10 +1727,12 @@
                         </svg><span class="text-sm font-semibold text-black tracking-wide">CLIENT TESTIMONIALS</span>
                     </div>
                     <h2 class="text-4xl md:text-4xl font-bold text-white mb-4">What Our Clients Say</h2>
-                    <p class="text-white  md:text-xl max-w-3xl mx-auto pl-20 p_version11">Trusted by leading brands and creators
+                    <p class="text-white  md:text-xl max-w-3xl mx-auto pl-20 p_version11">Trusted by leading brands and
+                        creators
                         across India for delivering <br><span class="text-center pl-25">exceptional video content that
                             drives results.</span></p>
-                    <p class="text-white  md:text-xl max-w-3xl mx-auto p_version12">Trusted by leading brands and creators
+                    <p class="text-white  md:text-xl max-w-3xl mx-auto p_version12">Trusted by leading brands and
+                        creators
                         across India for delivering <span class="text-center ">exceptional video content that
                             drives results.</span></p>
                 </div>
@@ -1783,71 +1886,74 @@
         }
 
         /* new code  */
-.ADOAJOWE{
-  display: flex;
-  gap: 10px;
-  
-}
-.ADOAJOWE input{
-  background-color: var(--grad-lan);
-  border: 1px solid #665;
-  border-radius: 5px;
-}
-.ADOAJOWE input::placeholder{
-color: rgba(255, 255, 255, 0.678);
-padding-left: 5px;
-font-family: var(--poppins);
-font-size: 12px;
-}
+        .ADOAJOWE {
+            display: flex;
+            gap: 10px;
 
-.ADOAJOWE button{
-background: var(--yellow);
-padding:8px 15px;
-border: none;
-border-radius: 15px;
+        }
 
-}
+        .ADOAJOWE input {
+            background-color: var(--grad-lan);
+            border: 1px solid #665;
+            border-radius: 5px;
+        }
+
+        .ADOAJOWE input::placeholder {
+            color: rgba(255, 255, 255, 0.678);
+            padding-left: 5px;
+            font-family: var(--poppins);
+            font-size: 12px;
+        }
+
+        .ADOAJOWE button {
+            background: var(--yellow);
+            padding: 8px 15px;
+            border: none;
+            border-radius: 15px;
+
+        }
     </style>
     <section id="contact">
         <div class="awsad13">
             <div class="footer-grid">
                 <div class="footer-brand reveal">
-          <div class="logo">
-            <div style="width:110px;margin-left: 35px;">
-            <img style="width: 95%;" src="assets/footer_logo.png" alt="">
-          </div>
-          </div>
-          <p>Revolutionizing video dubbing with AI-powered technology. Making content globally accessible.</p>
-          <div class="footer-copyright" style="color: white;"><span>
-              <p>Stay updated with our latest</p>
-            </span>
-            <span class="ADOAJOWE"><input type="email" placeholder="Enter The Email "><button type="submit">submit</button></span>
-          </div>
-        </div>
+                    <div class="logo">
+                        <div style="width:110px;margin-left: 35px;">
+                            <img style="width: 95%;" src="assets/footer_logo.png" alt="">
+                        </div>
+                    </div>
+                    <p>Revolutionizing video dubbing with AI-powered technology. Making content globally accessible.</p>
+                    <div class="footer-copyright" style="color: white;"><span>
+                            <p>Stay updated with our latest</p>
+                        </span>
+                        <span class="ADOAJOWE"><input type="email" placeholder="Enter The Email "><button
+                                type="submit">submit</button></span>
+                    </div>
+                </div>
 
-        <div class="footer-col reveal delay-1">
-          <h4>Useful  Links</h4>
-          <ul class="footer-links">
-            <li><a href="/">Business Academy</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/">Digital</a></li>
-            <li><a href="/">Creative</a></li>
-            <li><a href="/">FAQs</a></li>
-            
-          </ul>
-        </div>
+                <div class="footer-col reveal delay-1">
+                    <h4>Useful Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Business Academy</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/">Digital</a></li>
+                        <li><a href="/">Creative</a></li>
+                        <li><a href="/">FAQs</a></li>
 
-        <div class="footer-col reveal delay-2">
-          <h4>Daur Production</h4>
-          <ul class="footer-links">
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/contact">Contact Us</a></li>
-            <li><a href="/">Daur Production Studio</a></li>
-            <li><a href="/">Why Daur Production?</a></li>
-            <!-- <li><a href="about">FAQs</a></li> -->
-            
-          </ul>
-          <!-- <div class="social-icons">
+                    </ul>
+                </div>
+
+                <div class="footer-col reveal delay-2">
+                    <h4>Daur Productions</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/">Daur Production Studio</a></li>
+                        <li><a href="/">Why Daur Production?</a></li>
+                        <!-- <li><a href="about">FAQs</a></li> -->
+
+                    </ul>
+                    <!-- <div class="social-icons">
             <a href="#" class="social-icon" title="Instagram">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="2" width="20" height="20" rx="5" />
@@ -1874,44 +1980,48 @@ border-radius: 15px;
               </svg>
             </a>
           </div> -->
-        </div>
+                </div>
 
-        <div class="footer-col reveal delay-3">
-          <h4>Contact Info</h4>
-          <div class="contact-items">
+                <div class="footer-col reveal delay-3">
+                    <h4>Contact Info</h4>
+                    <div class="contact-items">
 
-            
-            <div class="contact-item">
-              <span class="contact-item-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-              </span>
-              2nd Floor, Welldone Tech Park,
-Unit No. 213 & 214,
-Badshahpur Sohna Rd Hwy, Sector 48,
-Gurugram, Haryana 122018 
-            </div>
-            <div class="contact-item">
-              <span class="contact-item-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                  <polyline points="22,6 12,13 2,6" />
-                </svg>
-              </span>
-              hello@daurproduction.com
-            </div>
-            <div class="contact-item" id="call_me_to_more">
-              <span class="contact-item-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path
-                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.08 6.08l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2z" />
-                </svg>
-              </span>
-              099147 66103
-            </div>
-            <!-- <div class="contact-item">
+
+                        <div class="contact-item">
+                            <span class="contact-item-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </span>
+                            2nd Floor, Welldone Tech Park,
+                            Unit No. 213 & 214,
+                            Badshahpur Sohna Rd Hwy, Sector 48,
+                            Gurugram, Haryana 122018
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-item-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                            </span>
+                            hello@daurproduction.com
+                        </div>
+                        <div class="contact-item" id="call_me_to_more">
+                            <span class="contact-item-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.08 6.08l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2z" />
+                                </svg>
+                            </span>
+                            099147 66103
+                        </div>
+                        <!-- <div class="contact-item">
               <span class="contact-item-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
@@ -1920,8 +2030,8 @@ Gurugram, Haryana 122018
               </span>
               Delhi, India
             </div> -->
-          </div>
-        </div>
+                    </div>
+                </div>
             </div>
             <div class="footer-divider"></div>
             <div class="footer-bottom" style="color: white;">Made with passion by Daur Productions</div>
@@ -1954,7 +2064,7 @@ Gurugram, Haryana 122018
     </script>
 
 
-<!-- call and whatsapp icons start -->
+    <!-- call and whatsapp icons start -->
     <style>
         /* ── CHAT WIDGET ── */
         .chat-widget {
@@ -2127,16 +2237,16 @@ Gurugram, Haryana 122018
         let url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
 
         document.getElementById("whatsappBtn").href = url;
-         document.getElementById("call_me_to_more")
-      .addEventListener("click", () => {
-        window.location.href = "tel:+916283915317";
-      });
+        document.getElementById("call_me_to_more")
+            .addEventListener("click", () => {
+                window.location.href = "tel:+916283915317";
+            });
     </script>
 
-<!-- call and whatsapp icons end -->
+    <!-- call and whatsapp icons end -->
 
 
-<!-- form box hera start -->
+    <!-- form box hera start -->
     <style>
         /* * {
             margin: 0;
